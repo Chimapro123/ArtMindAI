@@ -1,0 +1,432 @@
+[
+  {
+    "slug": "wassily-kandinsky",
+    "name": "Wassily Kandinsky",
+    "born": 1866,
+    "died": 1944,
+    "nationality": "Russian",
+    "portrait": "composition-vii",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "piet-mondrian",
+    "name": "Piet Mondrian",
+    "born": 1872,
+    "died": 1944,
+    "nationality": "Dutch",
+    "portrait": "composition-with-red-blue-and-yellow",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "kazimir-malevich",
+    "name": "Kazimir Malevich",
+    "born": 1879,
+    "died": 1935,
+    "nationality": "Russian",
+    "portrait": "black-square",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "hilma-af-klint",
+    "name": "Hilma af Klint",
+    "born": 1862,
+    "died": 1944,
+    "nationality": "Swedish",
+    "portrait": "the-ten-largest-no-7",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "robert-delaunay",
+    "name": "Robert Delaunay",
+    "born": 1885,
+    "died": 1941,
+    "nationality": "French",
+    "portrait": "simultaneous-windows-on-the-city",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "vincent-van-gogh",
+    "name": "Vincent van Gogh",
+    "born": 1853,
+    "died": 1890,
+    "nationality": "Dutch",
+    "portrait": "/artists/vincent-van-gogh.jpg",
+    "portraitLicence": "Public domain",
+    "portraitSourceUrl": "https://commons.wikimedia.org/wiki/File:Zelfportret_met_grijze_vilthoed_-_s0016V1962_-_Van_Gogh_Museum.jpg"
+  },
+  {
+    "slug": "john-constable",
+    "name": "John Constable",
+    "born": 1776,
+    "died": 1837,
+    "nationality": "English",
+    "portrait": "the-hay-wain",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "j-m-w-turner",
+    "name": "J. M. W. Turner",
+    "born": 1775,
+    "died": 1851,
+    "nationality": "English",
+    "portrait": "the-fighting-temeraire",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "johannes-vermeer",
+    "name": "Johannes Vermeer",
+    "born": 1632,
+    "died": 1675,
+    "nationality": "Dutch",
+    "portrait": "view-of-delft",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "pieter-bruegel-the-elder",
+    "name": "Pieter Bruegel the Elder",
+    "born": 1525,
+    "died": 1569,
+    "nationality": "Flemish",
+    "portrait": "hunters-in-the-snow",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "hendrick-avercamp",
+    "name": "Hendrick Avercamp",
+    "born": 1585,
+    "died": 1634,
+    "nationality": "Dutch",
+    "portrait": "winter-landscape-with-skaters",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "rachel-ruysch",
+    "name": "Rachel Ruysch",
+    "born": 1664,
+    "died": 1750,
+    "nationality": "Dutch",
+    "portrait": "/artists/rachel-ruysch.jpg",
+    "portraitLicence": "Public domain",
+    "portraitSourceUrl": "https://commons.wikimedia.org/wiki/File:MIchiel_van_Musscher_-_Portrait_of_an_Artist_in_Her_Studio.jpg"
+  },
+  {
+    "slug": "ambrosius-bosschaert-the-elder",
+    "name": "Ambrosius Bosschaert the Elder",
+    "born": 1573,
+    "died": 1621,
+    "nationality": "Flemish-Dutch",
+    "portrait": "bouquet-of-flowers-in-a-glass-vase",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "jan-brueghel-the-elder",
+    "name": "Jan Brueghel the Elder",
+    "born": 1568,
+    "died": 1625,
+    "nationality": "Flemish",
+    "portrait": "flowers-in-a-wooden-vessel",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "jan-van-huysum",
+    "name": "Jan van Huysum",
+    "born": 1682,
+    "died": 1749,
+    "nationality": "Dutch",
+    "portrait": "still-life-with-flowers-and-fruit",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "odilon-redon",
+    "name": "Odilon Redon",
+    "born": 1840,
+    "died": 1916,
+    "nationality": "French",
+    "portrait": "bouquet-of-flowers-redon",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "caspar-david-friedrich",
+    "name": "Caspar David Friedrich",
+    "born": 1774,
+    "died": 1840,
+    "nationality": "German",
+    "portrait": "wanderer-above-the-sea-of-fog",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "albert-bierstadt",
+    "name": "Albert Bierstadt",
+    "born": 1830,
+    "died": 1902,
+    "nationality": "American",
+    "portrait": "among-the-sierra-nevada",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "ivan-aivazovsky",
+    "name": "Ivan Aivazovsky",
+    "born": 1817,
+    "died": 1900,
+    "nationality": "Russian",
+    "portrait": "the-ninth-wave",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "albrecht-durer",
+    "name": "Albrecht Dürer",
+    "born": 1471,
+    "died": 1528,
+    "nationality": "German",
+    "portrait": "young-hare",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "henri-rousseau",
+    "name": "Henri Rousseau",
+    "born": 1844,
+    "died": 1910,
+    "nationality": "French",
+    "portrait": "tiger-in-a-tropical-storm",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "franz-marc",
+    "name": "Franz Marc",
+    "born": 1880,
+    "died": 1916,
+    "nationality": "German",
+    "portrait": "the-large-blue-horses",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "katsushika-hokusai",
+    "name": "Katsushika Hokusai",
+    "born": 1760,
+    "died": 1849,
+    "nationality": "Japanese",
+    "portrait": "the-great-wave-off-kanagawa",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "rosa-bonheur",
+    "name": "Rosa Bonheur",
+    "born": 1822,
+    "died": 1899,
+    "nationality": "French",
+    "portrait": "the-horse-fair",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "gustav-klimt",
+    "name": "Gustav Klimt",
+    "born": 1862,
+    "died": 1918,
+    "nationality": "Austrian",
+    "portrait": "the-kiss",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "sandro-botticelli",
+    "name": "Sandro Botticelli",
+    "born": 1445,
+    "died": 1510,
+    "nationality": "Italian",
+    "portrait": "the-birth-of-venus",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "jan-van-eyck",
+    "name": "Jan van Eyck",
+    "born": 1390,
+    "died": 1441,
+    "nationality": "Flemish",
+    "portrait": "the-arnolfini-portrait",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "raphael",
+    "name": "Raphael",
+    "born": 1483,
+    "died": 1520,
+    "nationality": "Italian",
+    "portrait": "/artists/raphael.jpg",
+    "portraitLicence": "Public domain",
+    "portraitSourceUrl": "https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg"
+  },
+  {
+    "slug": "rembrandt-van-rijn",
+    "name": "Rembrandt van Rijn",
+    "born": 1606,
+    "died": 1669,
+    "nationality": "Dutch",
+    "portrait": "/artists/rembrandt-van-rijn.jpg",
+    "portraitLicence": "Public domain",
+    "portraitSourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_Self-portrait_(Kenwood).jpg"
+  },
+  {
+    "slug": "pierre-auguste-renoir",
+    "name": "Pierre-Auguste Renoir",
+    "born": 1841,
+    "died": 1919,
+    "nationality": "French",
+    "portrait": "luncheon-of-the-boating-party",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "georges-seurat",
+    "name": "Georges Seurat",
+    "born": 1859,
+    "died": 1891,
+    "nationality": "French",
+    "portrait": "a-sunday-on-la-grande-jatte",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "diego-velazquez",
+    "name": "Diego Velázquez",
+    "born": 1599,
+    "died": 1660,
+    "nationality": "Spanish",
+    "portrait": "las-meninas",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "gerard-ter-borch",
+    "name": "Gerard ter Borch",
+    "born": 1617,
+    "died": 1681,
+    "nationality": "Dutch",
+    "portrait": "a-boy-caring-for-his-dog",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "jean-francois-millet",
+    "name": "Jean-François Millet",
+    "born": 1814,
+    "died": 1875,
+    "nationality": "French",
+    "portrait": "the-gleaners",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "gabriel-metsu",
+    "name": "Gabriel Metsu",
+    "born": 1629,
+    "died": 1667,
+    "nationality": "Dutch",
+    "portrait": "woman-reading-a-letter-metsu",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "mary-cassatt",
+    "name": "Mary Cassatt",
+    "born": 1844,
+    "died": 1926,
+    "nationality": "American",
+    "portrait": "reading-le-figaro",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "fra-angelico",
+    "name": "Fra Angelico",
+    "born": 1390,
+    "died": 1455,
+    "nationality": "Italian",
+    "portrait": "the-annunciation-fra-angelico",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "sassoferrato",
+    "name": "Sassoferrato",
+    "born": 1609,
+    "died": 1685,
+    "nationality": "Italian",
+    "portrait": "the-virgin-in-prayer",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "leonardo-da-vinci",
+    "name": "Leonardo da Vinci",
+    "born": 1452,
+    "died": 1519,
+    "nationality": "Italian",
+    "portrait": "the-last-supper",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "michelangelo",
+    "name": "Michelangelo",
+    "born": 1475,
+    "died": 1564,
+    "nationality": "Italian",
+    "portrait": "the-creation-of-adam",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "caravaggio",
+    "name": "Caravaggio",
+    "born": 1571,
+    "died": 1610,
+    "nationality": "Italian",
+    "portrait": "the-calling-of-saint-matthew",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "duccio",
+    "name": "Duccio",
+    "born": 1255,
+    "died": 1319,
+    "nationality": "Italian",
+    "portrait": "maesta",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  },
+  {
+    "slug": "simone-martini",
+    "name": "Simone Martini",
+    "born": 1284,
+    "died": 1344,
+    "nationality": "Italian",
+    "portrait": "the-annunciation-simone-martini",
+    "portraitLicence": null,
+    "portraitSourceUrl": null
+  }
+]
