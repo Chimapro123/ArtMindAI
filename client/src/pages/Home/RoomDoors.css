@@ -1,0 +1,65 @@
+.room-doors {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.room-door {
+  display: block;
+}
+
+.door-arch {
+  display: block;
+  padding: 6px;
+  background: var(--stone-shadow);
+  border: 1px solid var(--line-on-stone);
+  border-radius: 999px 999px 4px 4px;
+  box-shadow: var(--soft-shadow);
+  overflow: hidden;
+  transition: transform var(--normal-speed) ease, box-shadow var(--normal-speed) ease;
+}
+
+.room-door:hover .door-arch {
+  transform: translateY(-6px);
+  box-shadow: var(--frame-shadow);
+}
+
+.door-arch img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 999px 999px 2px 2px;
+}
+
+.door-name {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--heading-font);
+  font-size: 20px;
+  transition: color var(--fast-speed);
+}
+
+.room-door:hover .door-name {
+  color: var(--gold);
+}
+
+.door-line {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 1024px) {
+  .room-doors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-doors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+}

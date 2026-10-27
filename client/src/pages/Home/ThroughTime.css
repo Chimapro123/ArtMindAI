@@ -1,0 +1,131 @@
+.through-time {
+  position: relative;
+}
+
+.time-stops {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+}
+
+.time-stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.time-picture {
+  display: block;
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 18px;
+  padding: 2px;
+  background: var(--darker-wall);
+  border: 4px solid var(--gold);
+  box-shadow: var(--soft-shadow);
+  opacity: 0.35;
+  transition: opacity var(--slow-speed) ease, transform var(--normal-speed) ease;
+}
+
+.time-picture:hover {
+  transform: translateY(-4px);
+}
+
+.time-picture img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.time-dot {
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: 0 0 14px 2px;
+  border-radius: 50%;
+  background: var(--stone-shadow);
+  border: 1px solid var(--line-on-stone);
+  transition: background-color var(--slow-speed), border-color var(--slow-speed);
+}
+
+.time-stop-on .time-picture {
+  opacity: 1;
+}
+
+.time-stop-on .time-dot {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.time-style {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.time-era {
+  font-size: 12px;
+  color: var(--brown-grey-text);
+}
+
+.time-title {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--brown-grey-text);
+}
+
+.time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--line-on-stone);
+  pointer-events: none;
+}
+
+.time-line-drawn {
+  display: block;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--gold);
+  transition: width var(--normal-speed) linear;
+}
+
+@media (min-width: 769px) {
+  .time-line {
+    top: auto;
+    bottom: 70px;
+  }
+
+  .time-stop {
+    padding-bottom: 0;
+  }
+
+  .time-dot {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .time-stops {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .time-picture {
+    opacity: 1;
+  }
+
+  .time-line {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-stops {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

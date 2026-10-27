@@ -1,0 +1,81 @@
+.colour-heaps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.colour-heaps .pigment-heap {
+  width: 100%;
+}
+
+.colour-paintings {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  animation: colour-fade var(--slow-speed) ease both;
+}
+
+@keyframes colour-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.colour-painting {
+  display: block;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  background: var(--darker-wall);
+  transition: transform var(--normal-speed) ease;
+}
+
+.colour-painting:hover {
+  transform: translateY(-4px);
+}
+
+.colour-painting img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.colour-painting-title {
+  display: block;
+  padding: 8px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--grey-text);
+}
+
+.colour-more {
+  margin-top: 32px;
+}
+
+@media (max-width: 1024px) {
+  .colour-heaps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .colour-paintings {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .colour-heaps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .colour-paintings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
