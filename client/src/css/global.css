@@ -105,6 +105,36 @@ select:focus-visible {
   margin-bottom: 20px;
 }
 
+.section-title {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+.breadcrumb a:hover {
+  color: var(--light-gold);
+}
+
+.breadcrumb-here {
+  color: var(--white-text);
+}
+
+.stone-section .breadcrumb {
+  color: var(--brown-grey-text);
+}
+
+.stone-section .breadcrumb-here {
+  color: var(--black-text);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -227,6 +257,10 @@ select:focus-visible {
 
   .page-title {
     font-size: 44px;
+  }
+
+  .section-title {
+    font-size: 32px;
   }
 }
 

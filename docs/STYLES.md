@@ -108,6 +108,28 @@ The big serif heading at the top of a page.
 <h1 className="page-title">The whole collection</h1>
 ```
 
+### section-title
+
+The serif heading for a section further down a page, a size smaller than page-title.
+
+```jsx
+<h2 className="section-title">What this painting is made of</h2>
+```
+
+### breadcrumb
+
+The small trail of links at the top of a page that sits under another, like Gallery / Landscape / Hunters in the Snow. The last part gets breadcrumb-here so it reads as the place you are. It works on both walls.
+
+```jsx
+<nav className="breadcrumb" aria-label="You are here">
+  <Link to="/gallery">Gallery</Link>
+  <span>/</span>
+  <span className="breadcrumb-here">{painting.title}</span>
+</nav>
+```
+
+One thing to know about page CSS: main.jsx loads root.css and global.css before App, so a rule in your page file wins over a shared one of the same strength. That is on purpose. If a shared style is not giving way, check that your selector is at least as specific as the shared one.
+
 ### btn, btn-light, btn-dark
 
 Buttons and links that look like buttons. Always add btn and one of the two colours.
