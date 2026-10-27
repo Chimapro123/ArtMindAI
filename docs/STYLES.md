@@ -194,7 +194,7 @@ A painting in a gold frame with the deep shadow, in the painting's own shape. It
 <Frame image={painting.image} title={painting.title} artist={painting.artist} />
 ```
 
-If `client/src/images/frame-gold.png` exists, the frame uses it as a border image. If not, it draws a plain gold border with CSS. Right now the picture is not there, so it is the CSS border.
+The frame picture, `client/src/images/frame-gold.png`, is used as a border image, so every frame has the carved gold look from the designs. The slice and the border width live in the `frame-gold` class in Frame.css. If the picture were ever missing, Frame falls back to a plain gold CSS border by itself.
 
 ### PaintingLabel
 
@@ -243,7 +243,7 @@ A heap of pigment in any colour, with the name and the share under it. Give it `
 <PigmentHeap name="Vermilion" hex="#c43b2a" selected={colour === "Vermilion"} onClick={() => setColour("Vermilion")} />
 ```
 
-If `client/src/images/pigment-heap.png` exists it is used as a mask, so the heap has the real shape. If not, you get a soft round blob of the colour. Right now the picture is not there.
+The heap picture, `client/src/images/pigment-heap.png`, is used as a mask, so the heap has the real powdery shape in whatever colour you give it. If the picture were ever missing, you would get a soft round blob of the colour instead.
 
 ### FadeIn
 
@@ -313,4 +313,6 @@ Animations only use the three speed variables, and global.css turns all of them 
 
 ## The art files
 
-The four art files from the design brief (two wall textures, the gold frame and the pigment heap) are not in the project yet. When they arrive they go in `client/src/images` as `wall-charcoal.jpg`, `wall-stone.jpg`, `frame-gold.png` and `pigment-heap.png`. Frame and PigmentHeap pick up theirs by themselves. The two walls need two lines in global.css, a faint `background-image` on `dark-section` and on `stone-section`.
+The four art files from the design brief are in `client/src/images`: `wall-charcoal.jpg`, `wall-stone.jpg`, `frame-gold.png` and `pigment-heap.png`. Each one was re-saved with its metadata stripped and shrunk to a sensible size before it went in, so please do the same if one is ever replaced.
+
+Frame and PigmentHeap pick up theirs by themselves. The two walls are laid over `dark-section` and `stone-section` in global.css as a faint `background-image`. A see through veil of the wall colour sits on top of each texture so it stays quiet, and the veil colours are the two variables `--dark-veil` and `--stone-veil` in root.css. If you want a texture somewhere else, copy those two lines rather than pointing at the image from a page.

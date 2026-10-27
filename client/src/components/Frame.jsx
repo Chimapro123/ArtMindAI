@@ -14,8 +14,8 @@ function Frame({ image, title, artist, className }) {
     }
   }, []);
 
-  const frameStyle = frameImage ? { borderImage: "url(" + frameImage + ") 48 round", borderWidth: "26px" } : undefined;
-  const frameClass = "frame" + (className ? " " + className : "");
+  const frameStyle = frameImage ? { borderImageSource: "url(" + frameImage + ")" } : undefined;
+  const frameClass = "frame" + (frameImage ? " frame-gold" : "") + (className ? " " + className : "");
   const imageClass = "frame-image" + (loaded ? " frame-image-loaded" : "");
 
   return (

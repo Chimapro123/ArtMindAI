@@ -76,12 +76,16 @@ select:focus-visible {
 
 .dark-section {
   background: var(--dark-wall);
+  background-image: linear-gradient(var(--dark-veil), var(--dark-veil)), url(../images/wall-charcoal.jpg);
+  background-size: auto, 1024px;
   color: var(--white-text);
   padding: var(--section-space) 0;
 }
 
 .stone-section {
   background: var(--stone-wall);
+  background-image: linear-gradient(var(--stone-veil), var(--stone-veil)), url(../images/wall-stone.jpg);
+  background-size: auto, 1024px;
   color: var(--black-text);
   padding: var(--section-space) 0;
 }

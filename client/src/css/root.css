@@ -15,6 +15,8 @@
   --line-on-dark: rgba(241, 236, 227, 0.14);
   --line-on-stone: rgba(28, 27, 25, 0.16);
   --error-red: #b3473a;
+  --dark-veil: rgba(29, 28, 26, 0.6);
+  --stone-veil: rgba(232, 227, 217, 0.6);
   --heading-font: "EB Garamond", Georgia, serif;
   --text-font: "Inter", Arial, sans-serif;
   --page-width: 1280px;
