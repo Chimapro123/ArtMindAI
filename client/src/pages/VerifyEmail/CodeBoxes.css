@@ -1,0 +1,36 @@
+.code-boxes {
+  display: flex;
+  gap: 18px;
+}
+
+.code-box {
+  width: 100%;
+  max-width: 72px;
+  padding: 10px 0 8px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--line-on-stone);
+  font-family: var(--heading-font);
+  font-size: 36px;
+  text-align: center;
+  color: var(--black-text);
+  transition: border-color var(--fast-speed);
+}
+
+.code-box:focus {
+  border-bottom-color: var(--gold);
+}
+
+.code-box-filled {
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .code-boxes {
+    gap: 10px;
+  }
+
+  .code-box {
+    font-size: 28px;
+  }
+}

@@ -1,3 +1,39 @@
-.verify-email-page {
-  min-height: 60vh;
+.verify-hint {
+  margin: 20px 0 28px;
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
+
+.verify-error,
+.verify-message {
+  margin-bottom: 16px;
+}
+
+.verify-message {
+  font-size: 14px;
+  color: var(--gold);
+}
+
+.verify-links {
+  margin-top: 18px;
+  font-family: var(--heading-font);
+  font-size: 17px;
+}
+
+.verify-links + .verify-links {
+  margin-top: 10px;
+}
+
+.verify-links span:first-child {
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--line-on-stone);
+}
+
+.verify-wait {
+  color: var(--brown-grey-text);
+}
+
+.verify-resend {
+  font-family: var(--heading-font);
+  font-size: 17px;
 }
