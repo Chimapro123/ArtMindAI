@@ -96,7 +96,7 @@ async function seedAdmin() {
     { $set: { role: "admin", isVerified: true }, $setOnInsert: { name: "Curator", email, password, rooms: [], createdAt: new Date() } },
     { upsert: true }
   );
-  console.log("Admin: " + email);
+  console.log("Admin user is ready");
 }
 
 async function run() {
