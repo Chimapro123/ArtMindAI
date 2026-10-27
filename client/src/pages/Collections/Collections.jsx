@@ -17,7 +17,7 @@ const tabs = [
 ];
 
 function Collections() {
-  const { user } = useContext(AuthContext);
+  const { user, loading: checkingUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [tab, setTab] = useState("all");
   const [collections, setCollections] = useState([]);
@@ -27,6 +27,9 @@ function Collections() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+    if (checkingUser) {
+      return undefined;
+    }
     let ignore = false;
     async function load() {
       setLoading(true);
@@ -48,7 +51,7 @@ function Collections() {
     return () => {
       ignore = true;
     };
-  }, [user]);
+  }, [user, checkingUser]);
 
   useEffect(() => {
     getCollection("good-dogs").then((data) => setShow(data.collection)).catch(() => setShow(null));
