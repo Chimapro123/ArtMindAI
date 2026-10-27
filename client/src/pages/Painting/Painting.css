@@ -1,3 +1,130 @@
-.painting-page {
+.painting-loading {
   min-height: 60vh;
+}
+
+.story-inner {
+  max-width: 720px;
+  margin-left: 0;
+}
+
+.story-lead {
+  font-family: var(--heading-font);
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.story-text {
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.colour-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.colour-row .pigment-heap {
+  flex: 1;
+  min-width: 120px;
+  border-left: 1px solid var(--line-on-stone);
+}
+
+.colour-row .pigment-heap:first-child {
+  border-left: none;
+}
+
+.about-and-similar {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+}
+
+.about-column,
+.similar-column {
+  padding: var(--section-space) var(--side-space);
+}
+
+.about-column {
+  padding-left: max(var(--side-space), calc((100% - var(--page-width)) / 2 + var(--side-space)));
+}
+
+.similar-column {
+  padding-right: max(var(--side-space), calc((100% - var(--page-width)) / 2 + var(--side-space)));
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+
+.similar-grid .label-title {
+  font-size: 16px;
+}
+
+.similar-reason {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--brown-grey-text);
+}
+
+.more-label {
+  margin-top: 56px;
+}
+
+.credit-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--line-on-dark);
+}
+
+.credit-line {
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+@media (max-width: 1024px) {
+  .similar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-column {
+    padding-left: var(--side-space);
+  }
+
+  .similar-column {
+    padding-right: var(--side-space);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-and-similar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .story-lead {
+    font-size: 23px;
+  }
+
+  .colour-row {
+    justify-content: flex-start;
+  }
+
+  .colour-row .pigment-heap {
+    flex: 0 1 calc(33% - 16px);
+    border-left: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .colour-row .pigment-heap {
+    flex: 0 1 calc(50% - 12px);
+  }
+
+  .similar-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
