@@ -1,0 +1,84 @@
+.show-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.show-inner {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.show-title {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.show-line {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.show-count {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.show-wall {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px 20px;
+}
+
+.show-painting {
+  width: calc(20% - 16px);
+  min-width: 120px;
+  transition: transform var(--normal-speed) ease;
+}
+
+.show-painting:hover {
+  transform: translateY(-4px);
+}
+
+.show-painting .frame {
+  border-width: 8px;
+  padding: 2px;
+}
+
+.show-painting-title {
+  margin-top: 10px;
+  font-family: var(--heading-font);
+  font-size: 15px;
+}
+
+.show-painting-artist {
+  font-size: 12px;
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 1024px) {
+  .show-painting {
+    width: calc(33% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .show-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .show-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .show-painting {
+    width: calc(50% - 10px);
+    min-width: 0;
+  }
+}

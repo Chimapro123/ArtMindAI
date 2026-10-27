@@ -9,6 +9,7 @@ import Loader from "../../components/Loader";
 import EmptyMessage from "../../components/EmptyMessage";
 import FadeIn from "../../components/FadeIn";
 import { ArrowIcon } from "../../components/Icons";
+import RoomFigures from "./RoomFigures";
 import TasteBar from "./TasteBar";
 import RoomCollections from "./RoomCollections";
 import "./Dashboard.css";
@@ -60,29 +61,7 @@ function Dashboard() {
           </div>
         </div>
       </section>
-      <section className="stone-section figures-section">
-        <div className="container">
-          <p className="small-label">Your visits so far</p>
-          <div className="figures">
-            <div className="figure">
-              <p className="figure-number">{counts.lookedAt}</p>
-              <p className="figure-text">paintings looked at</p>
-            </div>
-            <div className="figure">
-              <p className="figure-number">{counts.saved}</p>
-              <p className="figure-text">saved</p>
-            </div>
-            <div className="figure">
-              <p className="figure-number">{counts.searches}</p>
-              <p className="figure-text">searches</p>
-            </div>
-            <div className="figure">
-              <p className="figure-number figure-word">{favouriteRoom || "Not yet"}</p>
-              <p className="figure-text">your favourite room</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RoomFigures counts={counts} favouriteRoom={favouriteRoom} />
       {nothingYet && (
         <section className="dark-section">
           <div className="container">

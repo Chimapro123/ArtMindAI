@@ -6,6 +6,7 @@ import Frame from "../../components/Frame";
 import Loader from "../../components/Loader";
 import EmptyMessage from "../../components/EmptyMessage";
 import FadeIn from "../../components/FadeIn";
+import WeeksShow from "./WeeksShow";
 import CollectionCard from "./CollectionCard";
 import NameModal from "./NameModal";
 import "./Collections.css";
@@ -104,32 +105,7 @@ function Collections() {
           )}
         </div>
       </section>
-      {show && tab !== "made-for-you" && (
-        <section className="stone-section show-section">
-          <div className="container show-inner">
-            <div className="show-words">
-              <p className="small-label">Chosen by us</p>
-              <h2 className="show-title">{show.title}</h2>
-              <p className="show-line">{show.description}</p>
-              <p className="show-count">{show.paintingCount} paintings</p>
-              <Link to={"/collections/" + show.slug} className="btn btn-dark">
-                Walk through it
-              </Link>
-            </div>
-            <div className="show-wall">
-              {show.paintings.slice(0, 5).map((item) => (
-                <Link key={item.painting.slug} to={"/painting/" + item.painting.slug} className="show-painting">
-                  <Frame image={item.painting.thumb} title={item.painting.title} artist={item.painting.artist} />
-                  <p className="show-painting-title">{item.painting.title}</p>
-                  <p className="show-painting-artist">
-                    {item.painting.artist}, {item.painting.year}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {show && tab !== "made-for-you" && <WeeksShow show={show} />}
       <section className="dark-section">
         <div className="container">
           <p className="small-label">{tab === "made-for-you" ? "Made for you" : "All collections"}</p>

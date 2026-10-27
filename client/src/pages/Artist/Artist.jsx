@@ -9,37 +9,8 @@ import FadeIn from "../../components/FadeIn";
 import ArtistHeader from "./ArtistHeader";
 import LifeLine from "./LifeLine";
 import RelatedArtist from "./RelatedArtist";
+import { sortChoices, sortPaintings, wallWidth, possessive } from "./artistHelpers";
 import "./Artist.css";
-
-const sortChoices = [
-  { value: "oldest", text: "Oldest first" },
-  { value: "newest", text: "Newest first" },
-  { value: "most-viewed", text: "Most looked at" },
-  { value: "title", text: "Title" }
-];
-
-function sortPaintings(paintings, sort) {
-  const list = [...paintings];
-  if (sort === "newest") {
-    return list.sort((first, second) => second.yearValue - first.yearValue);
-  }
-  if (sort === "most-viewed") {
-    return list.sort((first, second) => second.views - first.views);
-  }
-  if (sort === "title") {
-    return list.sort((first, second) => first.title.localeCompare(second.title));
-  }
-  return list.sort((first, second) => first.yearValue - second.yearValue);
-}
-
-function wallWidth(painting) {
-  const pixels = Math.round((painting.widthCm || 100) * 1.4);
-  return Math.min(380, Math.max(170, pixels)) + "px";
-}
-
-function possessive(name) {
-  return name.endsWith("s") ? name + "'" : name + "'s";
-}
 
 function Artist() {
   const { slug } = useParams();

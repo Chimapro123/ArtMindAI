@@ -2,73 +2,6 @@
   min-height: 60vh;
 }
 
-.entrance {
-  padding-top: 28px;
-  padding-bottom: 56px;
-}
-
-.entrance-line {
-  max-width: 520px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--gold-line);
-  font-size: 17px;
-  color: var(--grey-text);
-}
-
-.entrance-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 0;
-  margin-top: 16px;
-  font-size: 14px;
-}
-
-.entrance-facts span + span {
-  margin-left: 24px;
-  padding-left: 24px;
-  border-left: 1px solid var(--line-on-dark);
-}
-
-.entrance-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 32px;
-  margin-top: 28px;
-}
-
-.entrance-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 0;
-  font-size: 14px;
-  color: var(--white-text);
-  transition: color var(--fast-speed);
-}
-
-.entrance-action:hover {
-  color: var(--light-gold);
-}
-
-.entrance-action:disabled {
-  cursor: default;
-}
-
-.entrance-action-on {
-  color: var(--light-gold);
-}
-
-.entrance-action-on svg {
-  fill: currentColor;
-}
-
-.entrance-note {
-  margin-top: 14px;
-  font-size: 13px;
-  color: var(--light-gold);
-}
-
 .room-end {
   padding-top: 72px;
   padding-bottom: 72px;
@@ -140,10 +73,5 @@
 
   .next-room-cover {
     width: 90px;
-  }
-
-  .entrance-facts span + span {
-    margin-left: 16px;
-    padding-left: 16px;
   }
 }

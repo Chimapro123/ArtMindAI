@@ -5,11 +5,10 @@ import { getCollection, savePainting } from "../../services/api";
 import Frame from "../../components/Frame";
 import Loader from "../../components/Loader";
 import EmptyMessage from "../../components/EmptyMessage";
-import { HeartIcon, ArrowIcon } from "../../components/Icons";
+import { ArrowIcon } from "../../components/Icons";
+import Entrance from "./Entrance";
 import WalkStop from "./WalkStop";
 import "./Collection.css";
-
-const typeNames = { chosen: "Chosen by us", "made-for-you": "Made for you", mine: "Your collection" };
 
 function Collection() {
   const { slug } = useParams();
@@ -113,40 +112,10 @@ function Collection() {
   }
 
   const { collection, next } = data;
-  const countText = collection.paintingCount === 1 ? "1 painting" : collection.paintingCount + " paintings";
 
   return (
     <>
-      <section className="dark-section entrance">
-        <div className="container">
-          <nav className="breadcrumb" aria-label="You are here">
-            <Link to="/collections">Collections</Link>
-            <span>/</span>
-            <span className="breadcrumb-here">{collection.title}</span>
-          </nav>
-          <p className="small-label">{typeNames[collection.type] || "Collection"}</p>
-          <h1 className="page-title">{collection.title}</h1>
-          {collection.description && <p className="entrance-line">{collection.description}</p>}
-          <p className="entrance-facts">
-            <span>{countText}</span>
-            <span>About {collection.minutes} minutes</span>
-          </p>
-          <div className="entrance-buttons">
-            <button type="button" className="btn btn-light" onClick={startWalk} disabled={collection.paintingCount === 0}>
-              Start the walk
-            </button>
-            <button type="button" className={"entrance-action" + (saved ? " entrance-action-on" : "")} onClick={saveAll} disabled={saved || collection.paintingCount === 0}>
-              <HeartIcon size={18} />
-              {saved ? "Saved" : "Save"}
-            </button>
-            <button type="button" className="entrance-action" onClick={share}>
-              <ArrowIcon size={18} />
-              Share
-            </button>
-          </div>
-          {note && <p className="entrance-note">{note}</p>}
-        </div>
-      </section>
+      <Entrance collection={collection} saved={saved} note={note} onStart={startWalk} onSave={saveAll} onShare={share} />
       {collection.paintingCount === 0 && (
         <section className="stone-section">
           <div className="container">
