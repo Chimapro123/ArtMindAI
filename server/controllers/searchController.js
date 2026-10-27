@@ -5,7 +5,7 @@ const { readSentence } = require("../utils/readSentence");
 const { rankPaintings } = require("../utils/scoreSearch");
 const { shapePainting } = require("../utils/shapePainting");
 const { roomNames } = require("../utils/shapeUser");
-const { styleNames, mediumNames } = require("../utils/wordLists");
+const { styleNames, mediumNames, colourWords } = require("../utils/wordLists");
 const { pigments } = require("../utils/pigments");
 
 const suggestions = ["a stormy sea in the 1800s", "gold, gold and more gold", "a painting with a dog in it somewhere", "something blue and calm"];
@@ -14,20 +14,40 @@ const system =
   "You read what a visitor types into the search box of a small painting gallery and pull out what they want. " +
   "Rooms: " + roomNames.join(", ") + ". " +
   "Colours, use these exact names: " + pigments.map((pigment) => pigment.name).join(", ") + ". " +
+  "Turn plain colour words into those names, so blue is Ultramarine, red is Vermilion, gold or yellow is Yellow ochre, green is Viridian, white is Lead white, black is Ivory black, brown is Burnt umber, pink is Rose madder and grey is Slate grey. " +
   "Moods: calm, stormy, dramatic, joyful, dark, dreamy. Styles: " + styleNames.join(", ") + ". Media: " + mediumNames.join(", ") + ". " +
-  "Give a JSON object with room (one room or empty), colours (list), moods (list), subjects (list of one word things to look for, like dog, sea, letter, mountain), style (or empty), medium (or empty), fromYear and toYear (numbers or null). Leave out anything the visitor did not mean.";
+  "Give a JSON object with room (one room or empty), colours (list), moods (list), subjects (list of one word things to look for, like dog, sea, letter, mountain, gold), style (or empty), medium (or empty), fromYear and toYear (numbers or null). Leave out anything the visitor did not mean.";
 
 function checkWants(data) {
   return typeof data === "object" && (Array.isArray(data.subjects) || Array.isArray(data.colours) || typeof data.room === "string");
 }
 
+function toPigment(word) {
+  const lower = String(word || "").toLowerCase().trim();
+  const byName = pigments.find((pigment) => pigment.name.toLowerCase() === lower);
+  if (byName) {
+    return byName.name;
+  }
+  return Object.keys(colourWords).find((name) => colourWords[name].includes(lower)) || null;
+}
+
 function cleanWants(data) {
-  const names = pigments.map((pigment) => pigment.name);
+  const colours = [];
+  const extraSubjects = [];
+  (Array.isArray(data.colours) ? data.colours : []).forEach((word) => {
+    const pigment = toPigment(word);
+    if (pigment && !colours.includes(pigment)) {
+      colours.push(pigment);
+    } else if (!pigment && String(word).trim()) {
+      extraSubjects.push(String(word).toLowerCase().trim());
+    }
+  });
+  const subjects = (Array.isArray(data.subjects) ? data.subjects : []).map((word) => String(word).toLowerCase().trim()).filter(Boolean);
   return {
     room: roomNames.includes(data.room) ? data.room : "",
-    colours: (Array.isArray(data.colours) ? data.colours : []).filter((name) => names.includes(name)),
+    colours,
     moods: (Array.isArray(data.moods) ? data.moods : []).map((mood) => String(mood).toLowerCase()).slice(0, 3),
-    subjects: (Array.isArray(data.subjects) ? data.subjects : []).map((word) => String(word).toLowerCase().trim()).filter(Boolean).slice(0, 5),
+    subjects: [...new Set([...subjects, ...extraSubjects])].slice(0, 5),
     style: styleNames.includes(data.style) ? data.style : "",
     medium: mediumNames.includes(data.medium) ? data.medium : "",
     fromYear: Number(data.fromYear) || null,
@@ -56,10 +76,13 @@ function partsFrom(wants) {
 }
 
 async function understand(sentence) {
-  const fromModel = await askJson("The visitor typed: " + sentence, system, checkWants, { temperature: 0.2, maxTokens: 300 });
+  const fromModel = await askJson("The visitor typed: " + sentence, system, checkWants, { temperature: 0.2, maxTokens: 800 });
   if (fromModel) {
     const wants = cleanWants(fromModel);
-    return { wants, parts: partsFrom(wants) };
+    const parts = partsFrom(wants);
+    if (parts.length) {
+      return { wants, parts };
+    }
   }
   return readSentence(sentence);
 }

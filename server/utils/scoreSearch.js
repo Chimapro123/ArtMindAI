@@ -1,3 +1,5 @@
+const { colourWords } = require("./wordLists");
+
 const moodTags = {
   calm: ["calm", "quiet", "gentle", "soft", "still"],
   stormy: ["stormy", "storm", "wild"],
@@ -33,9 +35,14 @@ function scorePainting(painting, wants) {
   }
   (wants.colours || []).forEach((name) => {
     const found = (painting.colours || []).slice(0, 4).find((colour) => colour.name === name);
+    const tagHit = (colourWords[name] || []).find((word) => (painting.tags || []).includes(word));
     if (found) {
       score += 2;
       whys.push("full of " + name.toLowerCase());
+    }
+    if (tagHit) {
+      score += 2;
+      whys.push("has " + tagHit + " in it");
     }
   });
   (wants.moods || []).forEach((mood) => {
