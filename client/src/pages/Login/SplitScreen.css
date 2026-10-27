@@ -292,15 +292,25 @@
 
 @media (max-width: 768px) {
   .split-screen {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .split-left {
+    flex: 0 0 auto;
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
     min-height: 0;
     padding: 70px 24px 24px;
+  }
+
+  .split-right {
+    flex: 1;
+  }
+
+  .split-form {
+    margin: 0 auto;
   }
 
   .split-logo {
