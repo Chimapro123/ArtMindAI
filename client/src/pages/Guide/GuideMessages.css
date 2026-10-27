@@ -1,0 +1,118 @@
+.guide-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 24px;
+}
+
+.guide-visitor {
+  align-self: flex-end;
+  max-width: 70%;
+  padding: 12px 18px;
+  background: var(--stone-shadow);
+  border-radius: var(--box-corner);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.guide-reply {
+  align-self: flex-start;
+  max-width: 760px;
+}
+
+.guide-reply-text {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.reply-paintings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.reply-painting {
+  width: 180px;
+}
+
+.reply-frame {
+  display: block;
+  margin-bottom: 12px;
+  transition: transform var(--normal-speed) ease;
+}
+
+.reply-frame:hover {
+  transform: translateY(-4px);
+}
+
+.reply-frame .frame {
+  border-width: 9px;
+  padding: 2px;
+}
+
+.reply-painting-title {
+  font-family: var(--heading-font);
+  font-size: 17px;
+}
+
+.reply-painting-artist {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.reply-open {
+  font-size: 13px;
+}
+
+.guide-typing {
+  display: inline-flex;
+  gap: 5px;
+  padding: 10px 14px;
+  background: var(--stone-shadow);
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.guide-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brown-grey-text);
+  animation: guide-dots var(--slow-speed) ease-in-out infinite;
+}
+
+.guide-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.guide-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes guide-dots {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .guide-visitor {
+    max-width: 90%;
+  }
+
+  .guide-reply-text {
+    font-size: 20px;
+  }
+
+  .reply-painting {
+    width: 140px;
+  }
+}

@@ -1,3 +1,55 @@
 .guide-page {
-  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  min-height: calc(100vh - 76px);
+  background: var(--stone-wall);
+  background-image: linear-gradient(var(--stone-veil), var(--stone-veil)), url(../../images/wall-stone.jpg);
+  background-size: auto, 1024px;
+  color: var(--black-text);
+}
+
+.guide-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 40px var(--side-space) 32px;
+}
+
+.guide-head {
+  margin-bottom: 24px;
+}
+
+.guide-title {
+  font-size: 44px;
+  margin-bottom: 8px;
+}
+
+.guide-line {
+  font-size: 16px;
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 1024px) {
+  .guide-page {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .guide-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .guide-page {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .guide-main {
+    padding-top: 28px;
+  }
+
+  .guide-title {
+    font-size: 30px;
+  }
 }

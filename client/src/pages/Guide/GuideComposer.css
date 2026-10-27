@@ -1,0 +1,120 @@
+.guide-composer {
+  position: sticky;
+  bottom: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-on-stone);
+  background: var(--stone-wall);
+}
+
+.talking-about {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 6px 10px 6px 14px;
+  border: 1px solid var(--gold-line);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.talking-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--brown-grey-text);
+  transition: color var(--fast-speed), background-color var(--fast-speed);
+}
+
+.talking-clear:hover {
+  color: var(--black-text);
+  background: var(--stone-shadow);
+}
+
+.composer-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.composer-suggestions .tag:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.composer-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.composer-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  background: transparent;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--box-corner);
+  font-size: 15px;
+  transition: border-color var(--fast-speed);
+}
+
+.composer-input::placeholder {
+  color: var(--brown-grey-text);
+}
+
+.composer-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.composer-image {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--brown-grey-text);
+  transition: color var(--fast-speed);
+}
+
+.composer-image:hover {
+  color: var(--black-text);
+}
+
+.composer-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--dark-button);
+  color: var(--white-text);
+  transition: background-color var(--fast-speed);
+}
+
+.composer-send:hover {
+  background: var(--darker-wall);
+}
+
+.composer-send:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.composer-note {
+  margin-top: 10px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 480px) {
+  .composer-image {
+    display: none;
+  }
+}

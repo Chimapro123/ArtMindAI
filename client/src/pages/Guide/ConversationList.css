@@ -1,0 +1,79 @@
+.conversation-side {
+  padding: 40px 32px;
+  background: var(--darker-wall);
+  color: var(--white-text);
+}
+
+.conversation-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.conversation-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--grey-text);
+}
+
+.conversation-label {
+  margin-top: 40px;
+}
+
+.conversation-empty {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+
+.conversation-link {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+  font-size: 15px;
+  text-align: left;
+  color: var(--white-text);
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.conversation-link:hover {
+  color: var(--light-gold);
+}
+
+.conversation-link-active {
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 1024px) {
+  .conversation-side {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .conversation-side {
+    padding: 16px var(--side-space);
+  }
+
+  .conversation-toggle {
+    display: inline-flex;
+  }
+
+  .conversation-list {
+    display: none;
+    padding-bottom: 8px;
+  }
+
+  .conversation-list-open {
+    display: block;
+  }
+
+  .conversation-label {
+    margin-top: 20px;
+  }
+}
