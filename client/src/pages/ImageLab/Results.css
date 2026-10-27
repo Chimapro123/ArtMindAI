@@ -1,0 +1,133 @@
+.result-style {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.result-bar-row,
+.result-other {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.result-bar {
+  flex: 1;
+  height: 5px;
+  background: var(--stone-shadow);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.result-fill {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 999px;
+  transition: width var(--slow-speed) ease;
+}
+
+.result-percent {
+  width: 42px;
+  text-align: right;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.result-sure {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
+
+.result-others {
+  margin-top: 24px;
+}
+
+.result-others-title {
+  font-family: var(--heading-font);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.result-other {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.result-other-name {
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.result-facts {
+  margin: 28px 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line-on-stone);
+  border-bottom: 1px solid var(--line-on-stone);
+}
+
+.result-facts div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.result-facts dt {
+  color: var(--brown-grey-text);
+}
+
+.result-facts dd {
+  font-family: var(--heading-font);
+  font-size: 18px;
+}
+
+.result-colours-title {
+  font-family: var(--heading-font);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.result-colours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.result-colours .pigment-heap {
+  width: calc(20% - 7px);
+  min-width: 90px;
+  padding: 8px 0;
+}
+
+.result-note {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.result-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.result-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--button-corner);
+  font-size: 14px;
+  color: var(--black-text);
+  transition: border-color var(--fast-speed), color var(--fast-speed);
+}
+
+.result-button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}

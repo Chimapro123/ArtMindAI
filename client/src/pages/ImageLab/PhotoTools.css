@@ -1,0 +1,84 @@
+.photo-picture {
+  position: relative;
+  overflow: hidden;
+  background: var(--darker-wall);
+  border-radius: var(--box-corner);
+  box-shadow: var(--soft-shadow);
+  touch-action: none;
+}
+
+.photo-picture img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.photo-cropping {
+  cursor: crosshair;
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--light-gold);
+  box-shadow: 0 0 24px 6px rgba(209, 174, 103, 0.5);
+  animation: scan 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes scan {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 3px);
+  }
+}
+
+.crop-box {
+  position: absolute;
+  border: 2px solid var(--light-gold);
+  box-shadow: 0 0 0 9999px rgba(22, 21, 19, 0.5);
+  pointer-events: none;
+}
+
+.photo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  margin-top: 20px;
+}
+
+.photo-button {
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--black-text);
+  border-bottom: 1px solid transparent;
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.photo-button:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.photo-button:disabled {
+  color: var(--brown-grey-text);
+  cursor: wait;
+}
+
+.photo-hint {
+  width: 100%;
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
+
+.photo-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
