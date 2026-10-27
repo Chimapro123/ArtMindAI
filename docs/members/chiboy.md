@@ -46,7 +46,7 @@ Everything is in `server`. Here is what each folder is for.
 Take someone opening Hunters in the Snow.
 
 1. The Painting page calls getPainting from `client/src/services/api.js`.
-2. That function does a fetch to `/api/paintings/hunters-in-the-snow` with the cookie included. In development Vite passes anything under `/api` to port 5000.
+2. That function does a fetch to the painting's address under `/api/paintings`, with the cookie included. In development Vite passes anything under `/api` to port 5000.
 3. `server.js` hands the path to `routes/paintingRoutes.js`, which runs findUser first so the server knows if a member is looking, then calls getPainting in `controllers/paintingController.js`.
 4. The controller asks the Painting model for that slug, and only one that is on the wall. If there is none it answers 404 with a message.
 5. It then picks four similar paintings with `utils/similarPaintings.js`, which scores every other painting on the same style, the same room, shared colours and a close year, and writes a short reason for the best match.

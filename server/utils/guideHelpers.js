@@ -66,7 +66,8 @@ function makeTitle(question) {
 }
 
 function tidyAnswer(text) {
-  return String(text).replace(/\s*[—–]\s*/g, ", ").replace(/\s+/g, " ").trim();
+  const noDashes = String(text).replace(/[—–]/g, ",");
+  return noDashes.replace(/\s+,/g, ",").replace(/,(?=\S)/g, ", ").replace(/\s+/g, " ").trim();
 }
 
 module.exports = { findMatches, factsFor, fallbackAnswer, makeTitle, tidyAnswer };

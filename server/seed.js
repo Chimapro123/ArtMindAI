@@ -19,7 +19,8 @@ const extras = JSON.parse(fs.readFileSync(path.join(dataFolder, "extras.json"), 
 
 async function seedPaintings() {
   for (const painting of paintings) {
-    const file = path.join(publicFolder, painting.thumb.replace(/^\//, ""));
+    const thumbPath = painting.thumb.startsWith("/") ? painting.thumb.slice(1) : painting.thumb;
+    const file = path.join(publicFolder, thumbPath);
     const colours = fs.existsSync(file) ? await getColours(file, 5) : [];
     const update = { ...painting, colours, tags: tagsFor(painting), lookCloser: extras.lookCloser[painting.slug] || [] };
     await Painting.updateOne(

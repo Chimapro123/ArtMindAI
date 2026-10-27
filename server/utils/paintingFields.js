@@ -61,7 +61,8 @@ function imageFileFor(painting) {
   if (imagePath.startsWith("/uploads/")) {
     return path.join(__dirname, "..", "uploads", imagePath.replace("/uploads/", ""));
   }
-  return path.join(__dirname, "..", "..", "client", "public", imagePath.replace(/^\//, ""));
+  const publicPath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath;
+  return path.join(__dirname, "..", "..", "client", "public", publicPath);
 }
 
 function readImageFile(painting) {
