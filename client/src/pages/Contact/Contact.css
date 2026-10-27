@@ -1,3 +1,237 @@
-.contact-page {
-  min-height: 60vh;
+.contact-top {
+  position: relative;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  overflow: hidden;
+}
+
+.contact-top-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 64px;
+  align-items: center;
+}
+
+.contact-line {
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--grey-text);
+}
+
+.contact-cover {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 130px;
+  gap: 24px;
+  align-items: center;
+}
+
+.contact-glow {
+  position: absolute;
+  top: -260px;
+  left: 40%;
+  width: 640px;
+  height: 640px;
+  margin-left: -320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
+  pointer-events: none;
+}
+
+.contact-cover-frame {
+  position: relative;
+  display: block;
+}
+
+.contact-cover-label {
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.contact-cover-label .small-label {
+  margin-bottom: 6px;
+  font-size: 10px;
+}
+
+.contact-cover-title {
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-size: 17px;
+}
+
+.contact-cover-year {
+  font-size: 12px;
+  color: var(--grey-text);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 64px;
+}
+
+.contact-aside {
+  padding-right: 40px;
+  border-right: 1px solid var(--line-on-stone);
+}
+
+.contact-email {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-aside-text {
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-field {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.contact-field > span {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.contact-select {
+  width: 100%;
+  padding: 10px 32px 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-on-stone);
+  font-family: var(--heading-font);
+  font-size: 19px;
+  color: var(--black-text);
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--brown-grey-text) 50%), linear-gradient(135deg, var(--brown-grey-text) 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.contact-select:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+.contact-choices {
+  margin: -16px 0 24px;
+  font-size: 12px;
+  color: var(--brown-grey-text);
+  white-space: pre;
+}
+
+.contact-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--box-corner);
+  font-size: 15px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.contact-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.contact-copy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.contact-copy input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--gold);
+}
+
+.contact-thanks {
+  margin-bottom: 16px;
+  font-family: var(--heading-font);
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.contact-send {
+  padding: 11px 28px;
+  border: 1px solid var(--gold);
+  border-radius: var(--button-corner);
+  font-size: 14px;
+  color: var(--black-text);
+  transition: background-color var(--fast-speed), color var(--fast-speed);
+}
+
+.contact-send:hover {
+  background: var(--gold);
+}
+
+.contact-send:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 1024px) {
+  .contact-top-inner {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 40px;
+  }
+
+  .contact-cover {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-cover-label {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .contact-inner {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .contact-aside {
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-top-inner,
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-cover {
+    display: none;
+  }
+
+  .contact-aside {
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--line-on-stone);
+  }
+
+  .contact-choices {
+    display: none;
+  }
 }
