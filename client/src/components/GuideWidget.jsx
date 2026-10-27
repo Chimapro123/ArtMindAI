@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { GuideContext } from "../context/GuideContext";
 import { ChatIcon } from "./Icons";
 import GuideChat from "./GuideChat";
 import "./GuideWidget.css";
 
 function GuideWidget() {
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useContext(GuideContext);
   const location = useLocation();
 
   const hidden = location.pathname === "/guide" || location.pathname.startsWith("/admin");

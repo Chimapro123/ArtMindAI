@@ -33,6 +33,56 @@
   gap: 2px;
 }
 
+.chat-about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line-on-dark);
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+.chat-about strong {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--light-gold);
+}
+
+.chat-about-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: var(--grey-text);
+  transition: color var(--fast-speed), background-color var(--fast-speed);
+}
+
+.chat-about-clear:hover {
+  color: var(--white-text);
+  background: var(--line-on-dark);
+}
+
+.chat-login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.chat-login-button {
+  padding: 10px 20px;
+}
+
+.chat-login-link {
+  font-size: 14px;
+}
+
 .chat-messages {
   flex: 1;
   min-height: 200px;
