@@ -1,0 +1,30 @@
+:root {
+  --dark-wall: #1d1c1a;
+  --darker-wall: #161513;
+  --stone-wall: #e8e3d9;
+  --stone-shadow: #d8d1c3;
+  --gold: #b8924a;
+  --light-gold: #d1ae67;
+  --cream: #efe8da;
+  --white-text: #f1ece3;
+  --grey-text: #aba395;
+  --black-text: #1c1b19;
+  --brown-grey-text: #5f5a51;
+  --dark-button: #232220;
+  --gold-line: rgba(184, 146, 74, 0.45);
+  --line-on-dark: rgba(241, 236, 227, 0.14);
+  --line-on-stone: rgba(28, 27, 25, 0.16);
+  --error-red: #b3473a;
+  --heading-font: "EB Garamond", Georgia, serif;
+  --text-font: "Inter", Arial, sans-serif;
+  --page-width: 1280px;
+  --side-space: 48px;
+  --section-space: 96px;
+  --button-corner: 3px;
+  --box-corner: 4px;
+  --frame-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --soft-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --slow-speed: 0.8s;
+  --normal-speed: 0.3s;
+  --fast-speed: 0.15s;
+}
