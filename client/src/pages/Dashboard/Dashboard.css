@@ -119,6 +119,11 @@
   transition: transform var(--normal-speed) ease;
 }
 
+.been-item .frame-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .been-item:hover .frame {
   transform: translateY(-4px);
 }
