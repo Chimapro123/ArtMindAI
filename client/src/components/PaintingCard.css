@@ -1,0 +1,90 @@
+.painting-card {
+  display: block;
+}
+
+.card-link {
+  display: block;
+}
+
+.card-frame {
+  position: relative;
+}
+
+.card-frame .frame {
+  transition: transform var(--normal-speed) ease;
+}
+
+.card-frame:hover .frame {
+  transform: translateY(-4px);
+}
+
+.heart-button,
+.quick-look {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(22, 21, 19, 0.75);
+  color: var(--white-text);
+  opacity: 0;
+  transition: opacity var(--normal-speed), color var(--fast-speed), background-color var(--fast-speed);
+}
+
+.heart-button {
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.heart-button:hover {
+  color: var(--light-gold);
+}
+
+.heart-saved {
+  color: var(--light-gold);
+}
+
+.heart-saved svg {
+  fill: currentColor;
+}
+
+.quick-look {
+  left: 24px;
+  bottom: 24px;
+  padding: 8px 14px;
+  border-radius: var(--button-corner);
+  font-size: 13px;
+}
+
+.quick-look:hover {
+  background: var(--darker-wall);
+  color: var(--light-gold);
+}
+
+.card-frame:hover .heart-button,
+.card-frame:hover .quick-look,
+.card-frame:focus-within .heart-button,
+.card-frame:focus-within .quick-look,
+.heart-saved {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .heart-button,
+  .quick-look {
+    opacity: 1;
+  }
+
+  .heart-button {
+    top: 18px;
+    right: 18px;
+  }
+
+  .quick-look {
+    left: 18px;
+    bottom: 18px;
+  }
+}

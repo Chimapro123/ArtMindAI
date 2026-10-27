@@ -1,0 +1,24 @@
+.painting-label {
+  margin-top: 16px;
+}
+
+.label-title {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.label-artist,
+.label-year {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+
+.stone-section .label-title {
+  color: var(--black-text);
+}
+
+.stone-section .label-artist,
+.stone-section .label-year {
+  color: var(--brown-grey-text);
+}
