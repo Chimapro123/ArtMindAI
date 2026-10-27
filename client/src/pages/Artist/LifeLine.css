@@ -1,0 +1,84 @@
+.life-line {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.life-stop {
+  position: relative;
+}
+
+.life-year {
+  font-family: var(--heading-font);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.life-dot {
+  position: relative;
+  display: block;
+  height: 1px;
+  margin-bottom: 14px;
+  background: var(--gold-line);
+}
+
+.life-dot::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.life-text {
+  padding-right: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 1024px) {
+  .life-line {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .life-line {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-left: 20px;
+    border-left: 1px solid var(--gold-line);
+  }
+
+  .life-stop {
+    padding-bottom: 28px;
+  }
+
+  .life-dot {
+    position: absolute;
+    top: 10px;
+    left: -25px;
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .life-dot::before {
+    display: none;
+  }
+
+  .life-year {
+    margin-bottom: 4px;
+  }
+}

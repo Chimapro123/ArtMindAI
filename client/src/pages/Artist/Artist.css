@@ -1,3 +1,105 @@
-.artist-page {
+.artist-loading {
   min-height: 60vh;
+}
+
+.artist-wall-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.artist-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+.artist-sort-select {
+  padding: 8px 32px 8px 12px;
+  background: transparent;
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--box-corner);
+  font-size: 13px;
+  color: var(--white-text);
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--grey-text) 50%), linear-gradient(135deg, var(--grey-text) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.artist-sort-select option {
+  color: var(--black-text);
+}
+
+.artist-wall {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 48px 36px;
+  margin-top: 24px;
+}
+
+.artist-wall-item {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.quote-inner {
+  text-align: center;
+}
+
+.quote-inner .small-label {
+  text-align: left;
+}
+
+.artist-quote {
+  max-width: 760px;
+  margin: 24px auto 20px;
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1.3;
+}
+
+.quote-source {
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
+
+.related-artists {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px 40px;
+}
+
+@media (max-width: 1024px) {
+  .artist-quote {
+    font-size: 32px;
+  }
+
+  .related-artists {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-quote {
+    font-size: 26px;
+  }
+
+  .artist-wall-item {
+    width: 100% !important;
+  }
+
+  .related-artists {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
 }

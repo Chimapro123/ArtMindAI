@@ -1,0 +1,39 @@
+.related-artist {
+  display: block;
+}
+
+.related-portrait {
+  margin-bottom: 18px;
+  transition: transform var(--normal-speed) ease;
+}
+
+.related-artist:hover .related-portrait {
+  transform: translateY(-6px);
+}
+
+.related-portrait .frame-image {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.related-name {
+  font-size: 20px;
+  margin-bottom: 4px;
+  transition: color var(--fast-speed);
+}
+
+.related-artist:hover .related-name {
+  color: var(--light-gold);
+}
+
+.related-line {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+
+.related-reason {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
