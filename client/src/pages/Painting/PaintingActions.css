@@ -1,0 +1,57 @@
+.painting-actions {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-on-dark);
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--white-text);
+  transition: color var(--fast-speed);
+}
+
+.action-button:hover {
+  color: var(--light-gold);
+}
+
+.action-button:disabled {
+  color: var(--grey-text);
+  cursor: wait;
+}
+
+.action-saved {
+  color: var(--light-gold);
+}
+
+.action-saved svg {
+  fill: currentColor;
+}
+
+.action-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--gold-line);
+  border-radius: 3px;
+  font-family: var(--heading-font);
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.action-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--light-gold);
+}
