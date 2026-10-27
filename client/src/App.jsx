@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { recordVisit } from "./services/api";
 import SiteLayout from "./components/SiteLayout";
 import AdminLayout from "./components/AdminLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
