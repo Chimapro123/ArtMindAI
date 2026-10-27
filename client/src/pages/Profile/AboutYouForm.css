@@ -1,0 +1,136 @@
+.about-form {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.about-photo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5px solid var(--gold);
+  background: var(--darker-wall);
+  box-shadow: var(--frame-shadow), inset 0 0 0 2px var(--light-gold);
+  font-family: var(--heading-font);
+  font-size: 56px;
+  color: var(--white-text);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-photo-link {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--gold-line);
+  font-size: 14px;
+  color: var(--black-text);
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.about-photo-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.about-photo-input {
+  display: none;
+}
+
+.about-field {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about-field > span:first-child {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.about-email {
+  position: relative;
+  display: block;
+}
+
+.about-email input {
+  color: var(--brown-grey-text);
+}
+
+.about-confirmed {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.about-rooms-label {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.about-rooms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.about-room {
+  padding: 10px 12px;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--button-corner);
+  font-size: 14px;
+  color: var(--black-text);
+  transition: background-color var(--fast-speed), color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.about-room:hover {
+  border-color: var(--gold);
+}
+
+.about-room-on {
+  background: var(--dark-button);
+  border-color: var(--dark-button);
+  color: var(--white-text);
+}
+
+.about-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.about-save {
+  width: 100%;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .about-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-rooms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
