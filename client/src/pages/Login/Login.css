@@ -1,3 +1,7 @@
-.login-page {
-  min-height: 60vh;
+.login-form {
+  margin-top: 8px;
+}
+
+.login-error {
+  margin-bottom: 16px;
 }
