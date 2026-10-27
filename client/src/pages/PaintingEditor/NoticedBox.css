@@ -1,0 +1,82 @@
+.noticed-box {
+  padding: 24px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--box-corner);
+}
+
+.noticed-title {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.noticed-label {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.noticed-value {
+  font-size: 16px;
+}
+
+.noticed-colours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.noticed-colours .pigment-heap {
+  padding: 4px;
+}
+
+.noticed-colours .pigment-shape {
+  width: 64px;
+  height: 48px;
+}
+
+.noticed-colours .pigment-name {
+  font-size: 12px;
+}
+
+.noticed-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.noticed-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 14px;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--box-corner);
+  font-size: 13px;
+}
+
+.noticed-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: var(--brown-grey-text);
+}
+
+.noticed-tag-remove:hover {
+  color: var(--black-text);
+  background: var(--stone-shadow);
+}
+
+.noticed-none {
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.noticed-keep {
+  margin-top: 20px;
+  font-size: 14px;
+}

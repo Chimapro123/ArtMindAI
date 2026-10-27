@@ -1,0 +1,110 @@
+.editor-form {
+  padding-left: 48px;
+  border-left: 1px solid var(--line-on-stone);
+}
+
+.editor-field {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.editor-field-label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.editor-form .line-input {
+  border-bottom-color: var(--line-on-stone);
+  font-size: 16px;
+}
+
+.editor-select {
+  width: 100%;
+  padding: 10px 32px 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-on-stone);
+  font-size: 16px;
+  color: var(--black-text);
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--brown-grey-text) 50%), linear-gradient(135deg, var(--brown-grey-text) 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.editor-select:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+.editor-size {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.editor-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--box-corner);
+  font-family: var(--heading-font);
+  font-size: 17px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.editor-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.editor-draft {
+  display: inline-flex;
+  margin: -12px 0 22px auto;
+  font-size: 14px;
+}
+
+.editor-draft:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.editor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.editor-tag {
+  padding: 5px 12px;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--box-corner);
+  font-size: 13px;
+  color: var(--black-text);
+  transition: border-color var(--fast-speed), color var(--fast-speed);
+}
+
+.editor-tag:hover {
+  border-color: var(--error-red);
+  color: var(--error-red);
+}
+
+.editor-add-tag {
+  margin: -12px 0 22px;
+}
+
+@media (max-width: 768px) {
+  .editor-form {
+    padding-left: 0;
+    padding-top: 32px;
+    border-left: none;
+    border-top: 1px solid var(--line-on-stone);
+  }
+}
