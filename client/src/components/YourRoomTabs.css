@@ -1,0 +1,30 @@
+.room-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  border-bottom: 1px solid var(--line-on-dark);
+}
+
+.room-tab {
+  margin-bottom: -1px;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: var(--grey-text);
+  border-bottom: 2px solid transparent;
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.room-tab:hover {
+  color: var(--white-text);
+}
+
+.room-tab.active {
+  color: var(--white-text);
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .room-tab {
+    padding: 10px 12px;
+  }
+}
