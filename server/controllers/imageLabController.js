@@ -66,7 +66,7 @@ async function checkImage(request, response) {
     }
     const buffer = request.file.buffer;
     const colours = await getColours(buffer, 5);
-    const fromModel = await askImage(buffer, "What painting style is this most likely to be?", system, checkLook, { maxTokens: 300, temperature: 0.3 });
+    const fromModel = await askImage(buffer, "What painting style is this most likely to be?", system, checkLook, { maxTokens: 800, temperature: 0.3 });
     const look = fromModel ? cleanLook(fromModel) : guessFromColours(colours);
     const paintings = await Painting.find({ status: "on-the-wall" });
     const closest = closestPaintings(look, colours, paintings);

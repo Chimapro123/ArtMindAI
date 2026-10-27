@@ -22,7 +22,7 @@ async function callModel(messages, options) {
       model: options.vision ? process.env.VISION_MODEL_NAME : process.env.MODEL_NAME,
       messages,
       temperature: options.temperature === undefined ? 0.6 : options.temperature,
-      max_tokens: options.maxTokens || 500
+      max_tokens: options.maxTokens || 900
     };
     const response = await fetch(getUrl(), {
       method: "POST",
@@ -37,7 +37,11 @@ async function callModel(messages, options) {
     const data = await response.json();
     const choice = data.choices && data.choices[0];
     const text = choice && choice.message && choice.message.content;
-    return typeof text === "string" && text.trim() ? text.trim() : null;
+    if (typeof text !== "string" || !text.trim()) {
+      console.log("The model sent an empty answer");
+      return null;
+    }
+    return text.trim();
   } catch (error) {
     console.log("The model call failed: " + error.message);
     return null;

@@ -34,7 +34,7 @@ async function writeBios() {
       "Write two or three plain, friendly sentences about this painter for a visitor who knows nothing about art. No dashes, no lists. " +
       "Name: " + artist.name + ". Born " + artist.born + ", died " + artist.died + ". Nationality: " + artist.nationality + ". Style: " + artist.era + ". " +
       "Paintings in our gallery: " + list + ".";
-    const text = await askText(prompt, "You write short, friendly museum labels in plain English.", { maxTokens: 220 });
+    const text = await askText(prompt, "You write short, friendly museum labels in plain English.", { maxTokens: 600 });
     if (!text) {
       console.log("No answer from the model for " + artist.name + ", skipping");
       continue;

@@ -24,7 +24,7 @@ function historyText(conversation) {
 async function askTheModel(question, matches, conversation) {
   const facts = matches.length ? matches.map(factsFor).join("\n") : "No paintings in the gallery match this question.";
   const prompt = historyText(conversation) + "Facts about the paintings:\n" + facts + "\n\nThe visitor asks: " + question;
-  return askJson(prompt, system, checkAnswer, { maxTokens: 400 });
+  return askJson(prompt, system, checkAnswer, { maxTokens: 900 });
 }
 
 async function ask(request, response) {

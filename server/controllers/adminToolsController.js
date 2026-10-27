@@ -22,7 +22,7 @@ async function makeLabels(painting) {
     return null;
   }
   const colours = await getColours(buffer, 5);
-  const fromModel = await askImage(buffer, "What style and room fit this painting, and what is in it?", labelSystem, checkLabels, { maxTokens: 300, temperature: 0.3 });
+  const fromModel = await askImage(buffer, "What style and room fit this painting, and what is in it?", labelSystem, checkLabels, { maxTokens: 800, temperature: 0.3 });
   if (fromModel) {
     const tags = fromModel.tags.map((tag) => String(tag).toLowerCase().trim()).filter(Boolean).slice(0, 8);
     return { style: fromModel.style, room: fromModel.room, colours, tags };
@@ -61,7 +61,7 @@ async function writeStory(painting) {
     "Write three or four warm, plain sentences about this painting for a visitor who knows nothing about art. No long dashes, no lists, no headings. " +
     "Title: " + painting.title + ". Artist: " + painting.artist + ". Year: " + painting.year + ". Style: " + painting.style + ". Medium: " + painting.medium + " on " + painting.surface + ". " +
     "Size: " + painting.widthCm + " by " + painting.heightCm + " cm. Where it hangs: " + painting.whereItHangs + ". Tags: " + painting.tags.join(", ") + ".";
-  const text = await askText(prompt, "You write short, friendly museum labels in plain English.", { maxTokens: 300 });
+  const text = await askText(prompt, "You write short, friendly museum labels in plain English.", { maxTokens: 700 });
   return text ? tidyAnswer(text) : fallbackStory(painting);
 }
 
