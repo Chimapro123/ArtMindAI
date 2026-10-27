@@ -1,3 +1,66 @@
-.join-page {
-  min-height: 60vh;
+.rooms-question {
+  margin: 8px 0 14px;
+  font-family: var(--heading-font);
+  font-size: 17px;
+  color: var(--brown-grey-text);
+}
+
+.rooms-question strong {
+  font-weight: 400;
+  color: var(--black-text);
+}
+
+.room-choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.room-choice {
+  padding: 11px 12px;
+  border: 1px solid var(--line-on-stone);
+  border-radius: var(--button-corner);
+  font-family: var(--heading-font);
+  font-size: 16px;
+  color: var(--black-text);
+  transition: border-color var(--fast-speed), background-color var(--fast-speed), color var(--fast-speed);
+}
+
+.room-choice:hover {
+  border-color: var(--gold);
+}
+
+.room-choice-on {
+  background: var(--dark-button);
+  border-color: var(--dark-button);
+  color: var(--light-gold);
+}
+
+.terms-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-family: var(--heading-font);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.terms-box {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.join-error {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+  .room-choices {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }

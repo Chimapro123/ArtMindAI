@@ -1,0 +1,26 @@
+.strength {
+  margin-top: 10px;
+}
+
+.strength-line {
+  display: flex;
+  gap: 6px;
+  max-width: 220px;
+}
+
+.strength-part {
+  flex: 1;
+  height: 2px;
+  background: var(--line-on-stone);
+  transition: background-color var(--normal-speed);
+}
+
+.strength-part-on {
+  background: var(--gold);
+}
+
+.strength-hint {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--brown-grey-text);
+}
