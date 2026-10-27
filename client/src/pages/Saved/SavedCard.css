@@ -1,0 +1,35 @@
+.saved-card {
+  position: relative;
+}
+
+.saved-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity var(--normal-speed);
+}
+
+.saved-card:hover .saved-actions,
+.saved-card:focus-within .saved-actions {
+  opacity: 1;
+}
+
+.saved-action {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--gold-line);
+  font-size: 13px;
+  color: var(--brown-grey-text);
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.saved-action:hover {
+  color: var(--black-text);
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .saved-actions {
+    opacity: 1;
+  }
+}
