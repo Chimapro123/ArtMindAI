@@ -1,0 +1,31 @@
+{
+  "lookCloser": {
+    "the-arnolfini-portrait": [
+      { "x": 50, "y": 31, "title": "The mirror.", "note": "Look at the round mirror on the back wall. Two more people are standing in the doorway." },
+      { "x": 42, "y": 6, "title": "One candle.", "note": "A single candle burns in the chandelier in broad daylight." },
+      { "x": 47, "y": 88, "title": "The little dog.", "note": "A small dog waits at their feet, painted almost hair by hair." }
+    ],
+    "hunters-in-the-snow": [
+      { "x": 27, "y": 68, "title": "The hunters.", "note": "Heads down, they bring home one fox between them." },
+      { "x": 78, "y": 59, "title": "The skaters.", "note": "The whole village is out on the frozen ponds." },
+      { "x": 10, "y": 38, "title": "The inn sign.", "note": "It hangs from a single hinge, about to fall." }
+    ]
+  },
+  "artists": {
+    "vincent-van-gogh": {
+      "lifeStops": [
+        { "year": 1853, "text": "Born in a village in the south of the Netherlands." },
+        { "year": 1880, "text": "Decides, at 27, to become a painter." },
+        { "year": 1886, "text": "Moves to Paris and discovers bright colour." },
+        { "year": 1888, "text": "Arles, the yellow house and the sunflowers." },
+        { "year": 1889, "text": "In a hospital in the south of France, he paints The Starry Night." },
+        { "year": 1890, "text": "Dies in a village outside Paris, aged 37." }
+      ],
+      "quote": "It often seems to me that the night is still more richly coloured than the day.",
+      "quoteSource": "From one of his letters, 1888."
+    },
+    "rachel-ruysch": {
+      "spotlightLine": "She painted flowers for almost seventy years and was one of the best paid painters of her day."
+    }
+  }
+}
