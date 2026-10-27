@@ -1,10 +1,10 @@
 const roomWords = {
-  Abstract: ["abstract", "shapes", "geometric", "squares", "circles", "lines", "grid"],
-  Landscape: ["landscape", "field", "fields", "river", "countryside", "hills", "village", "meadow", "wheat", "sky", "skies"],
-  Flower: ["flower", "flowers", "bouquet", "vase", "roses", "tulips", "blossom", "garden", "sunflowers", "irises"],
-  Nature: ["nature", "animal", "animals", "hare", "tiger", "horse", "horses", "wave", "waves", "mountain", "mountains", "sea", "moon", "fog", "deer"],
-  Figurative: ["people", "person", "woman", "women", "man", "men", "girl", "boy", "portrait", "reading", "letter", "dog", "party", "couple", "face", "kitchen"],
-  Religious: ["religious", "madonna", "virgin", "mary", "saint", "angel", "angels", "annunciation", "jesus", "god", "bible", "church", "prayer", "holy"]
+  Abstract: ["abstract", "abstracts", "geometric", "shapes"],
+  Landscape: ["landscape", "landscapes", "countryside", "scenery", "outdoors"],
+  Flower: ["flower", "flowers", "floral", "bouquet", "bouquets"],
+  Nature: ["nature", "animal", "animals", "wildlife"],
+  Figurative: ["people", "person", "portrait", "portraits", "figures", "faces"],
+  Religious: ["religious", "religion", "holy", "biblical", "bible"]
 };
 
 const colourWords = {
