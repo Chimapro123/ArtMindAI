@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { savePainting, unsavePainting } from "../../services/api";
 import { HeartIcon } from "../../components/Icons";
-import { downloadPdf, downloadWord } from "./downloads";
 import "./PaintingActions.css";
 
 function PaintingActions({ painting, saved }) {
@@ -46,10 +45,11 @@ function PaintingActions({ painting, saved }) {
   async function download(kind) {
     setBusy(kind);
     try {
+      const downloads = await import("./downloads");
       if (kind === "pdf") {
-        await downloadPdf(painting);
+        await downloads.downloadPdf(painting);
       } else {
-        await downloadWord(painting);
+        await downloads.downloadWord(painting);
       }
     } catch (error) {
       setNote("The file could not be made. Please try again.");
