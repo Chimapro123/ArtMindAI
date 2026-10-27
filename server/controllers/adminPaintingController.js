@@ -39,6 +39,18 @@ async function listPaintings(request, response) {
   }
 }
 
+async function getPainting(request, response) {
+  try {
+    const painting = await Painting.findOne({ slug: request.params.slug });
+    if (!painting) {
+      return response.status(404).json({ message: "We could not find that painting" });
+    }
+    response.json({ painting: shapePainting(painting) });
+  } catch (error) {
+    response.status(500).json({ message: "The painting could not be loaded" });
+  }
+}
+
 async function createPainting(request, response) {
   try {
     if (!request.file) {
@@ -110,4 +122,4 @@ async function deletePainting(request, response) {
   }
 }
 
-module.exports = { listPaintings, createPainting, updatePainting, deletePainting };
+module.exports = { listPaintings, getPainting, createPainting, updatePainting, deletePainting };

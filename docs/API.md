@@ -373,6 +373,10 @@ Query values, all optional: `search`, `room`, `status` (`on-the-wall`, `in-stora
 
 Returns a list of Painting objects of every status, plus one extra field, `inStorage`, the number in storage.
 
+### GET /api/admin/paintings/:slug
+
+Returns `{ painting }` whatever its status, so the editor can open a painting that is still in storage. 404 if the slug does not exist.
+
 ### POST /api/admin/paintings
 
 Multipart form. Text fields: `title`, `artistSlug`, `year`, `room`, `style`, `medium`, `surface`, `widthCm`, `heightCm`, `whereItHangs`, `story`, `tags` (JSON string), `colours` (JSON string), `lookCloser` (JSON string), `status`, `licence`, `sourceUrl`. One file field called `image`, which is required. The server makes the slug, the large image and the thumb under `/uploads/paintings`, fills in the artist's name from `artistSlug` (or takes a plain `artist` field when the slug is unknown), works out `yearValue` from `year`, and works out the five colours from the image when none are sent. The painting starts in storage unless `status` says otherwise.

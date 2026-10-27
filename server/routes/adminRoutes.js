@@ -13,6 +13,7 @@ router.get("/overview", overview.getOverview);
 router.get("/paintings", paintings.listPaintings);
 router.post("/paintings", uploadImage.single("image"), paintings.createPainting);
 router.post("/paintings/bulk", tools.bulk);
+router.get("/paintings/:slug", paintings.getPainting);
 router.put("/paintings/:slug", uploadImage.single("image"), paintings.updatePainting);
 router.delete("/paintings/:slug", paintings.deletePainting);
 router.post("/paintings/:slug/labels", tools.labels);

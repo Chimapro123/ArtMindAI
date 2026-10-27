@@ -210,6 +210,10 @@ export function getAdminPaintings(filters) {
   return get("/admin/paintings" + toQuery(filters));
 }
 
+export function getAdminPainting(slug) {
+  return get("/admin/paintings/" + slug);
+}
+
 export function createPainting(formData) {
   return postForm("/admin/paintings", formData);
 }
