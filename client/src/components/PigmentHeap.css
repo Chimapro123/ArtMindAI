@@ -1,0 +1,67 @@
+.pigment-heap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  text-align: center;
+  color: inherit;
+  border-radius: var(--box-corner);
+  transition: transform var(--normal-speed) ease;
+}
+
+button.pigment-heap:hover {
+  transform: translateY(-4px);
+}
+
+.pigment-shape {
+  display: block;
+  width: 96px;
+  height: 72px;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.pigment-blob {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  box-shadow: inset -10px -12px 20px rgba(0, 0, 0, 0.35), inset 8px 8px 16px rgba(255, 255, 255, 0.18);
+}
+
+.pigment-name {
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--fast-speed), color var(--fast-speed);
+}
+
+.pigment-share {
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+.stone-section .pigment-share {
+  color: var(--brown-grey-text);
+}
+
+.pigment-selected .pigment-name {
+  color: var(--light-gold);
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .pigment-shape {
+    width: 72px;
+    height: 54px;
+  }
+
+  .pigment-blob {
+    width: 60px;
+    height: 60px;
+  }
+}
