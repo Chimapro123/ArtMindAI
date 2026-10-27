@@ -1,0 +1,143 @@
+.quick-look-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--side-space);
+  background: rgba(22, 21, 19, 0.88);
+  animation: quick-fade var(--normal-speed) ease;
+}
+
+.quick-look-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 2fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: calc(100vh - 2 * var(--side-space));
+  padding: 40px;
+  overflow-y: auto;
+  background: var(--dark-wall);
+  color: var(--white-text);
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--box-corner);
+  box-shadow: var(--frame-shadow);
+}
+
+.quick-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.quick-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-picture .frame {
+  max-height: 70vh;
+  width: auto;
+  max-width: 100%;
+}
+
+.quick-picture .frame-image {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(70vh - 30px);
+}
+
+.quick-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quick-details .painting-label {
+  margin-top: 0;
+}
+
+.quick-details .label-title {
+  font-size: 30px;
+}
+
+.quick-facts {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--grey-text);
+}
+
+.quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.quick-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--button-corner);
+  font-size: 15px;
+  color: var(--white-text);
+  transition: border-color var(--fast-speed), color var(--fast-speed);
+}
+
+.quick-save:hover {
+  border-color: var(--gold);
+  color: var(--light-gold);
+}
+
+.quick-save-on {
+  color: var(--light-gold);
+}
+
+.quick-save-on svg {
+  fill: currentColor;
+}
+
+@keyframes quick-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-look-box {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 48px 24px 24px;
+  }
+
+  .quick-picture .frame,
+  .quick-picture .frame-image {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-look-backdrop {
+    padding: 0;
+  }
+
+  .quick-look-box {
+    max-height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .quick-details .label-title {
+    font-size: 24px;
+  }
+}
