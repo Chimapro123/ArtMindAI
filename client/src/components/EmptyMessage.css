@@ -1,0 +1,29 @@
+.empty-message {
+  padding: 40px 24px;
+  text-align: center;
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--box-corner);
+}
+
+.stone-section .empty-message {
+  border-color: var(--line-on-stone);
+}
+
+.empty-title {
+  font-family: var(--heading-font);
+  font-size: 24px;
+}
+
+.empty-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--grey-text);
+}
+
+.stone-section .empty-text {
+  color: var(--brown-grey-text);
+}
+
+.empty-action {
+  margin-top: 20px;
+}
