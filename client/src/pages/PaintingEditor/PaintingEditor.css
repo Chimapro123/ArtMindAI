@@ -4,6 +4,11 @@
 
 .editor-page .breadcrumb {
   margin-bottom: 20px;
+  color: var(--brown-grey-text);
+}
+
+.editor-page .breadcrumb-here {
+  color: var(--black-text);
 }
 
 .editor-title {

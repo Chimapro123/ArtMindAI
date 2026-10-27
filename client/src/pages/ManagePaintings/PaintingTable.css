@@ -53,10 +53,12 @@
 
 .cell-on-wall {
   color: var(--gold);
+  white-space: nowrap;
 }
 
 .cell-storage {
   color: var(--brown-grey-text);
+  white-space: nowrap;
 }
 
 .cell-actions {
