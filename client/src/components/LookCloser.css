@@ -1,0 +1,140 @@
+.look-closer {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.look-picture {
+  position: relative;
+  padding: 3px;
+  background: var(--darker-wall);
+  border: 10px solid var(--gold);
+  box-shadow: var(--frame-shadow), inset 0 0 0 1px var(--light-gold);
+}
+
+.look-picture img {
+  width: 100%;
+  height: auto;
+}
+
+.look-point {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 2px solid var(--light-gold);
+  border-radius: 50%;
+  background: rgba(22, 21, 19, 0.35);
+  box-shadow: 0 0 0 4px rgba(209, 174, 103, 0.25);
+  transition: transform var(--normal-speed) ease, background-color var(--fast-speed);
+}
+
+.look-point:hover,
+.look-point-active {
+  background: rgba(184, 146, 74, 0.6);
+  transform: scale(1.12);
+}
+
+.look-point-number {
+  display: block;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--white-text);
+}
+
+.look-closeups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.look-closeup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  color: inherit;
+}
+
+.look-circle {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background-repeat: no-repeat;
+  background-color: var(--darker-wall);
+  box-shadow: var(--frame-shadow);
+  transition: transform var(--normal-speed) ease, border-color var(--fast-speed);
+}
+
+.look-closeup:hover .look-circle,
+.look-closeup-active .look-circle {
+  border-color: var(--light-gold);
+  transform: translateY(-4px);
+}
+
+.look-title {
+  font-family: var(--heading-font);
+  font-size: 20px;
+}
+
+.look-note {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+
+.stone-section .look-note {
+  color: var(--brown-grey-text);
+}
+
+@media (max-width: 1024px) {
+  .look-closer {
+    gap: 32px;
+  }
+
+  .look-circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .look-closer {
+    grid-template-columns: 1fr;
+  }
+
+  .look-closeups {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .look-closeups {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .look-closeup {
+    flex-direction: row;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+
+  .look-circle {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 0;
+  }
+
+  .look-title,
+  .look-note {
+    width: calc(100% - 112px);
+  }
+}
