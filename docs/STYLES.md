@@ -167,9 +167,24 @@ Import them from `../../components/Name`.
 
 You do not add these yourself. SiteLayout in App.jsx puts them around every normal page. The log in, join, verify and reset pages and the admin pages do not have them, on purpose.
 
-### GuideWidget
+### GuideWidget and GuideContext
 
-Also added for you in App.jsx. It shows on every page except the Guide page and the admin pages. If you need to open the full guide from a page, link to `/guide`.
+The widget is added for you in App.jsx. It shows on every page except the Guide page and the admin pages. If you need to open the full guide from a page, link to `/guide`.
+
+The widget is driven by GuideContext, which lives in `client/src/context/GuideContext.jsx` and is already wrapped around the app in main.jsx. It gives you `openGuide(paintingSlug, title)`, which opens the small chat already talking about one painting. The chat then shows a "Talking about:" line with the title and a small x to clear it, and every question goes to the server with that painting's slug. The title is optional, because the chat looks it up when you only give the slug.
+
+```jsx
+import { useContext } from "react";
+import { GuideContext } from "../../context/GuideContext";
+
+const { openGuide } = useContext(GuideContext);
+
+<button type="button" className="text-link" onClick={() => openGuide(painting.slug, painting.title)}>
+  Ask the guide about this painting <ArrowIcon size={16} />
+</button>
+```
+
+When nobody is logged in the chat says "Log in and I'll help you find your way around." with a Log in button and a Get your free pass link, so you do not need to check for a user before showing the button.
 
 ### Frame
 
@@ -191,11 +206,33 @@ The title in the heading font with the artist and the year under it, like the ca
 
 ### PaintingCard
 
-Frame plus PaintingLabel, linked to the painting page, with a heart and a Quick look link that appear on hover. Pass `saved` to fill the heart, and `onSave` to be told when it is clicked. On phones the heart and the link are always shown.
+Frame plus PaintingLabel, linked to the painting page, with a heart and a Quick look button that appear on hover. On phones the heart and the button are always shown.
+
+The heart does the saving for you. It calls POST or DELETE `/api/saved/:slug` on the server, fills itself in when the painting is saved, and sends a logged out visitor to `/login` (and back again afterwards). Pass `saved` so the heart starts in the right state, and `onSave` if your page wants to know when it changes. `onSave` gets the painting and a boolean that is true when it was just saved, which the Saved page uses to take a card off the wall.
 
 ```jsx
 <PaintingCard painting={painting} saved={savedSlugs.includes(painting.slug)} onSave={handleSave} />
 ```
+
+Quick look opens QuickLook, below, so you get that for free as well.
+
+### QuickLook
+
+A modal for one painting: the big image in a Frame, the room, the label, a Save button and an Open painting link. PaintingCard opens it from its Quick look button, so you will rarely add it yourself, but you can. Escape and a click outside both close it.
+
+```jsx
+{open && <QuickLook painting={painting} saved={saved} onSave={handleSave} onClose={() => setOpen(false)} />}
+```
+
+### LookCloser
+
+The painting with small gold circles at its `lookCloser` points, and a round close up for each point made from the same image zoomed to that spot. Clicking a circle on the painting, or a close up, picks that point. It draws nothing when the painting has no points, so you can drop it on any painting page without checking first.
+
+```jsx
+<LookCloser painting={painting} />
+```
+
+The Painting page and the home page both use it, the second one with the Arnolfini Portrait.
 
 ### PigmentHeap
 
