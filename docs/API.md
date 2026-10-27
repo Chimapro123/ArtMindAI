@@ -11,6 +11,8 @@ This is the agreement between the client and the server. Every page talks to the
 - Errors come back with a fitting status code and a body of `{ message }`. The client shows that message to the visitor as it is.
 - "Logged in" means the request needs the cookie. Without it the server answers 401. "Admin only" means the user's role must be `admin`, otherwise the server answers 403.
 - Dates are ISO strings. Slugs are lowercase words joined by hyphens, like `the-starry-night`.
+- The six digit codes go out as emails through Resend, using MAIL_API_KEY and MAIL_FROM from `server/.env`. When MAIL_API_KEY is empty the server prints the code in its console instead, which is handy while building.
+- Register, login, the code routes, search, the guide and the Image Lab have rate limits. Go past them and the server answers 429 with a message.
 
 ## The objects
 
@@ -59,6 +61,8 @@ This is the agreement between the client and the server. Every page talks to the
 | about | string | One or two sentences |
 | quote | { text, source } or null | |
 | life | array of { year, text } | Moments for the timeline |
+| letter | string | The first letter of the surname, for the A to Z filter |
+| spotlightLine | string | The line shown when this artist is in the spotlight, usually empty |
 | paintingCount | number | How many of their paintings are on the wall |
 
 ### User
@@ -85,11 +89,14 @@ This is the agreement between the client and the server. Every page talks to the
 | description | string | |
 | type | string | `chosen` (made by us), `made-for-you` (made by the server for one visitor) or `mine` (made by the visitor) |
 | owner | string or null | User id for `mine` and `made-for-you`, otherwise null |
-| cover | string | Thumb path of the first painting |
+| cover | string | Thumb path of the lead painting |
+| leadPainting | Painting or null | The painting shown at the entrance |
 | paintingCount | number | |
 | minutes | number | A rough reading time, about two minutes per painting |
-| paintings | array of { painting, note } | Only sent by the single collection endpoint |
+| paintings | array of { painting, note, x, y } | Only sent by the single collection endpoint. `x` and `y` are percentages for a gold circle on the picture, or null when the collection has no point for it |
 | createdAt | string | |
+
+The two `made-for-you` collections are not stored. The server builds them fresh for the logged in visitor from the room they spend the most time in and the colour they keep coming back to, with the slugs `for-you-room` and `for-you-colour` and plain titles like "Quiet fields" or "Your blue hour". A brand new member gets them from the rooms they picked when joining.
 
 ### Conversation
 
@@ -124,8 +131,8 @@ All under `/api/auth`. None of these need to be logged in.
 ### POST /api/auth/register
 
 Sends `{ name, email, password, rooms }`. `rooms` is an array of room names and can be empty.
-Returns 201 and `{ message, email }`. The server emails a six digit code that works for ten minutes.
-Errors: 400 if a field is missing or the password is shorter than 8 characters, 409 if the email is already taken.
+Returns 201 and `{ message, email }`. The server emails a six digit code that works for ten minutes. The code is stored hashed, like a password.
+Errors: 400 if a field is missing, the email looks wrong, or the password is shorter than 8 characters or has no number or symbol. 409 if the email already has a confirmed pass. An email that registered but never confirmed can register again, and gets a fresh code.
 
 ### POST /api/auth/verify-email
 
@@ -135,13 +142,13 @@ Errors: 400 if the code is wrong or has run out.
 
 ### POST /api/auth/resend-code
 
-Sends `{ email }`. Returns `{ message }`. The server will not send more than one code a minute.
+Sends `{ email }`. Returns `{ message }`. The server will not send more than one code a minute, and answers 429 if you ask too soon. 400 if the email is unknown or already confirmed.
 
 ### POST /api/auth/login
 
 Sends `{ email, password }`.
 Returns `{ user }` and sets the cookie.
-Errors: 401 if the email or password is wrong. 403 with `{ message, needsVerification: true }` if the email was never confirmed, so the client can send them to the verify page.
+Errors: 401 if the email or password is wrong. 403 with `{ message, needsVerification: true }` if the email was never confirmed, so the client can send them to the verify page. In that case the server also sends a fresh code, unless one went out in the last minute.
 
 ### POST /api/auth/logout
 
@@ -153,7 +160,7 @@ Returns `{ user }` when the cookie is good, otherwise 401. The client calls this
 
 ### POST /api/auth/forgot-password
 
-Sends `{ email }`. Returns `{ message }`. The answer is the same whether or not the email exists, so nobody can use it to look up members. The server emails a six digit code.
+Sends `{ email }`. Returns `{ message }`. The answer is the same whether or not the email exists, so nobody can use it to look up members. The server emails a six digit code, unless one went out in the last minute.
 
 ### POST /api/auth/check-reset-code
 
@@ -205,11 +212,12 @@ Returns everything the home page needs in one go:
   lookCloser: Painting,
   colours: [ { name, hex, paintings: [ Painting ] } ],
   throughTime: [ { style, era, painting: Painting } ],
-  regular: Painting
+  regular: Painting,
+  count: number
 }
 ```
 
-`mainWall` is the five most viewed paintings this week. `throughTime` has one painting per style, oldest first. `regular` is the painting shown next to the free pass box.
+`mainWall` is the five most viewed paintings this week, topped up with the most viewed of all time when the week is quiet. `rooms` has one cover painting and a one line description per room. `colours` has the six pigments from the home page, each with up to six paintings that have the most of it. `throughTime` has the seven stops, oldest first. `regular` is the painting shown next to the free pass box. `count` is how many paintings are on the wall.
 
 ## Paintings
 
@@ -223,7 +231,7 @@ Returns a list of Painting objects. Only paintings on the wall are included.
 
 ### GET /api/paintings/:slug
 
-Returns `{ painting, related, saved }`. `related` is up to four paintings that go well with it. `saved` is true if the logged in visitor has saved it, otherwise false. 404 if the slug does not exist or the painting is in storage.
+Returns `{ painting, related, moreByArtist, saved }`. `related` is up to four Painting objects that go well with it, each with one extra field, `reason`, a short line like "Hangs in the same room." or "Shares its ultramarine.". They are never by the same artist, because `moreByArtist` is that artist's other paintings, oldest first. `saved` is true if the logged in visitor has saved it, otherwise false. 404 if the slug does not exist or the painting is in storage.
 
 ### POST /api/paintings/:slug/view
 
@@ -235,7 +243,7 @@ Sends nothing. Adds one to the painting's views and, if the visitor is logged in
 
 Query values, all optional: `era` (a style name), `letter` (one letter, matches the surname), `search` (part of a name), `page`, `limit`.
 
-Returns a list of Artist objects plus one extra field, `spotlight`, which is the artist to feature at the top of the page.
+Returns a list of Artist objects, sorted by surname, plus one extra field, `spotlight`, which is the artist to feature at the top of the page (Rachel Ruysch) as an Artist object with one extra field, `paintings`, three of hers to show beside her line.
 
 ### GET /api/artists/:slug
 
@@ -283,7 +291,7 @@ Returns `{ saved: false, saves }`.
 
 Sends `{ sentence }`, the words the visitor typed.
 
-Returns a list of Painting objects with two extra fields: `parts`, the ideas pulled out of the sentence as `[ { text, type } ]` where `type` is `subject`, `mood`, `colour`, `time` or `room`, and `suggestions`, four sentences to try next.
+Returns a list of Painting objects, best match first, each with one extra field, `why`, a short line on why it matched, like "Full of ultramarine and feels calm.". The list has two extra fields: `parts`, the ideas pulled out of the sentence as `[ { text, type } ]` where `type` is `subject`, `mood`, `colour`, `time`, `room`, `style` or `medium`, and `suggestions`, four sentences to try next. Every `text` is a plain word you can search for again, so taking one part out and sending the rest works. The list is empty when nothing matched. 400 if the sentence is empty.
 
 ## Guide
 
@@ -299,7 +307,7 @@ If the model service cannot be reached the server still answers 200 with a plain
 
 ### GET /api/guide/conversations
 
-Returns a list of conversations without their messages, newest first.
+Returns a list of `{ id, title, messageCount, startedAt, updatedAt }`, newest first, without the messages.
 
 ### GET /api/guide/conversations/:id
 
@@ -336,7 +344,7 @@ Returns a list of Image Lab result objects for this visitor, newest first.
 }
 ```
 
-`when` is a short phrase like `2 hours ago` or `Monday`, made by the server.
+`when` is a short phrase like `2 hours ago` or `Monday`, made by the server. `counts.lookedAt` counts different paintings, not visits. `waitingForYou` is four paintings the visitor has not opened or saved, each with a reason like "Because you lingered on The Hay Wain". `taste.rooms` are percentages of everything they opened and saved, and `taste.colours` is their top three pigments with `hex`. `collections` is their own collections plus the two made for them. A brand new member gets empty lists, an empty `favouriteRoom` and picks from the rooms they chose when joining.
 
 ## Admin
 
@@ -348,7 +356,7 @@ Query value `range`: `week` (the default), `month` or `year`.
 
 ```
 {
-  visits, visitsChange, saves, searches, newPasses,
+  visits, visitsChange, saves, savesChange, searches, searchesChange, newPasses, newPassesChange,
   visitsByDay: [ { day, count } ],
   timeInRooms: [ { room, percent } ],
   mostLookedAt: [ { painting: Painting, views, saves } ],
@@ -357,7 +365,7 @@ Query value `range`: `week` (the default), `month` or `year`.
 }
 ```
 
-`visitsChange` is a percentage compared to the range before, and can be negative.
+Each `Change` is a percentage compared to the range before, and can be negative. `visitsByDay` has one entry per day with a label like `Mon 27`, or one per month for the year range. `timeInRooms` is the share of painting views per room. `notes` is three plain sentences made from the numbers.
 
 ### GET /api/admin/paintings
 
@@ -367,9 +375,9 @@ Returns a list of Painting objects of every status, plus one extra field, `inSto
 
 ### POST /api/admin/paintings
 
-Multipart form. Text fields: `title`, `artistSlug`, `year`, `room`, `style`, `medium`, `surface`, `widthCm`, `heightCm`, `whereItHangs`, `story`, `tags` (JSON string), `colours` (JSON string), `lookCloser` (JSON string), `status`, `licence`, `sourceUrl`. One file field called `image`. The server makes the slug, the large image and the thumb.
+Multipart form. Text fields: `title`, `artistSlug`, `year`, `room`, `style`, `medium`, `surface`, `widthCm`, `heightCm`, `whereItHangs`, `story`, `tags` (JSON string), `colours` (JSON string), `lookCloser` (JSON string), `status`, `licence`, `sourceUrl`. One file field called `image`, which is required. The server makes the slug, the large image and the thumb under `/uploads/paintings`, fills in the artist's name from `artistSlug` (or takes a plain `artist` field when the slug is unknown), works out `yearValue` from `year`, and works out the five colours from the image when none are sent. The painting starts in storage unless `status` says otherwise.
 
-Returns 201 and `{ painting }`.
+Returns 201 and `{ painting }`. 400 if there is no image.
 
 ### PUT /api/admin/paintings/:slug
 
@@ -389,7 +397,7 @@ Sends nothing. Returns `{ story }`, a first draft. Nothing is saved until the ad
 
 ### POST /api/admin/paintings/bulk
 
-Sends `{ action, slugs }`. `action` is `label`, `storage`, `wall` or `remove`. Returns `{ message, count }`.
+Sends `{ action, slugs }`. `action` is `label`, `storage`, `wall` or `remove`. Returns `{ message, count }`, where `count` is how many paintings were changed. `label` runs the labels helper on each painting and saves the result, so it is slower. 400 for any other action.
 
 ## Contact
 
@@ -407,7 +415,7 @@ Sends `{ email }`. Returns `{ message }`. Answers 200 even if the email was alre
 
 ### POST /api/visits
 
-Sends `{ page }`, the path the visitor opened, like `/gallery`. Returns `{ ok: true }`. The client calls this once per page view and ignores the answer.
+Sends `{ page }`, the path the visitor opened, like `/gallery`. Returns `{ ok: true }`. The client calls this once per page view and ignores the answer. The server gives each browser a `visitor` cookie and counts one visit per browser per day, so the admin numbers are visits, not page views.
 
 ## Health
 

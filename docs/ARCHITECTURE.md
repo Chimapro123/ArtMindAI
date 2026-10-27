@@ -50,13 +50,13 @@ During development Vite proxies `/api` and `/uploads` to the server, so the brow
 
 The images are in `client/public/paintings` for the large versions (longest side 1600 pixels) and `client/public/paintings/thumbs` for the small ones (600 pixels). The database never holds image bytes, only the paths.
 
-The facts about each painting (title, artist, year, room, style, size, where it hangs, licence and source) start life in `server/data/paintings.json`, and the artists in `server/data/artists.json`. The first time the server runs with an empty database it loads these two files into MongoDB. From then on the database is the truth, and the admin pages change it. Stories, tags, colours, look closer points, views and saves are kept on the same painting records.
+The facts about each painting (title, artist, year, room, style, size, where it hangs, licence and source) start life in `server/data/paintings.json`, and the artists in `server/data/artists.json`. `server/seed.js` loads these two files into MongoDB, works out five colours for every painting from its thumbnail, adds tags, the look closer points and the chosen collections from `server/data/collections.json`, and makes the admin account. From then on the database is the truth, and the admin pages change it. Stories, tags, colours, look closer points, views and saves are kept on the same painting records. `server/stories.js` fills in the stories and the artist bios with the model, one at a time.
 
 Pictures that admins upload through the Painting Editor, profile photos and Image Lab photos go to `server/uploads`, which git ignores.
 
 ## Logging in
 
-1. Join. The client sends the name, email and password to POST /api/auth/register. The server stores the user with a hashed password and emails a six digit code.
+1. Join. The client sends the name, email and password to POST /api/auth/register. The server stores the user with a hashed password and emails a six digit code through Resend, using MAIL_API_KEY and MAIL_FROM from `server/.env`. The code itself is stored hashed and dies after ten minutes. When MAIL_API_KEY is empty the code is printed in the server window instead.
 2. Verify. The client sends the code to POST /api/auth/verify-email. The server marks the email as confirmed, makes a signed token and sends it back inside an httpOnly cookie called token.
 3. From then on the browser sends that cookie with every request by itself. The client never sees the token, which is the point.
 4. When the app starts, AuthContext calls GET /api/auth/me. If the cookie is good the server answers with the user, and the navbar shows the avatar. If it is not, or the server is off, the visitor is treated as logged out.
@@ -74,11 +74,21 @@ All three get their answers from one place, a model service on the server. The b
 
 The model settings live in `server/.env` as MODEL_API_URL, MODEL_API_KEY, MODEL_NAME and VISION_MODEL_NAME.
 
-The fallback. If MODEL_API_KEY is empty the model service does not call anything outside. The guide answers with the painting's story and facts in a short fixed sentence, the search does a plain word match against titles, artists, rooms and tags, and the Image Lab guesses from the average colours of the photo. Everything still works, just more simply, so you can build and test your pages without a key.
+The fallback. If MODEL_API_KEY is empty, or a call fails or takes more than twenty seconds, `utils/askModel.js` returns null and the controller uses its own plain logic. The guide answers with the painting's facts and the first line of its story, the search reads the sentence with word lists for rooms, colours, moods, styles and eras and scores the paintings, and the Image Lab guesses from the five colours of the photo. Everything still works, just more simply, so you can build and test your pages without a key. The model names and the key only ever live in `.env`. No other file knows which model it is.
+
+## Inside the server folder
+
+- `server.js` sets up cors, JSON, cookies, the `/uploads` folder, every route, a 404 for unknown `/api` paths and one error handler.
+- `routes` has one file per part of the API. Each one lists its paths and which middleware runs first.
+- `controllers` has the functions behind the routes. Each one is async with try and catch and answers with a status and a plain message.
+- `models` has the mongoose schemas: User, Painting, Artist, Collection, View, Search, Visit, Conversation, Upload, Message and Subscriber.
+- `middleware` has checkLogin, checkAdmin, findUser (optional login), the rate limits and the image upload.
+- `utils` has the helpers: askModel, sendEmail, getColours, the search word lists and scoring, the taste and recommendation helpers for the dashboard, and the shaping functions that turn a record into the object the client expects.
+- `data` has the JSON files, and `uploads` has the files people send in.
 
 ## The admin side
 
-Admins are ordinary users whose role is admin. The first one is made from ADMIN_EMAIL and ADMIN_PASSWORD in `server/.env` when the server starts and finds no admin yet. The admin pages live under `/admin`, use AdminLayout for the sidebar, and only call routes under `/api/admin`.
+Admins are ordinary users whose role is admin. The first one is made from ADMIN_EMAIL and ADMIN_PASSWORD in `server/.env` when you run the seed. The admin pages live under `/admin`, use AdminLayout for the sidebar, and only call routes under `/api/admin`.
 
 ## Folder map
 
@@ -99,8 +109,15 @@ ArtMindAI/
       images/           art files such as the frame
   server/               the Express app
     server.js           starts everything
+    seed.js             fills the database
+    stories.js          writes stories and bios with the model
     config/db.js        connects to MongoDB
-    data/               paintings.json and artists.json
+    models/             one schema per collection
+    routes/             one file per part of the API
+    controllers/        the functions behind the routes
+    middleware/         login checks, rate limits, uploads
+    utils/              the helpers
+    data/               paintings, artists, collections and extras
     uploads/            files people upload, ignored by git
   docs/                 these files and the page designs in docs/ui
 ```

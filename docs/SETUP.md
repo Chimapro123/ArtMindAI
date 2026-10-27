@@ -64,11 +64,34 @@ Copy-Item client\.env.example client\.env
 Copy-Item server\.env.example server\.env
 ```
 
-Open `server\.env` in VS Code and fill in the values I shared in the group: the database address, the secret, the mail account and the model settings. Keep them to yourself. Git is already set up to ignore .env files, so they will never be pushed, and please never paste the real values into the .env.example files.
+Open `server\.env` in VS Code and fill in the values I shared in the group. Keep them to yourself. Git is already set up to ignore .env files, so they will never be pushed, and please never paste the real values into the .env.example files.
+
+What each line is for:
+
+- MONGO_URI is the database address.
+- JWT_SECRET is the long random string that signs the login cookie.
+- CLIENT_URL and PORT can stay as they are on your own machine.
+- MODEL_API_URL, MODEL_API_KEY, MODEL_NAME and VISION_MODEL_NAME are the model service behind the guide, the search and the Image Lab. Leave MODEL_API_KEY empty if you do not have one. Everything still works, just with simpler answers.
+- MAIL_API_KEY and MAIL_FROM are for sending the six digit codes through Resend. Leave MAIL_API_KEY empty and the server prints every code in its own window instead, which is the easiest way to work while building.
+- ADMIN_EMAIL and ADMIN_PASSWORD make the first admin account when you seed.
 
 The client one can stay as it is. The VITE_API_URL line only gets a value when we put the site online.
 
-## 7. Run it
+## 7. Fill the database
+
+The database starts empty. From the ArtMindAI folder run:
+
+```
+cd server
+npm run seed
+cd ..
+```
+
+This loads the 76 paintings and 43 artists, works out their colours, adds the chosen collections and makes the admin account. You can run it again any time, it never doubles anything.
+
+If you have a model key you can also run `npm run stories` inside the server folder. It writes a story for every painting and a short bio for every artist, pausing between each one, so it takes about ten minutes. It is optional.
+
+## 8. Run it
 
 ```
 npm run dev
@@ -83,4 +106,6 @@ Press Ctrl and C in the PowerShell window to stop both.
 - PowerShell says npm is not recognised. Node did not finish installing, or you need to close PowerShell and open a new window.
 - Something about a port already in use. You have another copy of the project running. Close that window first.
 - Red text about the database when the server starts. The database address in `server\.env` is empty or wrong. The server keeps running anyway, but logging in and the pages that need data will not work until it is right.
+- The gallery is empty. You have not run the seed yet. See step 7.
+- You joined but no email came. Look in the server window. With MAIL_API_KEY empty the code is printed there.
 - The page is blank. Press F12 in the browser, open the Console tab and send me what it says.
