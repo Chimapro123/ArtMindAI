@@ -1,0 +1,85 @@
+.room-collections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.room-collection {
+  display: block;
+  padding-right: 24px;
+  border-right: 1px solid var(--line-on-stone);
+}
+
+.room-collection-cover {
+  max-width: 220px;
+  margin-bottom: 16px;
+  transition: transform var(--normal-speed) ease;
+}
+
+.room-collection:hover .room-collection-cover {
+  transform: translateY(-4px);
+}
+
+.room-collection-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  border: 1px dashed var(--gold-line);
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.room-collection-type {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--gold-line);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.room-collection-title {
+  margin-top: 8px;
+  font-family: var(--heading-font);
+  font-size: 22px;
+}
+
+.room-collection-count {
+  font-size: 13px;
+  color: var(--brown-grey-text);
+}
+
+.room-collection-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 1px solid var(--line-on-stone);
+  font-family: var(--heading-font);
+  font-size: 20px;
+  transition: border-color var(--fast-speed), color var(--fast-speed);
+}
+
+.room-collection-new:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .room-collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-collections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .room-collection {
+    padding-right: 0;
+    border-right: none;
+  }
+}
