@@ -1,0 +1,33 @@
+.artist-card {
+  display: block;
+}
+
+.artist-portrait {
+  margin-bottom: 18px;
+  transition: transform var(--normal-speed) ease;
+}
+
+.artist-card:hover .artist-portrait {
+  transform: translateY(-6px);
+}
+
+.artist-portrait .frame-image {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.artist-name {
+  font-size: 20px;
+  margin-bottom: 4px;
+  transition: color var(--fast-speed);
+}
+
+.artist-card:hover .artist-name {
+  color: var(--light-gold);
+}
+
+.artist-line {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
