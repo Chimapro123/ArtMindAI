@@ -1,0 +1,147 @@
+.gallery-top {
+  position: relative;
+  padding-top: 56px;
+  padding-bottom: 48px;
+  overflow: hidden;
+}
+
+.gallery-top-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px;
+  gap: 48px;
+  align-items: center;
+}
+
+.gallery-line {
+  max-width: 520px;
+  font-size: 17px;
+  color: var(--grey-text);
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin-top: 36px;
+}
+
+.room-link {
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  color: var(--grey-text);
+  transition: color var(--fast-speed), border-color var(--fast-speed);
+}
+
+.room-link:hover {
+  color: var(--white-text);
+}
+
+.room-link-active {
+  color: var(--white-text);
+  border-bottom-color: var(--gold);
+}
+
+.gallery-search {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 520px;
+  margin-top: 28px;
+  padding: 0 18px;
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--box-corner);
+  color: var(--grey-text);
+  transition: border-color var(--fast-speed);
+}
+
+.gallery-search:focus-within {
+  border-color: var(--gold);
+}
+
+.gallery-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 0;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: var(--white-text);
+}
+
+.gallery-search-input::placeholder {
+  color: var(--grey-text);
+}
+
+.gallery-search-input:focus {
+  outline: none;
+}
+
+.gallery-cover {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 28px;
+  align-items: end;
+}
+
+.cover-spotlight {
+  position: absolute;
+  top: -220px;
+  left: 50%;
+  width: 560px;
+  height: 560px;
+  margin-left: -320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
+  pointer-events: none;
+}
+
+.cover-frame {
+  position: relative;
+}
+
+.cover-label {
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gold-line);
+}
+
+.cover-label .small-label {
+  margin-bottom: 8px;
+}
+
+.cover-title {
+  font-size: 15px;
+}
+
+.cover-artist {
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+@media (max-width: 1024px) {
+  .gallery-top-inner {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 32px;
+  }
+
+  .gallery-cover {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cover-label {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-top-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gallery-cover {
+    display: none;
+  }
+}

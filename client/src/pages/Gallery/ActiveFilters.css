@@ -1,0 +1,38 @@
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.active-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 6px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.active-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--brown-grey-text);
+  transition: color var(--fast-speed), background-color var(--fast-speed);
+}
+
+.active-tag-remove:hover {
+  color: var(--black-text);
+  background: var(--stone-shadow);
+}
+
+.clear-all {
+  margin-left: 6px;
+  font-size: 13px;
+}

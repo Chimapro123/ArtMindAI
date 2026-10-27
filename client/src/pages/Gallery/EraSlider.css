@@ -1,0 +1,76 @@
+.era-slider {
+  position: relative;
+  height: 48px;
+  margin-top: 8px;
+}
+
+.era-track {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line-on-stone);
+}
+
+.era-fill {
+  position: absolute;
+  top: 11px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.era-slider input[type="range"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+}
+
+.era-slider input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--stone-wall);
+  box-shadow: 0 0 0 1px var(--gold);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.era-slider input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--stone-wall);
+  box-shadow: 0 0 0 1px var(--gold);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.era-slider input[type="range"]:focus-visible {
+  outline: none;
+}
+
+.era-slider input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--light-gold);
+  outline-offset: 3px;
+}
+
+.era-years {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--brown-grey-text);
+}
