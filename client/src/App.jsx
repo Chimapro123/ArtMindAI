@@ -34,6 +34,10 @@ import NotFound from "./pages/NotFound/NotFound";
 function App() {
   const location = useLocation();
 
+  useEffect(() => {
+    recordVisit(location.pathname).catch(() => {});
+  }, [location.pathname]);
+
   return (
     <>
       <ScrollToTop />
