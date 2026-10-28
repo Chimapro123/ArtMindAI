@@ -58,6 +58,51 @@ npm run dev
 
 Then log in and open http://localhost:5173/guide.
 
+## Getting the code onto your machine
+
+`docs/SETUP.md` walks you through Node, Git and the .env file. The short version, one line at a time in PowerShell:
+
+```
+git clone https://github.com/Chimapro123/ArtMindAI.git
+cd ArtMindAI
+git checkout luwa
+git pull origin develop
+npm run install-all
+```
+
+Then copy the two .env.example files to .env as SETUP.md shows, fill in the server one with the values from the group, and run the seed:
+
+```
+cd server
+npm run seed
+cd ..
+npm run dev
+```
+
+The pull from develop brings every finished page onto your branch, yours included, so you are reading and changing working code rather than starting from nothing. Keep your changes on your branch and save them the way `docs/WORKFLOW.md` describes:
+
+```
+git add .
+git commit -m "guide with a fifth suggestion"
+git push origin luwa
+```
+
+Shared files, which means anything in `components`, `context`, `services`, `css` or App.jsx, stay as they are. If a page of yours needs something changed there, tell me and I will do it.
+
+## Things to practice on your pages
+
+Do these in order. Each one is small, and together they take you through everything on your pages. After every change, open the page, press F12, and look at the Console and Network tabs so you can see what happened. Drag the window down to 1024, 768 and 480 pixels wide too, because every page has to work at all three.
+
+1. In `SearchResults.jsx`, add a fifth sentence to `defaultSuggestions`, then work out when the page uses that list and when it uses the one the server sends.
+2. In `TryThese.css`, lay the sentences out in two columns on a wide screen and one column on a phone.
+3. In `GuideComposer.jsx`, add a fifth suggestion tag and send it.
+4. In `ConversationList.jsx`, show how many messages each conversation has. The number is already in the data as `messageCount`.
+5. In `Collection.jsx`, make the walk start with the picture on the right instead of the left. One expression decides it.
+6. In `CollectionCard.jsx`, show "About 10 minutes" on each card using `minutes` from the data.
+7. Open the Network tab, send a question on the Guide page, find the request to `/api/guide/ask`, and read the answer and the conversation id that come back.
+
+When you can explain each change and why it worked, you are ready for the questions below.
+
 ## Five questions a lecturer might ask you
 
 **How does removing an understood tag search again without it?**

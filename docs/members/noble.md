@@ -63,6 +63,52 @@ npm run dev
 
 Then open http://localhost:5173, and log in with the admin account from server/.env for http://localhost:5173/admin.
 
+## Getting the code onto your machine
+
+`docs/SETUP.md` walks you through Node, Git and the .env file. The short version, one line at a time in PowerShell:
+
+```
+git clone https://github.com/Chimapro123/ArtMindAI.git
+cd ArtMindAI
+git checkout noble
+git pull origin develop
+npm run install-all
+```
+
+Then copy the two .env.example files to .env as SETUP.md shows, fill in the server one with the values from the group, and run the seed:
+
+```
+cd server
+npm run seed
+cd ..
+npm run dev
+```
+
+The pull from develop brings every finished page onto your branch, yours included, so you are reading and changing working code rather than starting from nothing. Keep your changes on your branch and save them the way `docs/WORKFLOW.md` describes:
+
+```
+git add .
+git commit -m "sixth question on the contact page"
+git push origin noble
+```
+
+Shared files, which means anything in `components`, `context`, `services`, `css` or App.jsx, stay as they are. You own the look of the site, so if a shared style needs to change, tell me what and why and I will put it on chiboy. For the Admin Overview, log in with the admin account from the group.
+
+## Things to practice on your pages
+
+Do these in order. Each one is small, and together they take you through everything on your pages. After every change, open the page, press F12, and look at the Console and Network tabs so you can see what happened. Drag the window down to 1024, 768 and 480 pixels wide too, because every page has to work at all three.
+
+1. In `HomeHero.jsx`, make the slow zoom stop at 5 percent instead of 10. One number in the scroll handler changes.
+2. In `MainWall.css`, make the strip show four cards at once by changing the card width.
+3. In `ColourPicker.jsx`, make the page start on Vermilion instead of Ultramarine.
+4. In `Faq.jsx`, add a sixth question with its answer.
+5. In `AdminOverview.jsx`, show the Worth knowing notes as a numbered list.
+6. In `VisitsChart.jsx`, set `tension` to 0 and see the curve become straight lines.
+7. In `NotFound.jsx`, show four paintings from the main wall instead of three.
+8. Open the Network tab on the home page, find the request to `/api/home`, and match each part of the answer to a section of the page.
+
+When you can explain each change and why it worked, you are ready for the questions below.
+
 ## Five questions a lecturer might ask you
 
 **Why does the home page make a single request?**

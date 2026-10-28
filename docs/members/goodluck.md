@@ -65,6 +65,51 @@ npm run dev
 
 Then open http://localhost:5173/gallery.
 
+## Getting the code onto your machine
+
+`docs/SETUP.md` walks you through Node, Git and the .env file. The short version, one line at a time in PowerShell:
+
+```
+git clone https://github.com/Chimapro123/ArtMindAI.git
+cd ArtMindAI
+git checkout goodluck
+git pull origin develop
+npm run install-all
+```
+
+Then copy the two .env.example files to .env as SETUP.md shows, fill in the server one with the values from the group, and run the seed:
+
+```
+cd server
+npm run seed
+cd ..
+npm run dev
+```
+
+The pull from develop brings every finished page onto your branch, yours included, so you are reading and changing working code rather than starting from nothing. Keep your changes on your branch and save them the way `docs/WORKFLOW.md` describes:
+
+```
+git add .
+git commit -m "gallery grid with four columns"
+git push origin goodluck
+```
+
+Shared files, which means anything in `components`, `context`, `services`, `css` or App.jsx, stay as they are. If a page of yours needs something changed there, tell me and I will do it.
+
+## Things to practice on your pages
+
+Do these in order. Each one is small, and together they take you through everything on your pages. After every change, open the page, press F12, and look at the Console and Network tabs so you can see what happened. Drag the window down to 1024, 768 and 480 pixels wide too, because every page has to work at all three.
+
+1. In `Gallery.css`, make the grid view four columns wide instead of three, then narrow the window to 1024 and 768 and watch which rule takes over.
+2. In `galleryHelpers.js`, change `wallWidth` so the biggest painting is 520 pixels wide, and check the wall still wraps on a phone.
+3. In `EraSlider.jsx`, make the two thumbs move in steps of 5 years instead of 10. Both inputs and both change functions need the new number.
+4. In `ZoomView.jsx`, make the zoom open at 150 percent instead of 100.
+5. In `artistHelpers.js`, add a fifth sort choice, Most saved, that sorts by `saves`, and check it appears in the select on the Artist page.
+6. In `Artists.jsx`, show two of the spotlight paintings instead of three, then put it back.
+7. Open the Network tab, click a room tab in the Gallery, find the request to `/api/paintings`, and read the answer. Match what you see to the fields in `docs/API.md`.
+
+When you can explain each change and why it worked, you are ready for the questions below.
+
 ## Five questions a lecturer might ask you
 
 **Why do the gallery filters live in the address bar instead of in state?**

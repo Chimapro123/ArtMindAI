@@ -48,6 +48,51 @@ npm run dev
 
 Log in and open http://localhost:5173/dashboard.
 
+## Getting the code onto your machine
+
+`docs/SETUP.md` walks you through Node, Git and the .env file. The short version, one line at a time in PowerShell:
+
+```
+git clone https://github.com/Chimapro123/ArtMindAI.git
+cd ArtMindAI
+git checkout treasure
+git pull origin develop
+npm run install-all
+```
+
+Then copy the two .env.example files to .env as SETUP.md shows, fill in the server one with the values from the group, and run the seed:
+
+```
+cd server
+npm run seed
+cd ..
+npm run dev
+```
+
+The pull from develop brings every finished page onto your branch, yours included, so you are reading and changing working code rather than starting from nothing. Keep your changes on your branch and save them the way `docs/WORKFLOW.md` describes:
+
+```
+git add .
+git commit -m "collections figure on the dashboard"
+git push origin treasure
+```
+
+Shared files, which means anything in `components`, `context`, `services`, `css` or App.jsx, stay as they are. If a page of yours needs something changed there, tell me and I will do it. Your three pages need a logged in member, so join with your own email first, or ask me for a test account.
+
+## Things to practice on your pages
+
+Do these in order. Each one is small, and together they take you through everything on your pages. After every change, open the page, press F12, and look at the Console and Network tabs so you can see what happened. Drag the window down to 1024, 768 and 480 pixels wide too, because every page has to work at all three.
+
+1. In `Dashboard.jsx`, greet people by their full name instead of their first name, then put it back.
+2. In `RoomFigures.jsx`, add a fifth figure for their collections. The count is `collections.length` in the dashboard answer, so the figure needs a new prop from `Dashboard.jsx`.
+3. In `TasteBar.jsx`, pick your own tones for the six rooms.
+4. In `SavedToolbar.jsx`, make the Download as PDF button say how many paintings it will include.
+5. In `AboutYouForm.jsx`, show a character count under About you. The field allows 160.
+6. In `ClosePass.jsx`, make people type GOODBYE instead of CLOSE, and update the label to match.
+7. Open the Network tab, flick one of the email switches, find the request to `/api/profile/emails`, and read what was sent and what came back.
+
+When you can explain each change and why it worked, you are ready for the questions below.
+
 ## Five questions a lecturer might ask you
 
 **Why does the dashboard make only one request?**

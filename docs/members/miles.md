@@ -50,6 +50,51 @@ npm run dev
 
 Log in with the admin account from server/.env and open http://localhost:5173/admin/paintings.
 
+## Getting the code onto your machine
+
+`docs/SETUP.md` walks you through Node, Git and the .env file. The short version, one line at a time in PowerShell:
+
+```
+git clone https://github.com/Chimapro123/ArtMindAI.git
+cd ArtMindAI
+git checkout miles
+git pull origin develop
+npm run install-all
+```
+
+Then copy the two .env.example files to .env as SETUP.md shows, fill in the server one with the values from the group, and run the seed:
+
+```
+cd server
+npm run seed
+cd ..
+npm run dev
+```
+
+The pull from develop brings every finished page onto your branch, yours included, so you are reading and changing working code rather than starting from nothing. Keep your changes on your branch and save them the way `docs/WORKFLOW.md` describes:
+
+```
+git add .
+git commit -m "year column in the paintings table"
+git push origin miles
+```
+
+Shared files, which means anything in `components`, `context`, `services`, `css` or App.jsx, stay as they are. If a page of yours needs something changed there, tell me and I will do it. For the two admin pages, log in with the admin account from the group.
+
+## Things to practice on your pages
+
+Do these in order. Each one is small, and together they take you through everything on your pages. After every change, open the page, press F12, and look at the Console and Network tabs so you can see what happened. Drag the window down to 1024, 768 and 480 pixels wide too, because every page has to work at all three.
+
+1. In `photoHelpers.js`, make Rotate turn the photo the other way. One number in `rotatePhoto` changes.
+2. In `PhotoTools.jsx`, show the photo's size in kilobytes under the preview. `photo.size` is in bytes.
+3. In `ManagePaintings.jsx`, change `perPage` from 10 to 15 and watch the page count change.
+4. In `PaintingTable.jsx`, add a column for the year, and give it a `data-label` so it still shows on a phone.
+5. In `ManagePaintings.jsx`, add a Clear filters link that empties the search and puts the three selects back to their first choice.
+6. In `EditorForm.jsx`, show how many tags there are under the tag list, with a quiet note when there are more than eight.
+7. Open the Network tab, choose a photo in the Image Lab, find the request to `/api/image-lab/check`, and look at the form data it sent and the result that came back.
+
+When you can explain each change and why it worked, you are ready for the questions below.
+
 ## Five questions a lecturer might ask you
 
 **Why is the photo sent as FormData and not JSON?**
