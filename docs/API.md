@@ -33,7 +33,7 @@ This is the agreement between the client and the server. Every page talks to the
 | widthCm | number | |
 | heightCm | number | |
 | whereItHangs | string | The museum, or `Private collection` |
-| image | string | Path of the large image, like `/paintings/hunters-in-the-snow.jpg` |
+| image | string | Path of the large image, like `/paintings/hunters-in-the-snow.jpg`. A painting an admin uploaded has a path like `/api/images/:id` instead |
 | thumb | string | Path of the small image |
 | story | string | A few short paragraphs about the painting |
 | tags | array of strings | Plain words like `winter`, `hunters`, `snow` |
@@ -379,17 +379,17 @@ Returns `{ painting }` whatever its status, so the editor can open a painting th
 
 ### POST /api/admin/paintings
 
-Multipart form. Text fields: `title`, `artistSlug`, `year`, `room`, `style`, `medium`, `surface`, `widthCm`, `heightCm`, `whereItHangs`, `story`, `tags` (JSON string), `colours` (JSON string), `lookCloser` (JSON string), `status`, `licence`, `sourceUrl`. One file field called `image`, which is required. The server makes the slug, the large image and the thumb under `/uploads/paintings`, fills in the artist's name from `artistSlug` (or takes a plain `artist` field when the slug is unknown), works out `yearValue` from `year`, and works out the five colours from the image when none are sent. The painting starts in storage unless `status` says otherwise.
+Multipart form. Text fields: `title`, `artistSlug`, `year`, `room`, `style`, `medium`, `surface`, `widthCm`, `heightCm`, `whereItHangs`, `story`, `tags` (JSON string), `colours` (JSON string), `lookCloser` (JSON string), `status`, `licence`, `sourceUrl`. One file field called `image`, which is required. The server makes the slug, saves the large image and the thumb in the database (see GET /api/images/:id below), fills in the artist's name from `artistSlug` (or takes a plain `artist` field when the slug is unknown), works out `yearValue` from `year`, and works out the five colours from the image when none are sent. The painting starts in storage unless `status` says otherwise.
 
 Returns 201 and `{ painting }`. 400 if there is no image.
 
 ### PUT /api/admin/paintings/:slug
 
-Same shape as POST, every field optional. `image` is optional. Returns `{ painting }`.
+Same shape as POST, every field optional. `image` is optional. A new image gets new addresses, and the old large image and thumb are deleted from the database. Returns `{ painting }`.
 
 ### DELETE /api/admin/paintings/:slug
 
-Returns `{ message }`. Also removes it from everyone's saved lists and collections.
+Returns `{ message }`. Also removes it from everyone's saved lists and collections, and deletes its stored images.
 
 ### POST /api/admin/paintings/:slug/labels
 
@@ -402,6 +402,12 @@ Sends nothing. Returns `{ story }`, a first draft. Nothing is saved until the ad
 ### POST /api/admin/paintings/bulk
 
 Sends `{ action, slugs }`. `action` is `label`, `storage`, `wall` or `remove`. Returns `{ message, count }`, where `count` is how many paintings were changed. `label` runs the labels helper on each painting and saves the result, so it is slower. 400 for any other action.
+
+## Images
+
+### GET /api/images/:id
+
+No login needed. Sends back one image the admin uploaded, as `image/jpeg`, so the address works straight in an img tag. The browser may keep it for a year, which is safe because a replaced image always gets a new id. 404 if the id does not exist.
 
 ## Contact
 
