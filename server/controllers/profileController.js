@@ -7,7 +7,7 @@ const Upload = require("../models/Upload");
 const Collection = require("../models/Collection");
 const { clearLoginCookie } = require("../utils/makeToken");
 const { shapeUser, goodPassword, cleanRooms } = require("../utils/shapeUser");
-const { saveProfilePhoto, removeUpload } = require("../utils/saveImage");
+const { saveProfilePhoto, removeImages, removeOwnedImages } = require("../utils/saveImage");
 
 async function getProfile(request, response) {
   try {
@@ -48,9 +48,9 @@ async function uploadPhoto(request, response) {
     }
     const user = request.user;
     const oldPhoto = user.photo;
-    user.photo = await saveProfilePhoto(request.file.buffer, String(user._id));
+    user.photo = await saveProfilePhoto(request.file.buffer, user._id);
     await user.save();
-    removeUpload(oldPhoto);
+    await removeImages([oldPhoto]);
     response.json({ user: shapeUser(user) });
   } catch (error) {
     response.status(500).json({ message: "That photo could not be saved. Please try another one" });
@@ -96,9 +96,7 @@ async function updateEmails(request, response) {
 async function closePass(request, response) {
   try {
     const user = request.user;
-    const uploads = await Upload.find({ user: user._id });
-    uploads.forEach((upload) => removeUpload(upload.image));
-    removeUpload(user.photo);
+    await removeOwnedImages(user._id);
     await Upload.deleteMany({ user: user._id });
     await View.deleteMany({ user: user._id });
     await Search.deleteMany({ user: user._id });

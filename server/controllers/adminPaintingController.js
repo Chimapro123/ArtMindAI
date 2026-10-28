@@ -1,7 +1,7 @@
 const Painting = require("../models/Painting");
 const getColours = require("../utils/getColours");
 const { shapePainting, pageList, readPage } = require("../utils/shapePainting");
-const { savePaintingImages, removePaintingImages } = require("../utils/saveImage");
+const { savePaintingImages, removeImages } = require("../utils/saveImage");
 const { uniqueSlug } = require("../utils/makeSlug");
 const { readFields, removePaintingEverywhere } = require("../utils/paintingFields");
 const { tagsFor } = require("../utils/paintingTags");
@@ -105,7 +105,7 @@ async function updatePainting(request, response) {
     }
     await painting.save();
     if (request.file) {
-      await removePaintingImages(oldImages);
+      await removeImages(oldImages);
     }
     response.json({ painting: shapePainting(painting) });
   } catch (error) {

@@ -70,7 +70,7 @@ async function checkImage(request, response) {
     const look = fromModel ? cleanLook(fromModel) : guessFromColours(colours);
     const paintings = await Painting.find({ status: "on-the-wall" });
     const closest = closestPaintings(look, colours, paintings);
-    const image = await saveLabPhoto(buffer, String(request.user._id));
+    const image = await saveLabPhoto(buffer, request.user._id);
     const upload = await Upload.create({
       user: request.user._id,
       image,
