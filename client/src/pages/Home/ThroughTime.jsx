@@ -4,7 +4,22 @@ import "./ThroughTime.css";
 
 function ThroughTime({ stops }) {
   const boxRef = useRef(null);
+  const dotRef = useRef(null);
   const [drawn, setDrawn] = useState(0);
+  const [lineTop, setLineTop] = useState(0);
+
+  useEffect(() => {
+    function placeLine() {
+      if (boxRef.current && dotRef.current) {
+        const box = boxRef.current.getBoundingClientRect();
+        const dot = dotRef.current.getBoundingClientRect();
+        setLineTop(dot.top - box.top + dot.height / 2);
+      }
+    }
+    placeLine();
+    window.addEventListener("resize", placeLine);
+    return () => window.removeEventListener("resize", placeLine);
+  }, [stops]);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -33,15 +48,18 @@ function ThroughTime({ stops }) {
 
   return (
     <div className="through-time" ref={boxRef}>
+      <div className="time-line" aria-hidden="true" style={{ top: lineTop + "px" }}>
+        <span className="time-line-drawn" style={{ width: drawn * 100 + "%" }}></span>
+      </div>
       <ol className="time-stops">
         {stops.map((stop, index) => {
           const reached = drawn * stops.length >= index + 0.5;
           return (
-            <li key={stop.slug || stop.painting.slug} className={"time-stop" + (reached ? " time-stop-on" : "")}>
+            <li key={stop.painting.slug} className={"time-stop" + (reached ? " time-stop-on" : "")}>
               <Link to={"/painting/" + stop.painting.slug} className="time-picture">
                 <img src={stop.painting.thumb} alt={stop.painting.title + " by " + stop.painting.artist} loading="lazy" />
               </Link>
-              <span className="time-dot"></span>
+              <span className="time-dot" ref={index === 0 ? dotRef : null}></span>
               <span className="time-style">{stop.style}</span>
               <span className="time-era">{stop.era}</span>
               <span className="time-title">{stop.painting.title}</span>
@@ -49,9 +67,6 @@ function ThroughTime({ stops }) {
           );
         })}
       </ol>
-      <div className="time-line" aria-hidden="true">
-        <span className="time-line-drawn" style={{ width: drawn * 100 + "%" }}></span>
-      </div>
     </div>
   );
 }

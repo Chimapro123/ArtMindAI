@@ -3,6 +3,8 @@
 }
 
 .time-stops {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 16px;
@@ -79,8 +81,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
   height: 1px;
+  margin-top: -1px;
   background: var(--line-on-stone);
   pointer-events: none;
 }
@@ -88,25 +90,8 @@
 .time-line-drawn {
   display: block;
   height: 2px;
-  margin-top: -1px;
   background: var(--gold);
   transition: width var(--normal-speed) linear;
-}
-
-@media (min-width: 769px) {
-  .time-line {
-    top: auto;
-    bottom: 70px;
-  }
-
-  .time-stop {
-    padding-bottom: 0;
-  }
-
-  .time-dot {
-    position: relative;
-    z-index: 1;
-  }
 }
 
 @media (max-width: 768px) {

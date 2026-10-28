@@ -1,5 +1,5 @@
 .chat-box {
-  width: 291px;
+  width: 340px;
   max-height: 72vh;
   display: flex;
   flex-direction: column;
@@ -213,7 +213,7 @@
 
 @media (max-width: 768px) {
   .chat-box {
-    width: min(291px, calc(100vw - 32px));
+    width: min(340px, calc(100vw - 32px));
   }
 }
 

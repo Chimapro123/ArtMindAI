@@ -7,7 +7,7 @@
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 398px;
+  grid-template-columns: minmax(0, 1fr) 560px;
   gap: 46px;
   align-items: center;
 }
@@ -116,7 +116,7 @@
 
 @media (max-width: 1024px) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) 275px;
+    grid-template-columns: minmax(0, 1fr) 360px;
     gap: 29px;
   }
 
