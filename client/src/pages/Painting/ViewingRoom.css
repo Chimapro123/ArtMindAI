@@ -14,6 +14,9 @@
 
 .room-picture-column {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .room-spotlight {
@@ -30,6 +33,20 @@
 
 .room-picture {
   position: relative;
+  max-width: 100%;
+}
+
+.room-picture .frame {
+  width: auto;
+  max-width: 100%;
+}
+
+.room-picture .frame-image {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 290px);
+  min-height: 240px;
+  object-fit: contain;
 }
 
 .room-picture:fullscreen {
