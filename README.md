@@ -8,12 +8,12 @@ It is a gallery, not a shop. Nothing is for sale, and every painting on the site
 
 | Name | Course |
 | --- | --- |
-| Chiboy (group leader) | |
-| Goodluck | |
-| Luwa | |
-| Miles | |
-| Treasure | |
-| Noble | |
+| Chiboy (group leader) | Advanced Diploma in Software Engineering (ADSE) |
+| Goodluck | Advanced Diploma in Software Engineering (ADSE) |
+| Luwa | Advanced Diploma in Software Engineering (ADSE) |
+| Miles | Advanced Diploma in Software Engineering (ADSE) |
+| Treasure | Advanced Diploma in Software Engineering (ADSE) |
+| Noble | Advanced Diploma in Software Engineering (ADSE) |
 
 ## School
 
