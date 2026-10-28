@@ -1,0 +1,19 @@
+flowchart TB
+  S1([Start: contact form]) --> A[/Contact page: name and email filled<br/>in when logged in, a subject from four,<br/>the message, Send me a copy/]
+  R1((1)) --> A
+  A --> B{Name, email and<br/>message filled?}
+  B -->|No| B1[/Please fill in your name,<br/>your email and a message/] --> R2((1))
+  B -->|Yes| C[POST /api/contact]
+  C --> D{Email looks<br/>right?}
+  D -->|No| D1[/400: that email does<br/>not look right/] --> R3((1))
+  D -->|Yes| E[Save the message in messages,<br/>cut to 3000 characters, with the<br/>subject and the copy choice]
+  E --> F[/Thanks, we've got your message./] --> X1([End])
+
+  S2([Start: newsletter]) --> N1[/Footer on every page: visitor<br/>types an email and Subscribe/]
+  N1 --> N2{Email<br/>typed?}
+  N2 -->|No| X2([End])
+  N2 -->|Yes| N3[POST /api/newsletter]
+  N3 --> N4{Email looks<br/>right?}
+  N4 -->|No| N5[/That email does<br/>not look right/] --> X3([End])
+  N4 -->|Yes| N6[Add it to subscribers<br/>only if it is new]
+  N6 --> N7[/Thank you. See you<br/>on Sunday./] --> X4([End])

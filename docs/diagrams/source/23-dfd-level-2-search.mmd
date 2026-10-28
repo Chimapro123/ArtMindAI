@@ -1,0 +1,23 @@
+flowchart TB
+  V[Visitor]
+  P1("<span class='pid'>3.1</span>Take the<br/>sentence"):::proc
+  P2("<span class='pid'>3.2</span>Understand<br/>the sentence"):::proc
+  P3("<span class='pid'>3.3</span>Score the<br/>paintings"):::proc
+  P4("<span class='pid'>3.4</span>Save and<br/>answer"):::proc
+  MS[Model service]
+  D1["<span class='sid'>D1</span>Users"]:::store
+  D2["<span class='sid'>D2</span>Paintings"]:::store
+  D6["<span class='sid'>D6</span>Searches"]:::store
+  V -->|sentence, cookie| P1
+  D1 -->|user, when<br/>logged in| P1
+  P1 -->|sentence, up to<br/>200 characters| P2
+  P2 -->|sentence, rooms,<br/>pigments, moods| MS
+  MS -->|JSON of room, colours,<br/>moods, subjects| P2
+  P2 -->|wants and the<br/>understood parts| P3
+  D2 -->|paintings on<br/>the wall| P3
+  P3 -->|up to 24 paintings<br/>with why lines| P4
+  P4 -->|sentence, parts,<br/>result count, user| D6
+  P4 -->|results, tags,<br/>suggestions| V
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P1
+  classDef store fill:#ffffff,stroke:#000000

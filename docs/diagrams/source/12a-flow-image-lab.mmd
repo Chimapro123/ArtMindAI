@@ -1,0 +1,13 @@
+flowchart TB
+  S([Start]) --> A{Logged<br/>in?}
+  A -->|No| A1[/Log in page/] --> X([End])
+  A -->|Yes| B[/Member drops a photo<br/>or clicks to choose one/]
+  R1((1)) --> B
+  B --> C{JPG or PNG,<br/>under 5 MB?}
+  C -->|No| C1[/Please choose a JPG or<br/>PNG under 5 MB/] --> R2((1))
+  C -->|Yes| D[/Preview with Crop, Rotate<br/>and Try another photo/]
+  D --> E{Crop or<br/>rotate?}
+  E -->|Yes| E1[A canvas makes a new JPEG<br/>of the crop or the quarter turn] --> F
+  E -->|No| F[POST /api/image-lab/check,<br/>25 photos per 15 minutes,<br/>multer checks type and size again]
+  F --> G[Work out five colours: shrink to<br/>64 pixels, match each pixel to the<br/>nearest of 18 pigments]
+  G --> P((A))

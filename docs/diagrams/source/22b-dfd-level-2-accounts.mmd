@@ -1,0 +1,39 @@
+flowchart LR
+    P0("<span class='pid'>1.5</span>Change<br/>password"):::proc
+    Member0[Member]
+    Member0 -->|current and<br/>new password| P0
+    P0 -->|password changed| Member0
+    D10["<span class='sid'>D1</span>Users"]:::store
+    D10 -->|password hash| P0
+    P0 -->|new hash| D10
+    P1("<span class='pid'>1.6</span>Update<br/>profile"):::proc
+    Member1[Member]
+    Member1 -->|name, about, rooms,<br/>photo, email choices| P1
+    P1 -->|updated user| Member1
+    D11["<span class='sid'>D1</span>Users"]:::store
+    P1 -->|changes| D11
+    D121["<span class='sid'>D12</span>Images"]:::store
+    P1 -->|new photo,<br/>old one removed| D121
+    P2("<span class='pid'>1.7</span>Close pass"):::proc
+    Member2[Member]
+    Member2 -->|type CLOSE| P2
+    P2 -->|cookie cleared| Member2
+    D122["<span class='sid'>D12</span>Images"]:::store
+    P2 -->|delete photos| D122
+    D82["<span class='sid'>D8</span>Uploads"]:::store
+    P2 -->|delete results| D82
+    D52["<span class='sid'>D5</span>Views"]:::store
+    P2 -->|delete views| D52
+    D62["<span class='sid'>D6</span>Searches"]:::store
+    P2 -->|delete searches| D62
+    D72["<span class='sid'>D7</span>Conversations"]:::store
+    P2 -->|delete conversations| D72
+    D42["<span class='sid'>D4</span>Collections"]:::store
+    P2 -->|delete own collections| D42
+    D12["<span class='sid'>D1</span>Users"]:::store
+    P2 -->|delete the user| D12
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P0
+  LEG ~~~ P1
+  LEG ~~~ P2
+  classDef store fill:#ffffff,stroke:#000000

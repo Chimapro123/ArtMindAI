@@ -1,0 +1,13 @@
+flowchart TB
+  S([Start]) --> A[/Visitor opens the guide<br/>widget or the Guide page/]
+  A --> B{Logged<br/>in?}
+  B -->|No| B1[/Widget: Log in and<br/>Join buttons. Page:<br/>sent to Log in/] --> X([End])
+  B -->|Yes| C[/Member types a question<br/>or taps a suggestion/]
+  R1((B)) --> C
+  C --> C1{Anything<br/>typed?}
+  C1 -->|No| R2((B))
+  C1 -->|Yes| D[POST /api/guide/ask with the<br/>question, conversationId and<br/>the painting being looked at,<br/>80 questions per 15 minutes]
+  D --> G{conversationId<br/>sent?}
+  G -->|Yes| G1[Load it, only if it<br/>belongs to this member] --> H
+  G -->|No| H[Find up to 5 paintings: title<br/>word 3, artist 2, tag 1, room or<br/>style 1, the painting in view 10]
+  H --> P((A))

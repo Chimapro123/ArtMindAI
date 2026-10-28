@@ -1,0 +1,15 @@
+flowchart TB
+  Public[("client/public<br/>large images and thumbs<br/>of the 76 paintings")]
+  Browser["<b>The visitor's browser</b><br/>React client made with Vite<br/>23 pages and the shared components<br/>AuthContext and GuideContext<br/>services/api.js sends every request"]
+  Server["<b>Express server on port 5000</b><br/>routes under /api<br/>middleware: checkLogin, checkAdmin,<br/>findUser, rate limits, upload checks<br/>controllers and helpers<br/>askModel.js and sendEmail.js"]
+  Mongo[("<b>MongoDB</b><br/>12 collections, through<br/>the Mongoose models")]
+  ModelService["<b>Model service</b><br/>a pretrained language model<br/>reached through an API"]
+  Email["<b>Email service</b><br/>Resend"]
+
+  Public -->|painting images| Browser
+  Browser -->|"JSON requests with<br/>the token cookie, photos<br/>as multipart forms"| Server
+  Server -->|"JSON answers,<br/>the httpOnly cookie,<br/>stored pictures"| Browser
+  Server <-->|"queries and documents"| Mongo
+  Server -->|"sentences, questions<br/>with facts, photos,<br/>when MODEL_API_KEY is set"| ModelService
+  ModelService -->|"answers as JSON"| Server
+  Server -->|"six digit codes,<br/>when MAIL_API_KEY is set"| Email

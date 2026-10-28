@@ -1,0 +1,11 @@
+flowchart TB
+  S([Start]) --> A[/Visitor opens /gallery, maybe with<br/>filters already in the address/]
+  A --> B[Load the filter choices: styles,<br/>media, surfaces and years<br/>of every painting]
+  B --> C{Logged<br/>in?}
+  C -->|Yes| C1[Load their saved<br/>paintings so the<br/>hearts show] --> D
+  C -->|No| D[GET /api/paintings with room,<br/>style, medium, surface,<br/>colour, years and sort]
+  R1((B)) --> D
+  D --> E[Keep only paintings on the<br/>wall and apply each filter]
+  E --> F{Hide seen, and<br/>logged in?}
+  F -->|Yes| F1[Leave out paintings<br/>this member<br/>has opened] --> P((A))
+  F -->|No| P

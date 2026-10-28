@@ -1,0 +1,15 @@
+flowchart TB
+  P((A)) --> E{Which<br/>tool?}
+  E -->|See it on a wall| W1{Size<br/>known?}
+  W1 -->|No| W2[/The button is hidden/]
+  W1 -->|Yes| W3[Draw the painting to scale<br/>next to a person 1.7 metres tall]
+  E -->|Download PDF| F1[Fetch the large image,<br/>jsPDF builds an A4 page]
+  F1 --> F2[Image, title, the label lines<br/>and the story on the page]
+  E -->|Download Word| G1[Fetch the large image,<br/>docx builds a Word file]
+  G1 --> G2[Image, title as a heading,<br/>the label lines and the story]
+  F2 --> H[/The browser saves<br/>slug.pdf or slug.docx/]
+  G2 --> H
+  W2 --> R((1))
+  W3 --> R
+  H --> R
+  R --> X([Back to the viewing room])

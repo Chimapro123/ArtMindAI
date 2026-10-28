@@ -1,0 +1,69 @@
+flowchart LR
+    P0("<span class='pid'>1.0</span>Manage<br/>accounts"):::proc
+    Visitor0[Visitor]
+    Visitor0 -->|join details, codes,<br/>log in details| P0
+    Member0[Member]
+    Member0 -->|profile changes, photo,<br/>passwords, close pass| P0
+    P0 -->|login cookie, user| Member0
+    D10["<span class='sid'>D1</span>Users"]:::store
+    P0 -->|new user, hashed<br/>password and code| D10
+    D10 -->|user record| P0
+    D120["<span class='sid'>D12</span>Images"]:::store
+    P0 -->|profile photo| D120
+    Email0[Email service]
+    P0 -->|six digit code| Email0
+    P1("<span class='pid'>2.0</span>Browse paintings<br/>and artists"):::proc
+    D21["<span class='sid'>D2</span>Paintings"]:::store
+    D21 -->|paintings| P1
+    D31["<span class='sid'>D3</span>Artists"]:::store
+    D31 -->|artists| P1
+    Visitor1[Visitor]
+    Visitor1 -->|filters, slugs| P1
+    P1 -->|painting and<br/>artist pages| Visitor1
+    P1 -->|view count| D21
+    D51["<span class='sid'>D5</span>Views"]:::store
+    P1 -->|view| D51
+    P2("<span class='pid'>3.0</span>Search"):::proc
+    D22["<span class='sid'>D2</span>Paintings"]:::store
+    D22 -->|paintings| P2
+    Visitor2[Visitor]
+    Visitor2 -->|sentence| P2
+    P2 -->|ranked results| Visitor2
+    Model2[Model service]
+    P2 -->|sentence| Model2
+    Model2 -->|parts| P2
+    D62["<span class='sid'>D6</span>Searches"]:::store
+    P2 -->|search| D62
+    P3("<span class='pid'>4.0</span>Talk to<br/>the guide"):::proc
+    D23["<span class='sid'>D2</span>Paintings"]:::store
+    D23 -->|facts, stories| P3
+    Member3[Member]
+    Member3 -->|question| P3
+    P3 -->|answer, cards| Member3
+    Model3[Model service]
+    P3 -->|facts, question| Model3
+    Model3 -->|answer| P3
+    D73["<span class='sid'>D7</span>Conversations"]:::store
+    P3 -->|messages| D73
+    D73 -->|conversation| P3
+    P4("<span class='pid'>5.0</span>Image Lab"):::proc
+    D24["<span class='sid'>D2</span>Paintings"]:::store
+    D24 -->|paintings| P4
+    Member4[Member]
+    Member4 -->|photo| P4
+    P4 -->|result, history| Member4
+    Model4[Model service]
+    P4 -->|photo| Model4
+    Model4 -->|style guess| P4
+    D124["<span class='sid'>D12</span>Images"]:::store
+    P4 -->|photo| D124
+    D84["<span class='sid'>D8</span>Uploads"]:::store
+    P4 -->|result| D84
+    D84 -->|history| P4
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P0
+  LEG ~~~ P1
+  LEG ~~~ P2
+  LEG ~~~ P3
+  LEG ~~~ P4
+  classDef store fill:#ffffff,stroke:#000000

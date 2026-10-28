@@ -1,0 +1,16 @@
+flowchart TB
+  S([Start]) --> A[/Visitor types a name, an email,<br/>a password twice, picks rooms<br/>and ticks the terms/]
+  R1((1)) --> A
+  A --> B{Page checks<br/>pass?}
+  B -->|No| B1[/Join page shows<br/>what is wrong/] --> R2((1))
+  B -->|Yes| C[POST /api/auth/register]
+  C --> D{Server checks<br/>pass?}
+  D -->|No, 400| B1
+  D -->|Yes| E{Already<br/>confirmed?}
+  E -->|Yes| E1[/409: try logging in/] --> X([End])
+  E -->|No| F[Hash the password with bcrypt,<br/>save the user, make a six digit<br/>code, store it hashed for 10 minutes]
+  F --> H{Mail key<br/>set?}
+  H -->|Yes| H1[Email the code<br/>through Resend]
+  H -->|No| H2[Print the code in<br/>the server window]
+  H1 --> P((A))
+  H2 --> P

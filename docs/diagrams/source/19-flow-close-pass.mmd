@@ -1,0 +1,15 @@
+flowchart TB
+  S([Start]) --> A[/Profile page, Closing your pass:<br/>member clicks Close my pass/]
+  A --> B[/Type CLOSE to go ahead/]
+  R1((1)) --> B
+  B --> C{Typed<br/>CLOSE?}
+  C -->|No| C1{I'll stay?}
+  C1 -->|Yes| X1([End])
+  C1 -->|No| R2((1))
+  C -->|Yes| D[DELETE /api/profile<br/>with the token cookie]
+  D --> E[Delete their profile and Image Lab<br/>photos from the images collection]
+  E --> F[Delete their Image Lab results,<br/>views, searches and conversations]
+  F --> G[Delete their own collections, then the<br/>user, with the saved list inside it]
+  G --> H[Clear the token cookie]
+  H --> I[AuthContext logs out]
+  I --> J[/Home page/] --> X2([End])

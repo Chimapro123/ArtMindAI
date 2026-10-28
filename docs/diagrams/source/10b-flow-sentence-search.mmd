@@ -1,0 +1,8 @@
+flowchart TB
+  P((A)) --> J[Score every painting on the wall:<br/>room 3, colour 2, colour tag 2,<br/>mood 2, subject 3, style 2,<br/>medium 1, years 2]
+  J --> K[Keep scores above 0, best first<br/>then most viewed, at most 24]
+  K --> K2[Save the search with its<br/>sentence, parts and count]
+  K2 --> L[/Results with a why line,<br/>the understood tags and<br/>four sentences to try/]
+  L --> M{Visitor removes<br/>a tag?}
+  M -->|Yes| M1[Search again with<br/>the other words] --> R2((B))
+  M -->|No| X([End])

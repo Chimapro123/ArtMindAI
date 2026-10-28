@@ -1,0 +1,43 @@
+flowchart LR
+    P0("<span class='pid'>1.1</span>Register"):::proc
+    Visitor0[Visitor]
+    Visitor0 -->|name, email,<br/>password, rooms| P0
+    P0 -->|check your inbox| Visitor0
+    D10["<span class='sid'>D1</span>Users"]:::store
+    D10 -->|existing user| P0
+    P0 -->|user, hashed password,<br/>hashed code| D10
+    Email0[Email service]
+    P0 -->|six digit code| Email0
+    P1("<span class='pid'>1.2</span>Verify email"):::proc
+    Visitor1[Visitor]
+    Visitor1 -->|email, code| P1
+    Member1[Member]
+    P1 -->|login cookie| Member1
+    D11["<span class='sid'>D1</span>Users"]:::store
+    D11 -->|hashed code, expiry| P1
+    P1 -->|email confirmed| D11
+    Email1[Email service]
+    P1 -->|fresh code| Email1
+    P2("<span class='pid'>1.3</span>Log in"):::proc
+    Member2[Member]
+    Member2 -->|email, password| P2
+    P2 -->|login cookie, user| Member2
+    D12["<span class='sid'>D1</span>Users"]:::store
+    D12 -->|user record| P2
+    Email2[Email service]
+    P2 -->|fresh code when<br/>not confirmed| Email2
+    P3("<span class='pid'>1.4</span>Reset<br/>password"):::proc
+    Member3[Member]
+    Member3 -->|email, code,<br/>new password| P3
+    P3 -->|same answer,<br/>all done| Member3
+    D13["<span class='sid'>D1</span>Users"]:::store
+    D13 -->|user, hashed code| P3
+    P3 -->|reset code,<br/>new hash| D13
+    Email3[Email service]
+    P3 -->|reset code| Email3
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P0
+  LEG ~~~ P1
+  LEG ~~~ P2
+  LEG ~~~ P3
+  classDef store fill:#ffffff,stroke:#000000

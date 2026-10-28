@@ -1,0 +1,16 @@
+flowchart TB
+  P((A)) --> A{Logged<br/>in?}
+  A -->|No| A1[/Log in page/] --> X([End])
+  A -->|Yes| B[/Name it and add<br/>a line if you like/]
+  R1((1)) --> B
+  B --> C{Name<br/>typed?}
+  C -->|No| C1[/Give your collection<br/>a name first/] --> R2((1))
+  C -->|Yes| D[POST /api/collections: slug from the<br/>title plus five random letters,<br/>type mine, owner is the member]
+  D --> E[/The new empty collection opens/]
+  E --> F[/Later, on the Saved page:<br/>Add to a collection/]
+  F --> G[POST /api/collections/:slug/paintings]
+  G --> H{Owner, and<br/>not there yet?}
+  H -->|Not owner| H1[/403: only the owner<br/>can add to this/] --> X
+  H -->|Already there| H2[Nothing changes] --> I
+  H -->|Yes| H3[Add the painting, it becomes the<br/>lead painting if there was none] --> I
+  I[/Added to the collection/] --> X

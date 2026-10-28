@@ -1,0 +1,17 @@
+flowchart TB
+  S([Start]) --> A[GET /api/collections: the chosen ones,<br/>plus made for you and their own<br/>when logged in]
+  A --> B{Tab}
+  B -->|All or<br/>Chosen by us| C[/Grid of collections<br/>and this week's show/]
+  B -->|Made for you| B1{Logged<br/>in?}
+  B1 -->|No| B2[/Log in and we'll put<br/>two together for you/] --> X1([End])
+  B1 -->|Yes| C
+  C --> D{Visitor}
+  D -->|Start a collection| P((A))
+  D -->|Opens one| E[GET /api/collections/:slug]
+  E --> F{Starts with<br/>for-you-?}
+  F -->|Yes| F1[Build it fresh from their taste:<br/>6 paintings from the top room<br/>or with the top colour] --> H
+  F -->|No| G{Chosen, or<br/>their own?}
+  G -->|No| G1[/404: we could not<br/>find that collection/] --> X2([End])
+  G -->|Yes| H[/Entrance: Start the walk,<br/>Save all, Share/]
+  H --> I[/The walk: each painting with its note,<br/>and a gold circle where it points/]
+  I --> J[/End of the room and the<br/>next chosen collection/] --> X3([End])

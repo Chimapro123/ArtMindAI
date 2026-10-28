@@ -1,0 +1,27 @@
+flowchart TB
+  M[Member]
+  P1("<span class='pid'>4.1</span>Check the<br/>question"):::proc
+  P2("<span class='pid'>4.2</span>Load the<br/>conversation"):::proc
+  P3("<span class='pid'>4.3</span>Find matching<br/>paintings"):::proc
+  P4("<span class='pid'>4.4</span>Write the<br/>answer"):::proc
+  P5("<span class='pid'>4.5</span>Save the<br/>conversation"):::proc
+  MS[Model service]
+  D1["<span class='sid'>D1</span>Users"]:::store
+  D2["<span class='sid'>D2</span>Paintings"]:::store
+  D7["<span class='sid'>D7</span>Conversations"]:::store
+  M -->|question, cookie,<br/>painting in view| P1
+  D1 -->|member record| P1
+  P1 -->|conversation id| P2
+  D7 -->|their earlier<br/>messages| P2
+  P1 -->|question, painting<br/>in view| P3
+  D2 -->|titles, artists,<br/>tags, stories| P3
+  P3 -->|up to five<br/>matches| P4
+  P2 -->|last six<br/>messages| P4
+  P4 -->|facts, history,<br/>question| MS
+  MS -->|answer and<br/>painting slugs| P4
+  P4 -->|answer and<br/>painting cards| P5
+  P5 -->|question, answer,<br/>title| D7
+  P5 -->|answer, cards,<br/>conversation id| M
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P1
+  classDef store fill:#ffffff,stroke:#000000

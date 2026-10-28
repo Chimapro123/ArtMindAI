@@ -1,0 +1,15 @@
+flowchart TB
+  P((A)) --> A[/Admin fills in the title, artist, year,<br/>room, style, medium, surface, size,<br/>where it hangs, licence and source/]
+  A --> B{Label it<br/>for me?}
+  B -->|Yes| B1[POST labels: with a model key the<br/>image goes to the model for style,<br/>room and tags, if not they come<br/>from the colours and the tag list]
+  B1 --> B2[/What we noticed: drop a tag<br/>or Keep all of these/] --> C
+  B -->|No| C{Draft the<br/>story?}
+  C -->|Yes| C1[POST story: three or four warm<br/>sentences from the model, or a<br/>plain story made from the facts] --> D
+  C -->|No| D{Where does<br/>it go?}
+  D -->|Hang it<br/>on the wall| E1[PUT /api/admin/paintings/:slug<br/>with status on-the-wall]
+  D -->|Keep it<br/>in storage| E2[PUT /api/admin/paintings/:slug<br/>with status in-storage]
+  E1 --> F1[/Visitors can see it<br/>in the gallery now/]
+  E2 --> F2[/Only admins can see it/]
+  F1 --> G[/Back to Manage Paintings/]
+  F2 --> G
+  G --> X([End])

@@ -1,0 +1,62 @@
+erDiagram
+  ARTIST {
+    ObjectId _id PK
+    string slug UK
+    string name
+    number born
+    number died
+    string era
+    string bio
+  }
+  PAINTING {
+    ObjectId _id PK
+    string slug UK
+    string title
+    string artistSlug FK
+    string year
+    string room
+    string style
+    string image
+    string thumb
+    array tags
+    array colours
+    number views
+    number saves
+    string status
+  }
+  COLLECTION {
+    ObjectId _id PK
+    string slug UK
+    string title
+    string type "chosen or mine"
+    ObjectId user FK
+    ObjectId leadPainting FK
+    array items "painting, note, x, y"
+  }
+  IMAGE {
+    ObjectId _id PK
+    buffer data
+    ObjectId owner FK "null for paintings"
+  }
+  USER {
+    ObjectId _id PK
+    string name
+  }
+  MESSAGE {
+    ObjectId _id PK
+    string name
+    string email
+    string subject
+    string message
+    boolean sendCopy
+  }
+  SUBSCRIBER {
+    ObjectId _id PK
+    string email UK
+    date createdAt
+  }
+
+  ARTIST ||--o{ PAINTING : "painted"
+  COLLECTION }o--o{ PAINTING : "holds"
+  PAINTING |o--o{ IMAGE : "image and thumb"
+  USER |o--o{ COLLECTION : "owns"

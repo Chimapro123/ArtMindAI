@@ -1,0 +1,15 @@
+flowchart TB
+  S([Start]) --> A[/Visitor types a sentence in the navbar,<br/>the home page or the search page/]
+  A --> B[Open /search?q=sentence]
+  B --> C{Sentence<br/>empty?}
+  C -->|Yes| C1[/What would you like<br/>to see? and four<br/>sentences to try/] --> X([End])
+  C -->|No| D[POST /api/search, cut to<br/>200 characters, 80 searches<br/>per 15 minutes]
+  R1((B)) --> D
+  D --> E{MODEL_API_KEY<br/>set?}
+  E -->|Yes| F[Model branch: ask the<br/>model to pull out room,<br/>colours, moods, subjects,<br/>style, medium and years]
+  F --> G{Good JSON<br/>with parts<br/>in 20 s?}
+  G -->|Yes| H[Clean it: colour words<br/>become pigment names,<br/>keep only known rooms,<br/>styles and media]
+  G -->|No| I
+  E -->|No| I[Fallback branch: read<br/>the sentence with word<br/>lists for rooms, colours,<br/>moods, styles, media and<br/>eras, the rest are subjects]
+  H --> P((A))
+  I --> P

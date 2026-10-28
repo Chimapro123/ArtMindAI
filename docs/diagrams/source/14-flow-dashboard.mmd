@@ -1,0 +1,18 @@
+flowchart TB
+  S([Start]) --> A{Logged<br/>in?}
+  A -->|No| A1[/Log in page/] --> X([End])
+  A -->|Yes| B[GET /api/dashboard]
+  B --> C{Request<br/>worked?}
+  C -->|No| C1[/Your room could<br/>not be opened/] --> X
+  C -->|Yes| D[Server works out the taste, counts<br/>searches, picks 4 paintings, builds<br/>the two made for you collections<br/>and loads their own collections]
+  D --> E[/Welcome line and the member card<br/>with the month they joined/]
+  E --> F[/Figures: paintings looked at, saved,<br/>searches and favourite room/]
+  F --> G{Anything<br/>yet?}
+  G -->|No| G1[/Look around the gallery and<br/>this room will start to fill up/] --> H
+  G -->|Yes| H[/Waiting for you, and Where you've<br/>been with times like 2 hours ago/]
+  H --> I[/Your taste: a bar of rooms<br/>and the top three colours/]
+  I --> J[/Your collections and a link<br/>to every collection/]
+  J --> K{Tab?}
+  K -->|Saved| K1[/Saved page/] --> X
+  K -->|Profile| K2[/Profile page/] --> X
+  K -->|Stay| X

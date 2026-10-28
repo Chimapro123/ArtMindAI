@@ -1,0 +1,27 @@
+flowchart LR
+    P0("<span class='pid'>8.5</span>Save and<br/>hang"):::proc
+    Admin0[Admin]
+    Admin0 -->|details, labels,<br/>story, status| P0
+    P0 -->|back to the list| Admin0
+    D20["<span class='sid'>D2</span>Paintings"]:::store
+    P0 -->|updated painting| D20
+    D120["<span class='sid'>D12</span>Images"]:::store
+    P0 -->|new image,<br/>old one removed| D120
+    P1("<span class='pid'>8.6</span>Bulk actions<br/>and removal"):::proc
+    Admin1[Admin]
+    Admin1 -->|slugs, action| P1
+    P1 -->|how many changed| Admin1
+    D21["<span class='sid'>D2</span>Paintings"]:::store
+    P1 -->|status, labels,<br/>removed painting| D21
+    D11["<span class='sid'>D1</span>Users"]:::store
+    P1 -->|removed from<br/>saved lists| D11
+    D41["<span class='sid'>D4</span>Collections"]:::store
+    P1 -->|removed from<br/>collections| D41
+    D51["<span class='sid'>D5</span>Views"]:::store
+    P1 -->|views deleted| D51
+    D121["<span class='sid'>D12</span>Images"]:::store
+    P1 -->|images deleted| D121
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P0
+  LEG ~~~ P1
+  classDef store fill:#ffffff,stroke:#000000

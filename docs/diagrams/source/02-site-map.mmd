@@ -1,0 +1,44 @@
+flowchart LR
+  Home["Home  /"]
+  Lost["Not Found<br/>any other address"]
+
+  subgraph PUB["Public pages"]
+    Gallery["Gallery  /gallery"]
+    Search["Search Results  /search"]
+    Artists["Artists  /artists"]
+    Collections["Collections  /collections"]
+    About["About  /about"]
+    Contact["Contact  /contact"]
+    Login["Log in  /login"]
+    Join["Join  /join"]
+    Painting["Painting  /painting/:slug"]
+    Artist["Artist  /artists/:slug"]
+    Collection["Collection  /collections/:slug"]
+    Reset["Reset Password  /reset-password"]
+    Verify["Verify Email  /verify-email"]
+  end
+
+  subgraph MEM["Member pages, need a log in"]
+    Guide["Guide  /guide"]
+    Lab["Image Lab  /image-lab"]
+    Dashboard["Dashboard  /dashboard"]
+    Saved["Saved  /saved"]
+    Profile["Profile  /profile"]
+  end
+
+  subgraph ADM["Admin pages, need the admin role"]
+    Overview["Admin Overview  /admin"]
+    Manage["Manage Paintings  /admin/paintings"]
+    Editor["Painting Editor<br/>/admin/paintings/new<br/>/admin/paintings/:slug/edit"]
+  end
+
+  Home --> Gallery & Artists & Collections & Search & About & Contact & Login & Join
+  Home --> Guide & Lab & Dashboard & Saved & Profile & Overview
+  Lost --> Gallery
+  Gallery --> Painting
+  Search --> Painting
+  Artists --> Artist
+  Collections --> Collection
+  Login --> Reset
+  Join --> Verify
+  Overview --> Manage & Editor

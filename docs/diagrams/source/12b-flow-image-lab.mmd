@@ -1,0 +1,18 @@
+flowchart TB
+  P((A)) --> A{MODEL_API_KEY<br/>set?}
+  A -->|Yes| B[Model branch: send the photo,<br/>at most 1024 pixels, and ask for style,<br/>confidence, two other styles,<br/>room and mood]
+  B --> C{Known style and<br/>room in 20 s?}
+  C -->|Yes| D[Keep the answer,<br/>confidence 0 to 100]
+  C -->|No| E
+  A -->|No| E[Fallback branch: guess style,<br/>room and mood from the<br/>colours, confidence 40]
+  D --> F[Find the 4 closest paintings:<br/>same style 3, same room 2,<br/>each shared colour 1]
+  E --> F
+  F --> G[Store the photo in images with its<br/>owner, save the result in uploads<br/>with an honest note]
+  G --> H{Confidence}
+  H -->|70 or more| H1[Fairly sure]
+  H -->|50 to 69| H2[Not very sure]
+  H -->|below 50| H3[Just a guess]
+  H1 --> I[/Result: style and bar, the sure words,<br/>other styles, room, mood, colours,<br/>the note and the closest paintings/]
+  H2 --> I
+  H3 --> I
+  I --> X([End])

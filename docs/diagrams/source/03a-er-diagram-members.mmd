@@ -1,0 +1,63 @@
+erDiagram
+  direction LR
+  USER {
+    ObjectId _id PK
+    string name
+    string email UK
+    string password "bcrypt hash"
+    string role "member or admin"
+    boolean isVerified
+    array rooms
+    string photo FK "an Image"
+    array savedPaintings "painting, savedAt"
+  }
+  VIEW {
+    ObjectId _id PK
+    ObjectId user FK
+    ObjectId painting FK
+    date createdAt
+  }
+  SEARCH {
+    ObjectId _id PK
+    ObjectId user FK
+    string sentence
+    array parts
+  }
+  CONVERSATION {
+    ObjectId _id PK
+    ObjectId user FK
+    string title
+    array messages
+  }
+  UPLOAD {
+    ObjectId _id PK
+    ObjectId user FK
+    string image FK "an Image"
+    mixed result
+  }
+  IMAGE {
+    ObjectId _id PK
+    buffer data
+    ObjectId owner FK
+  }
+  VISIT {
+    ObjectId _id PK
+    string visitorId
+    string day
+    ObjectId user FK
+  }
+  PAINTING {
+    ObjectId _id PK
+    string slug UK
+    string title
+  }
+
+  USER }o--o{ PAINTING : "saves"
+  USER |o--o{ VIEW : "makes"
+  PAINTING ||--o{ VIEW : "gets"
+  USER |o--o{ SEARCH : "types"
+  USER ||--o{ CONVERSATION : "has"
+  USER ||--o{ UPLOAD : "checks"
+  UPLOAD ||--|| IMAGE : "photo"
+  USER |o--o{ IMAGE : "owns"
+  USER |o--o{ VISIT : "makes"

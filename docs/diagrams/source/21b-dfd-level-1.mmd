@@ -1,0 +1,74 @@
+flowchart LR
+    P0("<span class='pid'>6.0</span>Personal<br/>room"):::proc
+    D50["<span class='sid'>D5</span>Views"]:::store
+    D50 -->|views| P0
+    D60["<span class='sid'>D6</span>Searches"]:::store
+    D60 -->|search count| P0
+    D40["<span class='sid'>D4</span>Collections"]:::store
+    D40 -->|own collections| P0
+    Member0[Member]
+    Member0 -->|save, unsave| P0
+    P0 -->|dashboard, saved,<br/>recommendations| Member0
+    D10["<span class='sid'>D1</span>Users"]:::store
+    P0 -->|saved list| D10
+    D10 -->|saved paintings| P0
+    D20["<span class='sid'>D2</span>Paintings"]:::store
+    P0 -->|saves count| D20
+    P1("<span class='pid'>7.0</span>Collections"):::proc
+    D21["<span class='sid'>D2</span>Paintings"]:::store
+    D21 -->|paintings| P1
+    D51["<span class='sid'>D5</span>Views"]:::store
+    D51 -->|taste| P1
+    Visitor1[Visitor]
+    Visitor1 -->|collection slug| P1
+    P1 -->|collection walk| Visitor1
+    Member1[Member]
+    Member1 -->|new collection,<br/>painting to add| P1
+    P1 -->|collection walk| Member1
+    D41["<span class='sid'>D4</span>Collections"]:::store
+    P1 -->|new collection| D41
+    D41 -->|collections| P1
+    P2("<span class='pid'>8.0</span>Manage<br/>paintings"):::proc
+    D32["<span class='sid'>D3</span>Artists"]:::store
+    D32 -->|artist names| P2
+    Admin2[Admin]
+    Admin2 -->|details, image,<br/>status, bulk action| P2
+    P2 -->|lists, labels,<br/>story drafts| Admin2
+    D22["<span class='sid'>D2</span>Paintings"]:::store
+    P2 -->|painting record| D22
+    D22 -->|paintings| P2
+    D122["<span class='sid'>D12</span>Images"]:::store
+    P2 -->|image and thumb| D122
+    Model2[Model service]
+    P2 -->|image, facts| Model2
+    Model2 -->|labels, story| P2
+    P3("<span class='pid'>9.0</span>Analytics"):::proc
+    Visitor3[Visitor]
+    Visitor3 -->|page visited| P3
+    D53["<span class='sid'>D5</span>Views"]:::store
+    D53 -->|views| P3
+    D63["<span class='sid'>D6</span>Searches"]:::store
+    D63 -->|searches| P3
+    D13["<span class='sid'>D1</span>Users"]:::store
+    D13 -->|saves, new passes| P3
+    D113["<span class='sid'>D11</span>Visits"]:::store
+    P3 -->|one visit a day| D113
+    D113 -->|visits| P3
+    Admin3[Admin]
+    Admin3 -->|range| P3
+    P3 -->|figures, charts, notes| Admin3
+    P4("<span class='pid'>10.0</span>Contact and<br/>newsletter"):::proc
+    Visitor4[Visitor]
+    Visitor4 -->|message, email| P4
+    P4 -->|thanks| Visitor4
+    D94["<span class='sid'>D9</span>Messages"]:::store
+    P4 -->|message| D94
+    D104["<span class='sid'>D10</span>Subscribers"]:::store
+    P4 -->|email| D104
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ P0
+  LEG ~~~ P1
+  LEG ~~~ P2
+  LEG ~~~ P3
+  LEG ~~~ P4
+  classDef store fill:#ffffff,stroke:#000000

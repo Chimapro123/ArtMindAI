@@ -1,0 +1,21 @@
+flowchart LR
+  V[Visitor]
+  M[Member]
+  A[Admin]
+  P0("<span class='pid'>0</span>ArtMind<br/>AI Portal"):::proc
+  MS[Model service]
+  ES[Email service]
+
+  V -->|browse requests, search<br/>sentences, join details,<br/>messages, newsletter email| P0
+  P0 -->|paintings, artists,<br/>collections, search<br/>results, thanks| V
+  M -->|log in details, saves,<br/>questions, photos, profile<br/>changes, new collections| P0
+  P0 -->|login cookie, dashboard,<br/>recommendations, guide<br/>answers, Image Lab results| M
+  A -->|painting details and<br/>images, status changes,<br/>label and story requests| P0
+  P0 -->|overview figures and<br/>charts, painting lists,<br/>labels, story drafts| A
+  P0 -->|sentences, questions<br/>with painting facts,<br/>photos| MS
+  MS -->|search parts, answers,<br/>style guesses, labels,<br/>stories| P0
+  P0 -->|six digit codes| ES
+
+  LEG["<div class='lg'><span class='lg-title'>Legend</span><span class='lg-ent'>External entity</span><span class='lg-proc'><span class='lg-pid'>1.0</span><span class='lg-pname'>Process</span></span><span class='lg-store'><span class='lg-sid'>D1</span><span class='lg-sname'>Data store</span></span><span class='lg-flow'><span class='lg-line'></span><span class='lg-head'></span><span>data flow</span></span></div>"]:::legendbox
+  LEG ~~~ V
+  classDef store fill:#ffffff,stroke:#000000

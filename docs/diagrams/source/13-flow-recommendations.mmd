@@ -1,0 +1,14 @@
+flowchart TB
+  S([Start]) --> A[GET /api/dashboard for the<br/>logged in member]
+  A --> B[Read their taste: the last 200 views<br/>and the saved paintings, counted<br/>by room and by colour]
+  B --> C[Fresh list: paintings on the wall<br/>they have not opened or saved,<br/>most viewed first]
+  C --> D{Opened a<br/>painting?}
+  D -->|Yes| D1[Up to 2 from the same room and<br/>style: Because you lingered on it] --> E
+  D -->|No| E{Saved a<br/>painting?}
+  E -->|Yes| E1[Up to 2 by the same artist or room:<br/>Because you saved it] --> F
+  E -->|No| F{Any<br/>activity?}
+  F -->|Yes| F1[2 from the top room and 2 with<br/>the top colour, each with its reason] --> G
+  F -->|No| G[2 from each room picked when<br/>joining: From the room you said you like]
+  G --> H[Fill up with the most viewed:<br/>Everyone is looking at this one]
+  H --> I[Stop as soon as there are 4,<br/>no painting twice]
+  I --> J[/Waiting for you: 4 paintings,<br/>each with its reason/] --> X([End])

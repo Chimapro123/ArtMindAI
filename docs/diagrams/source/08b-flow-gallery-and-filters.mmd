@@ -1,0 +1,12 @@
+flowchart TB
+  P((A)) --> G{Curated<br/>picks only?}
+  G -->|Yes| G1[Keep only paintings in<br/>the chosen collections] --> H
+  G -->|No| H[Sort, most viewed first by<br/>default, and send 12 at a time]
+  H --> I{Any<br/>paintings?}
+  I -->|No| I1[/Nothing on this wall,<br/>with Clear all/] --> J
+  I -->|Yes| I2[/Wall or grid of frames/] --> J
+  R2((2)) --> I2
+  J{Visitor<br/>does what?}
+  J -->|Changes a filter<br/>or the sort| J1[Write it into<br/>the address] --> R3((B))
+  J -->|Show more| J2[Fetch the next 12<br/>and add them] --> R4((2))
+  J -->|Opens a<br/>painting| K[/Painting page/] --> X([End])

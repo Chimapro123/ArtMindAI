@@ -1,0 +1,17 @@
+flowchart TB
+  S([Start]) --> A[/Visitor types an email and<br/>a password on the Log in page/]
+  R1((1)) --> A
+  A --> B{Both<br/>typed?}
+  B -->|No| B1[/Please type your email<br/>and password/] --> R2((1))
+  B -->|Yes| C[POST /api/auth/login,<br/>40 tries per 15 minutes]
+  C --> D{Email found,<br/>password right?}
+  D -->|No| D1[/401: email or<br/>password is wrong/] --> R3((1))
+  D -->|Yes| E{Email<br/>confirmed?}
+  E -->|No| F{A minute since<br/>the last code?}
+  F -->|Yes| F1[Make and send<br/>a fresh code] --> G
+  F -->|No| G[/403: open the<br/>Verify Email page/]
+  G --> X([End])
+  E -->|Yes| H[Sign a token for 7 days,<br/>set the httpOnly cookie,<br/>AuthContext keeps the user]
+  H --> I{Came from a<br/>member page?}
+  I -->|Yes| I1[/Go back to that page/] --> X
+  I -->|No| I2[/Open the Dashboard/] --> X

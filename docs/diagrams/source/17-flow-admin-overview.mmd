@@ -1,0 +1,15 @@
+flowchart TB
+  S([Start]) --> A{Logged in<br/>as admin?}
+  A -->|No| A1[/AdminRoute sends them<br/>home or to Log in/] --> X1([End])
+  A -->|Yes| B[/Range: this week, this<br/>month or this year/]
+  R1((1)) --> B
+  B --> C[GET /api/admin/overview?range=week,<br/>month or year]
+  C --> D[Count visits, saves, searches and new<br/>confirmed passes in this range and in<br/>the range before, then the change in %]
+  D --> E[Visits for each day,<br/>or each month for a year]
+  E --> F[Share of painting<br/>views per room]
+  F --> G[The 5 most looked at paintings<br/>and the 5 most typed searches]
+  G --> H[Three plain notes<br/>made from the numbers]
+  H --> I[/Figures, a line chart of visits, a bar<br/>chart of rooms, the most looked at table,<br/>the searches and the notes/]
+  I --> J{Change the<br/>range?}
+  J -->|Yes| R2((1))
+  J -->|No| X2([End])

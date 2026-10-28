@@ -1,0 +1,14 @@
+flowchart TB
+  P((A)) --> I[/Verify Email page asks<br/>for the six digit code/]
+  R1((2)) --> I
+  I --> J[POST /api/auth/verify-email]
+  J --> K{Right and<br/>in time?}
+  K -->|No| K1[/That code is wrong<br/>or has run out/]
+  K1 --> K2{New code?}
+  K2 -->|No| R2((2))
+  K2 -->|Yes| K3{A minute<br/>since last?}
+  K3 -->|No| K4[/429: please<br/>wait a minute/] --> R3((2))
+  K3 -->|Yes| K5[POST /api/auth/resend-code,<br/>make and send a fresh code] --> R4((2))
+  K -->|Yes| L[Mark the email confirmed,<br/>clear the code]
+  L --> M[Sign a token for 7 days,<br/>set the httpOnly cookie]
+  M --> N[/Open the Dashboard/] --> X([End])

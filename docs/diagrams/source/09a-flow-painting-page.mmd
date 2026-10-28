@@ -1,0 +1,14 @@
+flowchart TB
+  S([Start]) --> A[GET /api/paintings/:slug]
+  A --> B{Found and<br/>on the wall?}
+  B -->|No| B1[/We could not<br/>find that painting/] --> X1([End])
+  B -->|Yes| C[POST /api/paintings/:slug/view:<br/>views go up by one, a View<br/>is saved, with the member<br/>when logged in]
+  C --> D[/Viewing room, story,<br/>look closer, colours, about,<br/>similar paintings and<br/>more by the artist/]
+  R1((1)) --> D
+  D --> E{Visitor<br/>picks}
+  E -->|Save| F{Logged<br/>in?}
+  F -->|No| F1[/Log in page/] --> X2([End])
+  F -->|Yes| F2[POST or DELETE<br/>/api/saved/:slug,<br/>the heart and the<br/>saves count change] --> R2((1))
+  E -->|Zoom in| G[Zoom view:<br/>scroll or pinch from<br/>100% to 600%,<br/>drag to move] --> R3((1))
+  E -->|Ask the<br/>guide| H[Guide widget<br/>opens, talking<br/>about this painting] --> R4((1))
+  E -->|Wall or<br/>download| P((A))

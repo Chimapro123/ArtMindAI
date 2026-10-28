@@ -1,0 +1,13 @@
+flowchart TB
+  S([Start]) --> A{Logged in<br/>as admin?}
+  A -->|No| A1[/AdminRoute sends them<br/>home or to Log in/] --> X1([End])
+  A -->|Yes| B[/Add a painting: the admin<br/>chooses a JPG or PNG/]
+  R1((1)) --> B
+  B --> C[POST /api/admin/paintings,<br/>multipart, status in storage]
+  C --> D{Image there,<br/>JPG or PNG,<br/>under 5 MB?}
+  D -->|No| D1[/400 with a<br/>plain message/] --> R2((1))
+  D -->|Yes| E[Make a unique slug from the title,<br/>or Untitled at first]
+  E --> F[Save a 1600 pixel image and a<br/>600 pixel thumb in images, the<br/>painting keeps /api/images/:id]
+  F --> G[Work out five colours from<br/>the image and add tags]
+  G --> H[Save the painting in storage,<br/>open its editor page]
+  H --> P((A))

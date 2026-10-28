@@ -1,0 +1,15 @@
+flowchart TB
+  P((A)) --> A{MODEL_API_KEY<br/>set?}
+  A -->|Yes| B[Model branch: send the facts,<br/>the stories and the last six<br/>messages, ask for JSON]
+  B --> C{Good answer<br/>in 20 s?}
+  C -->|Yes| D[Use its two or three sentences<br/>and up to three painting slugs,<br/>swap long dashes for commas]
+  C -->|No| E
+  A -->|No| E[Fallback branch: the facts of the<br/>best match and the first line of<br/>its story, or I'm not sure about<br/>that one when nothing matches]
+  D --> G[Save the question and the answer<br/>in the conversation, a new one gets<br/>a title from the first six words]
+  E --> G
+  G --> G2{Request<br/>worked?}
+  G2 -->|No| G3[/The guide is resting<br/>right now. Try again<br/>in a moment./] --> R1((B))
+  G2 -->|Yes| H[/Answer with up to three<br/>painting cards/]
+  H --> I{Another<br/>question?}
+  I -->|Yes| R2((B))
+  I -->|No| X([End])
