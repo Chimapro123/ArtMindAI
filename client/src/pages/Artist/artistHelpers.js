@@ -20,8 +20,8 @@ export function sortPaintings(paintings, sort) {
 }
 
 export function wallWidth(painting) {
-  const pixels = Math.round((painting.widthCm || 100) * 1.4);
-  return Math.min(380, Math.max(170, pixels)) + "px";
+  const pixels = Math.round((painting.widthCm || 100) * 1.2);
+  return Math.min(320, Math.max(140, pixels)) + "px";
 }
 
 export function possessive(name) {

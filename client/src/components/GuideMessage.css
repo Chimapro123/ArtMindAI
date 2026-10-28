@@ -1,6 +1,6 @@
 .message {
   max-width: 92%;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -32,7 +32,7 @@
 
 .message-painting-title {
   font-family: var(--heading-font);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .message-painting-artist {
@@ -42,5 +42,5 @@
 }
 
 .message-painting-link {
-  font-size: 13px;
+  font-size: 12px;
 }

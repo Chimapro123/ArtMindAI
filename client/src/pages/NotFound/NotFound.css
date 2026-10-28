@@ -1,7 +1,7 @@
 .lost-top {
   position: relative;
-  padding-top: 61px;
-  padding-bottom: 68px;
+  padding-top: 52px;
+  padding-bottom: 58px;
   overflow: hidden;
   text-align: center;
 }
@@ -11,17 +11,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 34px;
-  margin-bottom: 41px;
+  gap: 29px;
+  margin-bottom: 35px;
 }
 
 .lost-spotlight {
   position: absolute;
   top: -340px;
   left: 50%;
-  width: 646px;
-  height: 646px;
-  margin-left: -323px;
+  width: 581px;
+  height: 581px;
+  margin-left: -275px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -29,8 +29,8 @@
 
 .lost-frame {
   position: relative;
-  width: 272px;
-  height: 289px;
+  width: 245px;
+  height: 260px;
   border: 26px solid var(--gold);
   border-image-slice: 118;
   border-image-repeat: round;
@@ -46,29 +46,29 @@
 
 .lost-label-title {
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .lost-label-line {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
 .lost-label-quiet {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
   opacity: 0.7;
 }
 
 .lost-title {
-  font-size: 43px;
+  font-size: 34px;
   margin-bottom: 16px;
 }
 
 .lost-text {
-  max-width: 442px;
+  max-width: 398px;
   margin: 0 auto 27px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--grey-text);
 }
@@ -84,7 +84,7 @@
 .lost-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
+  gap: 29px;
 }
 
 @media (max-width: 768px) {
@@ -94,8 +94,8 @@
   }
 
   .lost-frame {
-    width: 204px;
-    height: 213px;
+    width: 184px;
+    height: 192px;
     border-width: 20px;
   }
 
@@ -104,7 +104,7 @@
   }
 
   .lost-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .lost-grid {

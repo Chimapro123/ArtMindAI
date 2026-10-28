@@ -49,13 +49,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 28px;
+  gap: 8px 24px;
   margin-top: 20px;
 }
 
 .photo-button {
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--black-text);
   border-bottom: 1px solid transparent;
   transition: color var(--fast-speed), border-color var(--fast-speed);
@@ -73,12 +73,12 @@
 
 .photo-hint {
   width: 100%;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--brown-grey-text);
 }
 
 .photo-note {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }

@@ -1,5 +1,5 @@
 .editor-page {
-  padding-bottom: 82px;
+  padding-bottom: 70px;
 }
 
 .editor-page .breadcrumb {
@@ -12,14 +12,14 @@
 }
 
 .editor-title {
-  font-size: 36px;
-  margin-bottom: 31px;
+  font-size: 29px;
+  margin-bottom: 26px;
 }
 
 .editor-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 41px;
+  gap: 35px;
   align-items: start;
 }
 
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 41px;
+  padding: 16px 35px;
   background: var(--darker-wall);
   color: var(--white-text);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.25);
@@ -64,7 +64,7 @@
 .editor-storage {
   padding-bottom: 2px;
   border-bottom: 1px solid var(--gold-line);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--light-gold);
   transition: color var(--fast-speed), border-color var(--fast-speed);
 }
@@ -82,7 +82,7 @@
 
 @media (max-width: 1024px) {
   .editor-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .editor-columns {
@@ -108,7 +108,7 @@
 
 @media (max-width: 480px) {
   .editor-title {
-    font-size: 25px;
+    font-size: 21px;
   }
 
   .editor-bar {

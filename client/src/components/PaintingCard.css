@@ -56,7 +56,7 @@
   bottom: 24px;
   padding: 8px 14px;
   border-radius: var(--button-corner);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .quick-look:hover {

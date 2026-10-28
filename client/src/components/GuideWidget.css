@@ -18,7 +18,7 @@
   color: var(--black-text);
   border-radius: 999px;
   box-shadow: var(--soft-shadow);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   transition: transform var(--normal-speed) ease, background-color var(--fast-speed);
 }

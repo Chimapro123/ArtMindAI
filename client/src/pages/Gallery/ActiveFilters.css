@@ -13,7 +13,7 @@
   padding: 6px 10px 6px 14px;
   border: 1px solid var(--gold);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .active-tag-remove {
@@ -34,5 +34,5 @@
 
 .clear-all {
   margin-left: 6px;
-  font-size: 13px;
+  font-size: 12px;
 }

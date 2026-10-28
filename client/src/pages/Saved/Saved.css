@@ -1,22 +1,22 @@
 .saved-top {
-  padding-top: 41px;
+  padding-top: 35px;
   padding-bottom: 0;
 }
 
 .saved-line {
-  max-width: 476px;
-  font-size: 16px;
+  max-width: 428px;
+  font-size: 15px;
   color: var(--grey-text);
 }
 
 .saved-note {
   padding-bottom: 12px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--light-gold);
 }
 
 .saved-body {
-  padding-top: 48px;
+  padding-top: 41px;
 }
 
 .saved-wall {
@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 41px 31px;
+  gap: 35px 26px;
 }
 
 .saved-wall .saved-item {
@@ -35,18 +35,18 @@
 .saved-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 34px 28px;
+  gap: 29px 24px;
 }
 
 .saved-more {
   display: flex;
   justify-content: center;
-  margin-top: 41px;
+  margin-top: 35px;
 }
 
 .saved-foot {
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 29px;
+  padding-bottom: 29px;
   border-top: 1px solid var(--line-on-dark);
 }
 
@@ -62,7 +62,7 @@
   padding-left: 24px;
   border-left: 2px solid var(--gold);
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @media (max-width: 1024px) {
@@ -78,7 +78,7 @@
   }
 
   .saved-foot-text {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 

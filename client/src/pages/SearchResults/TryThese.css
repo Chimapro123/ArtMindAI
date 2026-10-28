@@ -1,6 +1,6 @@
 .try-these {
-  padding-top: 61px;
-  padding-bottom: 82px;
+  padding-top: 52px;
+  padding-bottom: 70px;
 }
 
 .try-list {
@@ -14,7 +14,7 @@
   padding-bottom: 4px;
   border-bottom: 1px solid var(--gold);
   font-family: var(--heading-font);
-  font-size: 33px;
+  font-size: 27px;
   line-height: 1.2;
   text-align: left;
   color: var(--white-text);
@@ -28,12 +28,12 @@
 
 @media (max-width: 1024px) {
   .try-sentence {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 
 @media (max-width: 480px) {
   .try-sentence {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

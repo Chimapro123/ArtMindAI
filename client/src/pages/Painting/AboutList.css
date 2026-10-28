@@ -1,5 +1,5 @@
 .about-list {
-  max-width: 374px;
+  max-width: 337px;
 }
 
 .about-row {
@@ -8,7 +8,7 @@
   gap: 16px;
   padding: 12px 0;
   border-bottom: 1px solid var(--line-on-dark);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .about-row dt {

@@ -1,32 +1,32 @@
 .collections-top {
   position: relative;
-  padding-top: 41px;
-  padding-bottom: 34px;
+  padding-top: 35px;
+  padding-bottom: 29px;
   overflow: hidden;
 }
 
 .collections-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 255px;
-  gap: 54px;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 46px;
   align-items: center;
 }
 
 .collections-top .page-title {
-  max-width: 476px;
-  font-size: 40px;
+  max-width: 428px;
+  font-size: 32px;
 }
 
 .collections-line {
-  max-width: 442px;
-  font-size: 16px;
+  max-width: 398px;
+  font-size: 15px;
   color: var(--grey-text);
 }
 
 .collection-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 28px;
+  gap: 2px 24px;
   margin-top: 27px;
   border-bottom: 1px solid var(--line-on-dark);
 }
@@ -35,7 +35,7 @@
   margin-bottom: -1px;
   padding: 8px 0 10px;
   border-bottom: 2px solid transparent;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--grey-text);
   transition: color var(--fast-speed), border-color var(--fast-speed);
 }
@@ -57,9 +57,9 @@
   position: absolute;
   top: -240px;
   left: 50%;
-  width: 476px;
-  height: 476px;
-  margin-left: -238px;
+  width: 428px;
+  height: 428px;
+  margin-left: -202px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -73,12 +73,12 @@
 .collection-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px 41px;
+  gap: 41px 35px;
 }
 
 .make-own {
-  padding-top: 54px;
-  padding-bottom: 54px;
+  padding-top: 46px;
+  padding-bottom: 46px;
 }
 
 .make-own-title {
@@ -86,23 +86,23 @@
 }
 
 .make-own-line {
-  margin-bottom: 28px;
-  font-size: 15px;
+  margin-bottom: 24px;
+  font-size: 14px;
 }
 
 @media (max-width: 1024px) {
   .collections-top-inner {
-    grid-template-columns: minmax(0, 1fr) 187px;
-    gap: 34px;
+    grid-template-columns: minmax(0, 1fr) 168px;
+    gap: 29px;
   }
 
   .collections-top .page-title {
-    font-size: 33px;
+    font-size: 27px;
   }
 
   .collection-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px 27px;
+    gap: 29px 27px;
   }
 }
 
@@ -116,7 +116,7 @@
   }
 
   .collections-top .page-title {
-    font-size: 28px;
+    font-size: 23px;
   }
 }
 

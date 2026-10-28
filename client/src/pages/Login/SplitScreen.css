@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 85px 41px 41px;
+  padding: 72px 35px 35px;
   background: var(--dark-wall);
   color: var(--white-text);
   overflow: hidden;
@@ -20,16 +20,16 @@
   position: absolute;
   top: 28px;
   left: 48px;
-  font-size: 33px;
+  font-size: 27px;
 }
 
 .split-spotlight {
   position: absolute;
   top: -120px;
   left: 50%;
-  width: 442px;
-  height: 442px;
-  margin-left: -221px;
+  width: 398px;
+  height: 398px;
+  margin-left: -188px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -38,7 +38,7 @@
 .split-picture {
   position: relative;
   width: 100%;
-  max-width: 442px;
+  max-width: 398px;
   opacity: 1;
   transition: opacity var(--slow-speed) ease;
 }
@@ -62,15 +62,15 @@
 }
 
 .split-label {
-  margin-top: 31px;
-  font-size: 15px;
+  margin-top: 26px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 .split-title {
   font-family: var(--heading-font);
   font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .split-year {
@@ -80,12 +80,12 @@
 .split-counter {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   width: 100%;
-  max-width: 442px;
-  margin-top: 34px;
+  max-width: 398px;
+  margin-top: 29px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--light-gold);
 }
 
@@ -113,7 +113,7 @@
 .split-right {
   display: flex;
   flex-direction: column;
-  padding: 28px 41px 41px;
+  padding: 24px 35px 35px;
   background: var(--stone-wall);
   color: var(--black-text);
 }
@@ -125,7 +125,7 @@
 
 .split-top-link {
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--gold);
   transition: color var(--fast-speed);
@@ -137,13 +137,13 @@
 
 .split-form {
   width: 100%;
-  max-width: 476px;
+  max-width: 428px;
   margin: auto;
-  padding: 34px 0;
+  padding: 29px 0;
 }
 
 .split-form .page-title {
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: 12px;
 }
 
@@ -162,7 +162,7 @@
 
 .form-line {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
   color: var(--brown-grey-text);
   margin-bottom: 27px;
 }
@@ -174,7 +174,7 @@
 .form-field-label {
   display: block;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 2px;
 }
 
@@ -187,7 +187,7 @@
   right: 0;
   bottom: 12px;
   font-family: var(--heading-font);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--brown-grey-text);
   transition: color var(--fast-speed);
 }
@@ -200,7 +200,7 @@
   width: 100%;
   padding: 16px 24px;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .form-button:disabled {
@@ -211,7 +211,7 @@
 .form-under {
   margin-top: 22px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .form-under a,
@@ -229,13 +229,13 @@
 .form-side {
   display: flex;
   justify-content: flex-end;
-  margin: -14px 0 28px;
+  margin: -14px 0 24px;
   font-family: var(--heading-font);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .form-note {
-  margin-top: 54px;
+  margin-top: 46px;
   font-size: 12px;
   color: var(--brown-grey-text);
 }
@@ -253,14 +253,14 @@
 
 .form-step-count {
   font-family: var(--heading-font);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--brown-grey-text);
 }
 
 .form-progress {
   position: relative;
   height: 2px;
-  margin: 12px 0 34px;
+  margin: 12px 0 29px;
   background: var(--line-on-stone);
 }
 
@@ -274,7 +274,7 @@
 
 @media (max-width: 1024px) {
   .split-left {
-    padding: 77px 27px 34px;
+    padding: 65px 27px 29px;
   }
 
   .split-logo {
@@ -282,11 +282,11 @@
   }
 
   .split-right {
-    padding: 24px 27px 34px;
+    padding: 24px 27px 29px;
   }
 
   .split-form .page-title {
-    font-size: 33px;
+    font-size: 27px;
   }
 }
 
@@ -302,7 +302,7 @@
     justify-content: flex-start;
     gap: 20px;
     min-height: 0;
-    padding: 60px 24px 24px;
+    padding: 51px 24px 24px;
   }
 
   .split-right {
@@ -316,7 +316,7 @@
   .split-logo {
     top: 18px;
     left: 24px;
-    font-size: 25px;
+    font-size: 21px;
   }
 
   .split-spotlight {
@@ -345,11 +345,11 @@
 
   .split-label {
     margin-top: 0;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .split-title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .split-counter {
@@ -357,7 +357,7 @@
   }
 
   .split-right {
-    padding: 20px 24px 34px;
+    padding: 20px 24px 29px;
   }
 
   .split-form {
@@ -365,17 +365,17 @@
   }
 
   .split-form .page-title {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .form-note {
-    margin-top: 34px;
+    margin-top: 29px;
   }
 }
 
 @media (max-width: 480px) {
   .split-left {
-    padding: 54px 16px 20px;
+    padding: 46px 16px 20px;
   }
 
   .split-logo {
@@ -395,6 +395,6 @@
   }
 
   .split-form .page-title {
-    font-size: 25px;
+    font-size: 21px;
   }
 }

@@ -29,7 +29,7 @@
 .user-dropdown a,
 .user-dropdown button {
   padding: 9px 18px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--white-text);
   text-align: left;
   transition: background-color var(--fast-speed), color var(--fast-speed);

@@ -35,7 +35,7 @@
   display: block;
   margin-top: 16px;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
   transition: color var(--fast-speed);
 }
 
@@ -45,7 +45,7 @@
 
 .door-line {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--brown-grey-text);
 }

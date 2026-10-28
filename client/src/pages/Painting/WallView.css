@@ -30,7 +30,7 @@
 
 .wall-title {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .wall-close:hover {
@@ -43,8 +43,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 34px;
-  padding: 20px 34px 0;
+  gap: 29px;
+  padding: 20px 29px 0;
   overflow: hidden;
 }
 
@@ -54,7 +54,7 @@
   background: var(--darker-wall);
   border: 10px solid var(--gold);
   box-shadow: var(--frame-shadow);
-  margin-bottom: 34px;
+  margin-bottom: 29px;
 }
 
 .wall-frame img {
@@ -77,13 +77,13 @@
   padding: 16px var(--side-space) 20px;
   border-top: 1px solid var(--line-on-stone);
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 
 @media (max-width: 480px) {
   .wall-title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .wall-room {

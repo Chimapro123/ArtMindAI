@@ -13,12 +13,12 @@
 .quick-look-box {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(204px, 2fr);
-  gap: 34px;
+  grid-template-columns: minmax(0, 3fr) minmax(184px, 2fr);
+  gap: 29px;
   width: 100%;
-  max-width: 850px;
+  max-width: 765px;
   max-height: calc(100vh - 2 * var(--side-space));
-  padding: 34px;
+  padding: 29px;
   overflow-y: auto;
   background: var(--dark-wall);
   color: var(--white-text);
@@ -62,12 +62,12 @@
 }
 
 .quick-details .label-title {
-  font-size: 25px;
+  font-size: 21px;
 }
 
 .quick-facts {
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
 }
 
@@ -76,7 +76,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .quick-save {
@@ -86,7 +86,7 @@
   padding: 11px 18px;
   border: 1px solid var(--gold-line);
   border-radius: var(--button-corner);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--white-text);
   transition: border-color var(--fast-speed), color var(--fast-speed);
 }
@@ -117,7 +117,7 @@
   .quick-look-box {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 41px 24px 24px;
+    padding: 35px 24px 24px;
   }
 
   .quick-picture .frame,
@@ -138,6 +138,6 @@
   }
 
   .quick-details .label-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

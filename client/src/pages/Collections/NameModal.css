@@ -22,8 +22,8 @@
 .name-box {
   position: relative;
   width: 100%;
-  max-width: 374px;
-  padding: 31px;
+  max-width: 337px;
+  padding: 26px;
   background: var(--darker-wall);
   color: var(--white-text);
   border: 1px solid var(--gold-line);
@@ -38,7 +38,7 @@
 }
 
 .name-title {
-  font-size: 25px;
+  font-size: 21px;
   margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@
 .name-field span {
   display: block;
   margin-bottom: 4px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
@@ -59,11 +59,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 @media (max-width: 480px) {
   .name-box {
-    padding: 28px 20px;
+    padding: 24px 20px;
   }
 }

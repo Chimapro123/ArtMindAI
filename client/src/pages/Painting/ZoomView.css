@@ -28,7 +28,7 @@
 
 .zoom-title {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -46,7 +46,7 @@
   height: 36px;
   border: 1px solid var(--line-on-dark);
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 15px;
   transition: border-color var(--fast-speed), color var(--fast-speed);
 }
 
@@ -58,7 +58,7 @@
 .zoom-level {
   min-width: 48px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
@@ -87,6 +87,6 @@
 .zoom-hint {
   padding: 12px var(--side-space) 20px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }

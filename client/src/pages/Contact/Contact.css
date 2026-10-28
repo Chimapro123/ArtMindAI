@@ -1,20 +1,20 @@
 .contact-top {
   position: relative;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 41px;
+  padding-bottom: 41px;
   overflow: hidden;
 }
 
 .contact-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 357px;
-  gap: 54px;
+  grid-template-columns: minmax(0, 1fr) 321px;
+  gap: 46px;
   align-items: center;
 }
 
 .contact-line {
-  max-width: 442px;
-  font-size: 16px;
+  max-width: 398px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--grey-text);
 }
@@ -31,9 +31,9 @@
   position: absolute;
   top: -260px;
   left: 40%;
-  width: 544px;
-  height: 544px;
-  margin-left: -272px;
+  width: 490px;
+  height: 490px;
+  margin-left: -231px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -58,7 +58,7 @@
 .contact-cover-title {
   font-family: var(--heading-font);
   font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .contact-cover-year {
@@ -68,28 +68,28 @@
 
 .contact-inner {
   display: grid;
-  grid-template-columns: 255px minmax(0, 1fr);
-  gap: 54px;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 46px;
 }
 
 .contact-aside {
-  padding-right: 34px;
+  padding-right: 29px;
   border-right: 1px solid var(--line-on-stone);
 }
 
 .contact-email {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
 .contact-aside-text {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--brown-grey-text);
 }
 
 .contact-form {
-  max-width: 510px;
+  max-width: 459px;
 }
 
 .contact-field {
@@ -100,7 +100,7 @@
 .contact-field > span {
   display: block;
   margin-bottom: 2px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .contact-select {
@@ -110,7 +110,7 @@
   border: none;
   border-bottom: 1px solid var(--line-on-stone);
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
   color: var(--black-text);
   appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, var(--brown-grey-text) 50%), linear-gradient(135deg, var(--brown-grey-text) 50%, transparent 50%);
@@ -138,7 +138,7 @@
   background: transparent;
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   resize: vertical;
 }
@@ -153,7 +153,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 24px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -167,15 +167,15 @@
 .contact-thanks {
   margin-bottom: 16px;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 15px;
   color: var(--gold);
 }
 
 .contact-send {
-  padding: 11px 28px;
+  padding: 11px 24px;
   border: 1px solid var(--gold);
   border-radius: var(--button-corner);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--black-text);
   transition: background-color var(--fast-speed), color var(--fast-speed);
 }
@@ -191,8 +191,8 @@
 
 @media (max-width: 1024px) {
   .contact-top-inner {
-    grid-template-columns: minmax(0, 1fr) 255px;
-    gap: 34px;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 29px;
   }
 
   .contact-cover {
@@ -205,8 +205,8 @@
   }
 
   .contact-inner {
-    grid-template-columns: 187px minmax(0, 1fr);
-    gap: 34px;
+    grid-template-columns: 168px minmax(0, 1fr);
+    gap: 29px;
   }
 
   .contact-aside {

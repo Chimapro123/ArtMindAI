@@ -79,6 +79,6 @@ export async function loadSavedSlugs() {
 }
 
 export function wallWidth(painting) {
-  const pixels = Math.round((painting.widthCm || 100) * 1.6);
-  return Math.min(460, Math.max(180, pixels)) + "px";
+  const pixels = Math.round((painting.widthCm || 100) * 1.3);
+  return Math.min(380, Math.max(150, pixels)) + "px";
 }

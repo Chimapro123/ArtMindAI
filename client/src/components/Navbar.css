@@ -19,12 +19,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 27px;
-  height: 76px;
+  height: 64px;
 }
 
 .logo {
   font-family: var(--heading-font);
-  font-size: 25px;
+  font-size: 21px;
   color: var(--light-gold);
   line-height: 1;
 }
@@ -35,7 +35,7 @@
 }
 
 .nav-link {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--white-text);
   padding: 6px 0;
   border-bottom: 1px solid transparent;
@@ -91,7 +91,7 @@
   background: transparent;
   border: none;
   color: var(--white-text);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .search-input::placeholder {
@@ -117,11 +117,11 @@
 
 @media (max-width: 768px) {
   .nav-inner {
-    height: 64px;
+    height: 56px;
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .nav-links,

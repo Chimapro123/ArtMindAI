@@ -15,7 +15,7 @@
 
 .filter-panel-heading {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .filter-backdrop {
@@ -37,7 +37,7 @@
   align-items: center;
   gap: 12px;
   padding: 5px 0;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -55,7 +55,7 @@
   gap: 12px;
   width: 100%;
   padding: 5px 0;
-  font-size: 14px;
+  font-size: 13px;
   text-align: left;
   color: inherit;
 }
@@ -90,7 +90,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -146,7 +146,7 @@
     bottom: 0;
     z-index: 31;
     max-height: 80vh;
-    padding: 24px var(--side-space) 34px;
+    padding: 24px var(--side-space) 29px;
     background: var(--stone-wall);
     color: var(--black-text);
     border-radius: 12px 12px 0 0;

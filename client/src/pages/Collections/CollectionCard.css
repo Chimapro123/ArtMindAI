@@ -15,7 +15,7 @@
 
 .collection-cover {
   width: 70%;
-  max-width: 187px;
+  max-width: 168px;
   margin-bottom: 20px;
   transition: transform var(--normal-speed) ease;
 }
@@ -30,24 +30,24 @@
   justify-content: center;
   aspect-ratio: 4 / 3;
   border: 1px dashed var(--gold-line);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
 .collection-title {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
 .collection-line {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--grey-text);
 }
 
 .collection-count {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .collection-foot {
@@ -73,7 +73,7 @@
 }
 
 .collection-open {
-  font-size: 13px;
+  font-size: 12px;
   opacity: 0;
   transition: opacity var(--normal-speed);
 }

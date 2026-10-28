@@ -1,13 +1,13 @@
 .entrance {
-  padding-top: 28px;
-  padding-bottom: 48px;
+  padding-top: 24px;
+  padding-bottom: 41px;
 }
 
 .entrance-line {
-  max-width: 442px;
+  max-width: 398px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--gold-line);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--grey-text);
 }
 
@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   gap: 8px 0;
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .entrance-facts span + span {
@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 27px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .entrance-action {
@@ -38,7 +38,7 @@
   align-items: center;
   gap: 10px;
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--white-text);
   transition: color var(--fast-speed);
 }
@@ -61,7 +61,7 @@
 
 .entrance-note {
   margin-top: 14px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--light-gold);
 }
 

@@ -3,12 +3,12 @@
   width: 100%;
   padding: 3px;
   background: var(--darker-wall);
-  border: 12px solid var(--gold);
+  border: 9px solid var(--gold);
   box-shadow: var(--frame-shadow), inset 0 0 0 1px var(--light-gold);
 }
 
 .frame-gold {
-  border-width: 26px;
+  border-width: 18px;
   border-image-slice: 118;
   border-image-repeat: round;
 }
@@ -26,10 +26,10 @@
 
 @media (max-width: 480px) {
   .frame {
-    border-width: 8px;
+    border-width: 6px;
   }
 
   .frame-gold {
-    border-width: 16px;
+    border-width: 12px;
   }
 }

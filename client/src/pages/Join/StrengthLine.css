@@ -5,7 +5,7 @@
 .strength-line {
   display: flex;
   gap: 6px;
-  max-width: 187px;
+  max-width: 168px;
 }
 
 .strength-part {
@@ -21,6 +21,6 @@
 
 .strength-hint {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--brown-grey-text);
 }

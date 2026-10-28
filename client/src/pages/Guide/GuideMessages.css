@@ -2,7 +2,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
   padding-bottom: 24px;
 }
 
@@ -12,30 +12,30 @@
   padding: 12px 18px;
   background: var(--stone-shadow);
   border-radius: var(--box-corner);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 .guide-reply {
   align-self: flex-start;
-  max-width: 646px;
+  max-width: 581px;
 }
 
 .guide-reply-text {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.45;
 }
 
 .reply-paintings {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 24px;
   margin-top: 20px;
 }
 
 .reply-painting {
-  width: 153px;
+  width: 138px;
 }
 
 .reply-frame {
@@ -55,17 +55,17 @@
 
 .reply-painting-title {
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .reply-painting-artist {
   margin-bottom: 8px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 
 .reply-open {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .guide-typing {
@@ -109,7 +109,7 @@
   }
 
   .guide-reply-text {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .reply-painting {

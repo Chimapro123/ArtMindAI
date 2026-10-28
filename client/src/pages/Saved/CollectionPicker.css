@@ -22,8 +22,8 @@
 .picker-box {
   position: relative;
   width: 100%;
-  max-width: 374px;
-  padding: 31px;
+  max-width: 337px;
+  padding: 26px;
   background: var(--darker-wall);
   color: var(--white-text);
   border: 1px solid var(--gold-line);
@@ -38,7 +38,7 @@
 }
 
 .picker-title {
-  font-size: 23px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -78,14 +78,14 @@
 
 .picker-none {
   margin-bottom: 24px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
 }
 
 .picker-new-label {
   display: block;
   margin-bottom: 4px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
@@ -97,6 +97,6 @@
 
 @media (max-width: 480px) {
   .picker-box {
-    padding: 28px 20px;
+    padding: 24px 20px;
   }
 }

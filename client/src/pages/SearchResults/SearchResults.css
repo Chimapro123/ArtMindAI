@@ -1,6 +1,6 @@
 .search-top {
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 29px;
+  padding-bottom: 29px;
 }
 
 .search-field {
@@ -24,7 +24,7 @@
   padding: 18px 0;
   background: none;
   border: none;
-  font-size: 17px;
+  font-size: 15px;
   color: var(--white-text);
 }
 
@@ -38,7 +38,7 @@
 
 .search-go {
   padding: 8px 0;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
   transition: color var(--fast-speed);
 }
@@ -48,25 +48,25 @@
 }
 
 .results-section {
-  padding-top: 48px;
-  padding-bottom: 61px;
+  padding-top: 41px;
+  padding-bottom: 52px;
 }
 
 .results-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 34px 28px;
+  gap: 29px 24px;
 }
 
 .results-grid .label-title {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .result-why {
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid var(--line-on-stone);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--brown-grey-text);
 }
@@ -84,7 +84,7 @@
   }
 
   .search-input {
-    font-size: 16px;
+    font-size: 15px;
     padding: 14px 0;
   }
 }
@@ -100,6 +100,6 @@
   }
 
   .search-input {
-    font-size: 15px;
+    font-size: 14px;
   }
 }

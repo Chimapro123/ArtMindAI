@@ -1,28 +1,28 @@
 .show-section {
-  padding-top: 54px;
-  padding-bottom: 54px;
+  padding-top: 46px;
+  padding-bottom: 46px;
 }
 
 .show-inner {
   display: grid;
-  grid-template-columns: 221px minmax(0, 1fr);
-  gap: 41px;
+  grid-template-columns: 199px minmax(0, 1fr);
+  gap: 35px;
   align-items: center;
 }
 
 .show-title {
-  font-size: 33px;
+  font-size: 27px;
   margin-bottom: 12px;
 }
 
 .show-line {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .show-count {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 24px;
 }
 
@@ -52,7 +52,7 @@
 .show-painting-title {
   margin-top: 10px;
   font-family: var(--heading-font);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .show-painting-artist {
@@ -72,7 +72,7 @@
   }
 
   .show-title {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 

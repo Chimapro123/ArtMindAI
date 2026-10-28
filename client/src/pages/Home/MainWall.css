@@ -13,7 +13,7 @@
 }
 
 .wall-strip-item {
-  flex: 0 0 238px;
+  flex: 0 0 214px;
   scroll-snap-align: start;
 }
 
@@ -76,12 +76,12 @@
   }
 
   .wall-strip-item {
-    flex-basis: 187px;
+    flex-basis: 168px;
   }
 }
 
 @media (max-width: 480px) {
   .wall-strip-item {
-    flex-basis: 170px;
+    flex-basis: 153px;
   }
 }

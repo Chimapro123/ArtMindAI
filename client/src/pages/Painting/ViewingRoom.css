@@ -1,14 +1,14 @@
 .viewing-room {
   position: relative;
-  padding-top: 28px;
-  padding-bottom: 48px;
+  padding-top: 24px;
+  padding-bottom: 41px;
   overflow: hidden;
 }
 
 .room-inner {
   display: grid;
   grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
-  gap: 54px;
+  gap: 46px;
   align-items: start;
 }
 
@@ -20,9 +20,9 @@
   position: absolute;
   top: -260px;
   left: 50%;
-  width: 646px;
-  height: 646px;
-  margin-left: -323px;
+  width: 581px;
+  height: 581px;
+  margin-left: -275px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -59,8 +59,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 31px;
-  margin-top: 28px;
+  gap: 8px 26px;
+  margin-top: 24px;
 }
 
 .room-tool {
@@ -68,7 +68,7 @@
   align-items: center;
   gap: 10px;
   padding: 6px 0;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
   transition: color var(--fast-speed);
 }
@@ -83,12 +83,12 @@
 }
 
 .room-title {
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: 8px;
 }
 
 .room-artist {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 12px;
 }
 
@@ -97,21 +97,21 @@
 }
 
 .room-fact {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--grey-text);
 }
 
 .room-ask {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 @media (max-width: 1024px) {
   .room-inner {
-    gap: 34px;
+    gap: 29px;
   }
 
   .room-title {
-    font-size: 31px;
+    font-size: 26px;
   }
 }
 
@@ -125,16 +125,16 @@
   }
 
   .room-spotlight {
-    width: 442px;
-    height: 442px;
-    margin-left: -221px;
+    width: 398px;
+    height: 398px;
+    margin-left: -188px;
     top: -200px;
   }
 }
 
 @media (max-width: 480px) {
   .room-title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .room-tools {

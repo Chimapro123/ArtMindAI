@@ -13,7 +13,7 @@
   padding: 7px 10px 7px 16px;
   border: 1px solid var(--gold);
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .understood-remove {
@@ -34,7 +34,7 @@
 
 .understood-hint {
   margin-left: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
 }
 

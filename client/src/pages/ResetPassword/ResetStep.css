@@ -23,7 +23,7 @@
   border: 1px solid var(--gold);
   border-radius: 50%;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--gold);
   background: transparent;
   transition: background-color var(--normal-speed), color var(--normal-speed);
@@ -51,7 +51,7 @@
 .step-body {
   flex: 1;
   min-width: 0;
-  padding: 6px 0 28px;
+  padding: 6px 0 24px;
 }
 
 .reset-step-last .step-body {
@@ -66,7 +66,7 @@
 }
 
 .step-title {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .step-check {
@@ -82,7 +82,7 @@
   margin-top: 8px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--line-on-stone);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--brown-grey-text);
 }
 
@@ -98,10 +98,10 @@
   .step-circle {
     width: 34px;
     height: 34px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .step-title {
-    font-size: 17px;
+    font-size: 15px;
   }
 }

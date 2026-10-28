@@ -1,5 +1,5 @@
 .conversation-side {
-  padding: 34px 27px;
+  padding: 29px 27px;
   background: var(--darker-wall);
   color: var(--white-text);
 }
@@ -16,16 +16,16 @@
   display: none;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
 }
 
 .conversation-label {
-  margin-top: 34px;
+  margin-top: 29px;
 }
 
 .conversation-empty {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--grey-text);
 }
@@ -35,7 +35,7 @@
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid transparent;
-  font-size: 15px;
+  font-size: 14px;
   text-align: left;
   color: var(--white-text);
   transition: color var(--fast-speed), border-color var(--fast-speed);

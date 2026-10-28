@@ -1,13 +1,13 @@
 .close-heading {
-  max-width: 697px;
-  font-size: 26px;
+  max-width: 627px;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
 .close-link {
   padding-bottom: 2px;
   border-bottom: 1px solid var(--gold-line);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--white-text);
   transition: color var(--fast-speed), border-color var(--fast-speed);
 }
@@ -18,7 +18,7 @@
 }
 
 .close-confirm {
-  max-width: 340px;
+  max-width: 306px;
 }
 
 .close-field {
@@ -29,7 +29,7 @@
 .close-field span {
   display: block;
   margin-bottom: 2px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
@@ -37,7 +37,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 28px;
+  gap: 16px 24px;
 }
 
 .close-button:disabled {
@@ -47,12 +47,12 @@
 
 @media (max-width: 768px) {
   .close-heading {
-    font-size: 22px;
+    font-size: 19px;
   }
 }
 
 @media (max-width: 480px) {
   .close-heading {
-    font-size: 19px;
+    font-size: 17px;
   }
 }

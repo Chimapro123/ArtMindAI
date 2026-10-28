@@ -1,6 +1,6 @@
 .verify-hint {
-  margin: 20px 0 28px;
-  font-size: 14px;
+  margin: 20px 0 24px;
+  font-size: 13px;
   color: var(--brown-grey-text);
 }
 
@@ -10,14 +10,14 @@
 }
 
 .verify-message {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--gold);
 }
 
 .verify-links {
   margin-top: 18px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .verify-links + .verify-links {
@@ -35,5 +35,5 @@
 
 .verify-resend {
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }

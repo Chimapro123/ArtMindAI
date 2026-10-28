@@ -17,7 +17,7 @@
 }
 
 .artist-name {
-  font-size: 17px;
+  font-size: 15px;
   margin-bottom: 4px;
   transition: color var(--fast-speed);
 }
@@ -27,7 +27,7 @@
 }
 
 .artist-line {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--grey-text);
 }

@@ -9,7 +9,7 @@
 .picture-link {
   padding-bottom: 2px;
   border-bottom: 1px solid var(--gold-line);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--black-text);
   transition: color var(--fast-speed), border-color var(--fast-speed);
 }
@@ -25,7 +25,7 @@
 }
 
 .picture-note {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 
@@ -36,7 +36,7 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  min-height: 255px;
+  min-height: 230px;
   padding: 27px;
   border: 1px dashed var(--gold);
   border-radius: var(--box-corner);
@@ -56,13 +56,13 @@
 .picture-empty-title {
   margin-top: 8px;
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
   color: var(--black-text);
 }
 
 .picture-empty-text {
-  max-width: 272px;
-  font-size: 13px;
+  max-width: 245px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--brown-grey-text);
 }

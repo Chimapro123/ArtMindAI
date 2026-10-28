@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 272px;
-  padding: 34px;
+  min-height: 245px;
+  padding: 29px;
   border: 1px dashed var(--gold);
   border-radius: var(--box-corner);
   text-align: center;
@@ -23,18 +23,18 @@
 .drop-title {
   margin-top: 12px;
   font-family: var(--heading-font);
-  font-size: 22px;
+  font-size: 19px;
   color: var(--black-text);
 }
 
 .drop-text {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--brown-grey-text);
 }
 
 .drop-note {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 

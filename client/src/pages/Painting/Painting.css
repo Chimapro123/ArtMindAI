@@ -3,19 +3,19 @@
 }
 
 .story-inner {
-  max-width: 612px;
+  max-width: 551px;
   margin-left: 0;
 }
 
 .story-lead {
   font-family: var(--heading-font);
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.4;
 }
 
 .story-text {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 34px;
+  margin-bottom: 29px;
 }
 
 .colour-row .pigment-heap {
@@ -62,18 +62,18 @@
 }
 
 .similar-grid .label-title {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .similar-reason {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--brown-grey-text);
 }
 
 .more-label {
-  margin-top: 48px;
+  margin-top: 41px;
 }
 
 .credit-section {
@@ -82,7 +82,7 @@
 }
 
 .credit-line {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
@@ -106,7 +106,7 @@
   }
 
   .story-lead {
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .colour-row {

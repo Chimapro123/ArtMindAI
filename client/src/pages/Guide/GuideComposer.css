@@ -14,7 +14,7 @@
   padding: 6px 10px 6px 14px;
   border: 1px solid var(--gold-line);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .talking-clear {
@@ -58,7 +58,7 @@
   background: transparent;
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
-  font-size: 15px;
+  font-size: 14px;
   transition: border-color var(--fast-speed);
 }
 

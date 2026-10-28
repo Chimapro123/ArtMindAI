@@ -1,5 +1,5 @@
 .empty-message {
-  padding: 34px 24px;
+  padding: 29px 24px;
   text-align: center;
   border: 1px solid var(--line-on-dark);
   border-radius: var(--box-corner);
@@ -11,12 +11,12 @@
 
 .empty-title {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .empty-text {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--grey-text);
 }
 

@@ -1,5 +1,5 @@
 .chat-box {
-  width: 323px;
+  width: 291px;
   max-height: 72vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 }
 
 .chat-title {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .chat-subtitle {
@@ -40,14 +40,14 @@
   gap: 10px;
   padding: 8px 16px;
   border-bottom: 1px solid var(--line-on-dark);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--grey-text);
 }
 
 .chat-about strong {
   font-family: var(--heading-font);
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--light-gold);
 }
 
@@ -80,12 +80,12 @@
 }
 
 .chat-login-link {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .chat-messages {
   flex: 1;
-  min-height: 170px;
+  min-height: 153px;
   overflow-y: auto;
   padding: 16px;
   display: flex;
@@ -95,7 +95,7 @@
 
 .chat-greeting,
 .chat-login {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -145,7 +145,7 @@
   border: 1px solid var(--line-on-dark);
   border-radius: var(--box-corner);
   color: var(--white-text);
-  font-size: 14px;
+  font-size: 13px;
   transition: border-color var(--fast-speed);
 }
 
@@ -213,7 +213,7 @@
 
 @media (max-width: 768px) {
   .chat-box {
-    width: min(323px, calc(100vw - 32px));
+    width: min(291px, calc(100vw - 32px));
   }
 }
 

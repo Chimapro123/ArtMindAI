@@ -1,26 +1,26 @@
 .home-panels {
-  padding-top: 54px;
-  padding-bottom: 54px;
+  padding-top: 46px;
+  padding-bottom: 46px;
 }
 
 .panels-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 54px;
+  gap: 46px;
 }
 
 .panel-second {
-  padding-left: 54px;
+  padding-left: 46px;
   border-left: 1px solid var(--line-on-dark);
 }
 
 .panel-title {
-  font-size: 23px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
 .panel-chat {
-  max-width: 357px;
+  max-width: 321px;
   margin-bottom: 24px;
 }
 
@@ -37,7 +37,7 @@
   background: var(--darker-wall);
   border: 1px solid var(--line-on-dark);
   border-radius: var(--box-corner);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -48,9 +48,9 @@
 }
 
 .panel-text {
-  max-width: 357px;
+  max-width: 321px;
   margin-bottom: 24px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--grey-text);
 }
@@ -58,12 +58,12 @@
 @media (max-width: 768px) {
   .panels-inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: 34px;
+    gap: 29px;
   }
 
   .panel-second {
     padding-left: 0;
-    padding-top: 34px;
+    padding-top: 29px;
     border-left: none;
     border-top: 1px solid var(--line-on-dark);
   }

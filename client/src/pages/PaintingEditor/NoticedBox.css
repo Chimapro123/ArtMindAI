@@ -5,18 +5,18 @@
 }
 
 .noticed-title {
-  font-size: 22px;
+  font-size: 19px;
   margin-bottom: 16px;
 }
 
 .noticed-label {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 
 .noticed-value {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .noticed-colours {
@@ -53,7 +53,7 @@
   padding: 5px 8px 5px 14px;
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .noticed-tag-remove {
@@ -72,11 +72,11 @@
 }
 
 .noticed-none {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--brown-grey-text);
 }
 
 .noticed-keep {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 13px;
 }

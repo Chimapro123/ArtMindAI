@@ -13,8 +13,8 @@ import "./Saved.css";
 const perPage = 12;
 
 function wallWidth(painting) {
-  const pixels = Math.round((painting.widthCm || 100) * 1.5);
-  return Math.min(420, Math.max(180, pixels)) + "px";
+  const pixels = Math.round((painting.widthCm || 100) * 1.3);
+  return Math.min(360, Math.max(150, pixels)) + "px";
 }
 
 function Saved() {
