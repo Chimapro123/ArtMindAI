@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { recordVisit } from "./services/api";
 import SiteLayout from "./components/SiteLayout";
@@ -33,8 +33,13 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const location = useLocation();
+  const lastPage = useRef("");
 
   useEffect(() => {
+    if (lastPage.current === location.pathname) {
+      return;
+    }
+    lastPage.current = location.pathname;
     recordVisit(location.pathname).catch(() => {});
   }, [location.pathname]);
 
