@@ -4,7 +4,7 @@ This is the agreement between the client and the server. Every page talks to the
 
 ## The basics
 
-- Every path starts with `/api`. In development Vite proxies `/api` and `/uploads` to the server, so the client calls them on its own address.
+- Every path starts with `/api`. In development Vite proxies `/api` to the server, so the client calls it on its own address.
 - Requests and answers are JSON, except the uploads, which are `multipart/form-data`.
 - Logging in sets an httpOnly cookie called `token`. The browser sends it by itself because every fetch in `api.js` uses `credentials: "include"`.
 - Lists come back as `{ items, total, page, pages }`. `page` starts at 1 and `limit` is 12 unless the request says otherwise.
@@ -73,7 +73,7 @@ This is the agreement between the client and the server. Every page talks to the
 | name | string | |
 | email | string | |
 | role | string | `member` or `admin` |
-| photo | string or null | Path under `/uploads`, or null to show initials |
+| photo | string or null | Address under `/api/images`, or null to show initials |
 | about | string | |
 | rooms | array of strings | The rooms they said they like |
 | emails | { newsletter, newCollections } | Both booleans |
@@ -113,7 +113,7 @@ The two `made-for-you` collections are not stored. The server builds them fresh 
 | Field | Type | What it is |
 | --- | --- | --- |
 | id | string | |
-| image | string | Path of the uploaded photo under `/uploads` |
+| image | string | Address of the uploaded photo under `/api/images` |
 | style | string | The most likely style |
 | confidence | number | 0 to 100 |
 | otherStyles | array of { style, confidence } | |
@@ -184,7 +184,7 @@ Sends any of `{ name, about, rooms }`. Returns `{ user }`.
 
 ### POST /api/profile/photo
 
-Multipart form with one file field called `photo` (JPG or PNG, up to 5 MB). Returns `{ user }` with the new photo path.
+Multipart form with one file field called `photo` (JPG or PNG, up to 5 MB). The photo is saved in the database and the old one is deleted. Returns `{ user }` with the new photo address.
 
 ### PUT /api/profile/password
 
@@ -196,7 +196,7 @@ Sends `{ newsletter, newCollections }`, both booleans. Returns `{ user }`.
 
 ### DELETE /api/profile
 
-Sends nothing. Deletes the user, their saved paintings, their collections, their conversations and their Image Lab history. Returns `{ message }` and clears the cookie.
+Sends nothing. Deletes the user, their saved paintings, their collections, their conversations, their Image Lab history and every photo they uploaded. Returns `{ message }` and clears the cookie.
 
 ## Home
 
@@ -319,7 +319,7 @@ All under `/api/image-lab`. All logged in.
 
 ### POST /api/image-lab/check
 
-Multipart form with one file field called `image` (JPG or PNG, up to 5 MB). Returns `{ result }`, an Image Lab result object.
+Multipart form with one file field called `image` (JPG or PNG, up to 5 MB). The photo is saved in the database. Returns `{ result }`, an Image Lab result object.
 
 ### GET /api/image-lab/history
 
@@ -407,7 +407,7 @@ Sends `{ action, slugs }`. `action` is `label`, `storage`, `wall` or `remove`. R
 
 ### GET /api/images/:id
 
-No login needed. Sends back one image the admin uploaded, as `image/jpeg`, so the address works straight in an img tag. The browser may keep it for a year, which is safe because a replaced image always gets a new id. 404 if the id does not exist.
+Sends back one stored picture as `image/jpeg`, so the address works straight in an img tag. That is a painting an admin uploaded, a profile photo or an Image Lab photo. Painting images need no login. A profile or Image Lab photo is only sent to the member it belongs to, using the login cookie the browser sends by itself, and anyone else gets 404. The browser may keep a picture for a year, which is safe because a replaced picture always gets a new id. 404 if the id does not exist.
 
 ## Contact
 

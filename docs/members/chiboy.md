@@ -30,15 +30,15 @@ They all live in `client/src/pages`, one folder each, and they all share one lay
 
 Everything is in `server`. Here is what each folder is for.
 
-- `server.js` starts Express, turns on cors for the client address with cookies allowed, reads JSON and cookies, serves `uploads` as plain files, plugs in every route, answers 404 for any unknown `/api` path and has one error handler at the end for things like a file that is too big.
+- `server.js` starts Express, turns on cors for the client address with cookies allowed, reads JSON and cookies, plugs in every route, answers 404 for any unknown `/api` path and has one error handler at the end for things like a file that is too big.
 - `config/db.js` connects to MongoDB with mongoose.
-- `models` is one file per collection in the database: User, Painting, Artist, Collection, View, Search, Visit, Conversation, Upload, Message, Subscriber and Image. Image holds the pictures an admin uploads, and `routes/imageRoutes.js` sends them out at `/api/images/:id`.
+- `models` is one file per collection in the database: User, Painting, Artist, Collection, View, Search, Visit, Conversation, Upload, Message, Subscriber and Image. Image holds every picture people upload (painting images from the admin, profile photos and Image Lab photos), and `routes/imageRoutes.js` sends them out at `/api/images/:id`. A profile or Image Lab photo only goes to the member who owns it.
 - `routes` is one file per part of the API. A route file only says which path goes to which controller function and which middleware runs first.
 - `controllers` holds the functions that do the work. Every one is async, wrapped in try and catch, and answers with a status code and a JSON body with a plain message when something is wrong.
 - `middleware` has checkLogin (reads the cookie and finds the user, or answers 401), checkAdmin (403 unless the role is admin), findUser (like checkLogin but lets visitors through with no user), limits (the rate limits) and uploadImage (multer, JPG or PNG, 5 MB at most).
 - `utils` holds the helpers: askModel (the only file that talks to the model), sendEmail, getColours, makeToken, makeCode, the word lists and scoring for search, the taste helper for the dashboard, and the small shaping functions that turn a database record into the object the client expects.
 - `data` holds paintings.json, artists.json, collections.json and extras.json, which has the look closer points, van Gogh's life stops and Rachel Ruysch's line.
-- `uploads` is where profile and Image Lab photos go. Git ignores it. Paintings an admin uploads are saved in the database instead.
+- Nothing is saved to disk. `utils/saveImage.js` shrinks every uploaded picture with sharp and stores it in the database.
 - `seed.js` fills the database and `stories.js` writes the stories.
 
 ## How a request travels

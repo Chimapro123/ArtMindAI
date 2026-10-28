@@ -18,7 +18,7 @@ The server is an Express app in plain Node. It lives in the `server` folder, run
 |                      |   JSON     |                              |
 |  pages/              |            |  routes under /api           |
 |  components/         |            |  models                      |
-|  services/api.js     |            |  uploads/                    |
+|  services/api.js     |            |  stored pictures             |
 |  context/AuthContext |            |  model service               |
 +----------------------+            +------+----------------+------+
                                            |                |
@@ -44,7 +44,7 @@ Gallery page  --calls-->  getPaintings({ room: "Landscape" })
                      server route sends { items, total, page, pages }
 ```
 
-During development Vite proxies `/api` and `/uploads` to the server, so the browser thinks everything is on one address. That is why the login cookie works with no extra setup. Every endpoint and the shape of every answer is written down in `docs/API.md`.
+During development Vite proxies `/api` to the server, so the browser thinks everything is on one address. That is why the login cookie works with no extra setup. Every endpoint and the shape of every answer is written down in `docs/API.md`.
 
 ## Where the paintings live
 
@@ -52,7 +52,7 @@ The images are in `client/public/paintings` for the large versions (longest side
 
 The facts about each painting (title, artist, year, room, style, size, where it hangs, licence and source) start life in `server/data/paintings.json`, and the artists in `server/data/artists.json`. `server/seed.js` loads these two files into MongoDB, works out five colours for every painting from its thumbnail, adds tags, the look closer points and the chosen collections from `server/data/collections.json`, and makes the admin account. From then on the database is the truth, and the admin pages change it. Stories, tags, colours, look closer points, views and saves are kept on the same painting records. `server/stories.js` fills in the stories and the artist bios with the model, one at a time.
 
-Pictures that admins upload through the Painting Editor are kept in the database itself, in the images collection, as a large image and a thumb. The painting's `image` and `thumb` hold addresses like `/api/images/:id`, and the server sends the picture from there. Profile photos and Image Lab photos still go to `server/uploads`, which git ignores.
+Every picture people upload is kept in the database itself, in the images collection. That means the large image and the thumb of a painting an admin adds through the Painting Editor, profile photos and Image Lab photos. The painting, the user and the Image Lab result only hold an address like `/api/images/:id`, and the server sends the picture from there. Painting images are open to everyone, while a profile or Image Lab photo is only sent to the member it belongs to. Nothing is written to the server's own disk.
 
 ## Logging in
 
@@ -78,13 +78,13 @@ The fallback. If MODEL_API_KEY is empty, or a call fails or takes more than twen
 
 ## Inside the server folder
 
-- `server.js` sets up cors, JSON, cookies, the `/uploads` folder, every route, a 404 for unknown `/api` paths and one error handler.
+- `server.js` sets up cors, JSON, cookies, every route, a 404 for unknown `/api` paths and one error handler.
 - `routes` has one file per part of the API. Each one lists its paths and which middleware runs first.
 - `controllers` has the functions behind the routes. Each one is async with try and catch and answers with a status and a plain message.
 - `models` has the mongoose schemas: User, Painting, Artist, Collection, View, Search, Visit, Conversation, Upload, Message, Subscriber and Image.
 - `middleware` has checkLogin, checkAdmin, findUser (optional login), the rate limits and the image upload.
 - `utils` has the helpers: askModel, sendEmail, getColours, the search word lists and scoring, the taste and recommendation helpers for the dashboard, and the shaping functions that turn a record into the object the client expects.
-- `data` has the JSON files, and `uploads` has the profile and Image Lab photos people send in.
+- `data` has the JSON files.
 
 ## The admin side
 
@@ -118,6 +118,5 @@ ArtMindAI/
     middleware/         login checks, rate limits, uploads
     utils/              the helpers
     data/               paintings, artists, collections and extras
-    uploads/            profile and Image Lab photos, ignored by git
   docs/                 these files and the page designs in docs/ui
 ```

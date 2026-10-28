@@ -8,7 +8,7 @@ If you want to swap a page with someone that is fine, just tell me first so I ca
 
 Pages: Log in, Join, Verify Email, Reset Password.
 
-Also the whole server. That means every route in `docs/API.md`, the database models, the login cookie, the emails with the six digit codes, the uploads folder, and the model service behind the guide, the sentence search and the Image Lab.
+Also the whole server. That means every route in `docs/API.md`, the database models, the login cookie, the emails with the six digit codes, the uploaded pictures, and the model service behind the guide, the sentence search and the Image Lab.
 
 Behind the pages: `AuthContext` for the logged in user, `ProtectedRoute` and `AdminRoute`, and the auth functions in `services/api.js` (register, verifyEmail, resendCode, logIn, logOut, getMe, forgotPassword, checkResetCode and resetPassword). The four pages share the split layout from the designs, with the painting on the left and the form on the right, and none of them show the navbar or the footer.
 

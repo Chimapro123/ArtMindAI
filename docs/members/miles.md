@@ -6,7 +6,7 @@ Everything goes through `client/src/services/api.js`. The uploads use a `FormDat
 
 ## The Image Lab (client/src/pages/ImageLab)
 
-- `ImageLab.jsx` is the page. It keeps the chosen photo, the result from the server, whether a check is running, any error, and the visitor's last four photos. Choosing a photo sends it straight away with `POST /api/image-lab/check`. When the answer comes back it fills the right hand column and asks for the history again so the new photo appears at the bottom.
+- `ImageLab.jsx` is the page. It keeps the chosen photo, the result from the server, whether a check is running, any error, and the visitor's last four photos. Choosing a photo sends it straight away with `POST /api/image-lab/check`. When the answer comes back it fills the right hand column and asks for the history again so the new photo appears at the bottom. The server keeps each photo in the database, and only the member who sent it can load it.
 - `DropZone.jsx` is the dashed box. You can drop a file on it or click it to open the file picker. `checkFile` turns away anything that is not a JPG or PNG or is over 5 MB, with a plain message.
 - `PhotoTools.jsx` shows the photo once there is one, with Crop, Rotate and Try another photo under it. While the photo is being checked a slow gold line scans across it. Crop lets you drag a box over the picture and then press Use this crop.
 - `photoHelpers.js` does the picture work on a canvas in the browser. `rotatePhoto` turns the image a quarter turn and `cropPhoto` cuts out the box, and both hand back a new JPG file that is sent in place of the old one. It also has `friendlyTime` for the history and `sureWords`, which turns the confidence into Fairly sure from 70, Not very sure from 50 and Just a guess under that.
