@@ -16,7 +16,7 @@ async function countByDay(start, days) {
     for (let index = days - 1; index >= 0; index -= 1) {
       const date = new Date(Date.now() - index * 24 * 60 * 60 * 1000);
       const label = monthNames[date.getMonth()].slice(0, 3) + " " + date.getFullYear();
-      if (!byMonth[label]) {
+      if (byMonth[label] === undefined) {
         byMonth[label] = 0;
         order.push(label);
       }
