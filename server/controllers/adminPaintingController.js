@@ -1,7 +1,7 @@
 const Painting = require("../models/Painting");
 const getColours = require("../utils/getColours");
 const { shapePainting, pageList, readPage } = require("../utils/shapePainting");
-const { savePaintingImages } = require("../utils/saveImage");
+const { savePaintingImages, removePaintingImages } = require("../utils/saveImage");
 const { uniqueSlug } = require("../utils/makeSlug");
 const { readFields, removePaintingEverywhere } = require("../utils/paintingFields");
 const { tagsFor } = require("../utils/paintingTags");
@@ -59,7 +59,7 @@ async function createPainting(request, response) {
     const fields = await readFields(request.body);
     const title = fields.title || "Untitled";
     const slug = await uniqueSlug(Painting, title);
-    const images = await savePaintingImages(request.file.buffer, slug);
+    const images = await savePaintingImages(request.file.buffer);
     if (!fields.colours || !fields.colours.length) {
       fields.colours = await getColours(request.file.buffer, 5);
     }
@@ -88,6 +88,7 @@ async function updatePainting(request, response) {
       return response.status(404).json({ message: "We could not find that painting" });
     }
     const fields = await readFields(request.body);
+    const oldImages = [painting.image, painting.thumb];
     if (fields.title === "") {
       return response.status(400).json({ message: "The painting needs a title" });
     }
@@ -95,14 +96,17 @@ async function updatePainting(request, response) {
       painting[key] = fields[key];
     });
     if (request.file) {
-      const images = await savePaintingImages(request.file.buffer, painting.slug);
-      painting.image = images.image + "?v=" + Date.now();
-      painting.thumb = images.thumb + "?v=" + Date.now();
+      const images = await savePaintingImages(request.file.buffer);
+      painting.image = images.image;
+      painting.thumb = images.thumb;
       if (!fields.colours) {
         painting.colours = await getColours(request.file.buffer, 5);
       }
     }
     await painting.save();
+    if (request.file) {
+      await removePaintingImages(oldImages);
+    }
     response.json({ painting: shapePainting(painting) });
   } catch (error) {
     response.status(500).json({ message: "The painting could not be saved" });

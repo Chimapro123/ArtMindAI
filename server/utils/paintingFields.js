@@ -5,7 +5,7 @@ const User = require("../models/User");
 const Collection = require("../models/Collection");
 const View = require("../models/View");
 const Painting = require("../models/Painting");
-const { removeUpload } = require("./saveImage");
+const { readStoredImage, removePaintingImages } = require("./saveImage");
 
 const textFields = ["title", "artistSlug", "artist", "year", "room", "style", "medium", "surface", "whereItHangs", "story", "licence", "sourceUrl"];
 const numberFields = ["widthCm", "heightCm"];
@@ -57,7 +57,7 @@ async function readFields(body) {
 }
 
 function imageFileFor(painting) {
-  const imagePath = painting.image || "";
+  const imagePath = (painting.image || "").split("?")[0];
   if (imagePath.startsWith("/uploads/")) {
     return path.join(__dirname, "..", "uploads", imagePath.replace("/uploads/", ""));
   }
@@ -65,7 +65,10 @@ function imageFileFor(painting) {
   return path.join(__dirname, "..", "..", "client", "public", publicPath);
 }
 
-function readImageFile(painting) {
+async function readPaintingImage(painting) {
+  if ((painting.image || "").startsWith("/api/images/")) {
+    return readStoredImage(painting.image);
+  }
   const file = imageFileFor(painting);
   return fs.existsSync(file) ? fs.readFileSync(file) : null;
 }
@@ -75,11 +78,8 @@ async function removePaintingEverywhere(painting) {
   await Collection.updateMany({}, { $pull: { items: { painting: painting._id } } });
   await Collection.updateMany({ leadPainting: painting._id }, { $set: { leadPainting: null } });
   await View.deleteMany({ painting: painting._id });
-  if (painting.image && painting.image.startsWith("/uploads/")) {
-    removeUpload(painting.image);
-    removeUpload(painting.thumb);
-  }
   await Painting.deleteOne({ _id: painting._id });
+  await removePaintingImages([painting.image, painting.thumb]);
 }
 
-module.exports = { readFields, readImageFile, removePaintingEverywhere };
+module.exports = { readFields, readPaintingImage, removePaintingEverywhere };

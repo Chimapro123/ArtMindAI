@@ -16,6 +16,7 @@ const guideRoutes = require("./routes/guideRoutes");
 const imageLabRoutes = require("./routes/imageLabRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const imageRoutes = require("./routes/imageRoutes");
 const { contactRouter, newsletterRouter, visitRouter } = require("./routes/contactRoutes");
 
 const app = express();
@@ -44,6 +45,7 @@ app.use("/api/guide", guideRoutes);
 app.use("/api/image-lab", imageLabRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/images", imageRoutes);
 app.use("/api/contact", contactRouter);
 app.use("/api/newsletter", newsletterRouter);
 app.use("/api/visits", visitRouter);

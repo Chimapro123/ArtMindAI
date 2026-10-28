@@ -1,7 +1,7 @@
 const Painting = require("../models/Painting");
 const getColours = require("../utils/getColours");
 const { askImage, askText } = require("../utils/askModel");
-const { readImageFile, removePaintingEverywhere } = require("../utils/paintingFields");
+const { readPaintingImage, removePaintingEverywhere } = require("../utils/paintingFields");
 const { guessFromColours } = require("../utils/guessStyle");
 const { tagsFor } = require("../utils/paintingTags");
 const { roomNames } = require("../utils/shapeUser");
@@ -17,7 +17,7 @@ function checkLabels(data) {
 }
 
 async function makeLabels(painting) {
-  const buffer = readImageFile(painting);
+  const buffer = await readPaintingImage(painting);
   if (!buffer) {
     return null;
   }
@@ -39,7 +39,7 @@ async function labels(request, response) {
     }
     const result = await makeLabels(painting);
     if (!result) {
-      return response.status(400).json({ message: "The image file for this painting is missing" });
+      return response.status(400).json({ message: "The image for this painting is missing" });
     }
     response.json(result);
   } catch (error) {
