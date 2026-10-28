@@ -10,6 +10,7 @@ const User = require("./models/User");
 const getColours = require("./utils/getColours");
 const { tagsFor } = require("./utils/paintingTags");
 const defaultCollections = require("./utils/defaultCollections");
+const seedDemo = require("./utils/demoMember");
 
 const dataFolder = path.join(__dirname, "data");
 const publicFolder = path.join(__dirname, "..", "client", "public");
@@ -107,6 +108,7 @@ async function run() {
     await seedArtists();
     await seedCollections();
     await seedAdmin();
+    await seedDemo();
     console.log("Seed done");
   } catch (error) {
     console.log("Seed failed: " + error.message);
