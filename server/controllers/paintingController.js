@@ -85,7 +85,7 @@ async function viewPainting(request, response) {
     const painting = await Painting.findOneAndUpdate(
       { slug: request.params.slug },
       { $inc: { views: 1 } },
-      { new: true }
+      { returnDocument: "after" }
     );
     if (!painting) {
       return response.status(404).json({ message: "We could not find that painting" });
