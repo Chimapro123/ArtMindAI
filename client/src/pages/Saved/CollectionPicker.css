@@ -22,8 +22,8 @@
 .picker-box {
   position: relative;
   width: 100%;
-  max-width: 440px;
-  padding: 36px;
+  max-width: 374px;
+  padding: 31px;
   background: var(--darker-wall);
   color: var(--white-text);
   border: 1px solid var(--gold-line);
@@ -38,7 +38,7 @@
 }
 
 .picker-title {
-  font-size: 28px;
+  font-size: 23px;
   margin-bottom: 20px;
 }
 

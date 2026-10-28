@@ -4,15 +4,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px 24px;
-  margin-bottom: 36px;
+  margin-bottom: 31px;
 }
 
 .overview-title {
-  font-size: 44px;
+  font-size: 36px;
 }
 
 .overview-range {
-  padding: 10px 36px 10px 14px;
+  padding: 10px 31px 10px 14px;
   background: transparent;
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
@@ -29,7 +29,7 @@
 .overview-figures {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .overview-figure {
@@ -44,14 +44,14 @@
 
 .overview-number {
   font-family: var(--heading-font);
-  font-size: 52px;
+  font-size: 43px;
   line-height: 1.1;
 }
 
 .overview-text {
   margin-top: 6px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.4;
 }
 
@@ -59,7 +59,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 41px;
 }
 
 .overview-box {
@@ -76,18 +76,18 @@
 }
 
 .overview-box-title {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
 .overview-heading {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
 .overview-table {
   width: 100%;
-  margin-bottom: 48px;
+  margin-bottom: 41px;
   border-collapse: collapse;
   border: 1px solid var(--line-on-stone);
 }
@@ -109,7 +109,7 @@
   border-bottom: 1px solid var(--line-on-stone);
   border-right: 1px solid var(--line-on-stone);
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .overview-table td:last-child {
@@ -142,7 +142,7 @@
   padding: 10px 0;
   border-bottom: 1px solid var(--line-on-dark);
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .overview-searches li:last-child {
@@ -152,7 +152,7 @@
 .overview-note {
   margin-bottom: 14px;
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -167,7 +167,7 @@
 
 @media (max-width: 1024px) {
   .overview-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .overview-figures {
@@ -184,7 +184,7 @@
   }
 
   .overview-number {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 
@@ -213,7 +213,7 @@
 
 @media (max-width: 480px) {
   .overview-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .overview-figures {
@@ -226,6 +226,6 @@
   }
 
   .overview-heading {
-    font-size: 28px;
+    font-size: 23px;
   }
 }

@@ -1,7 +1,7 @@
 .look-closer {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  gap: 48px;
+  gap: 41px;
   align-items: center;
 }
 
@@ -47,7 +47,7 @@
 .look-closeups {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 27px;
 }
 
 .look-closeup {
@@ -61,8 +61,8 @@
 
 .look-circle {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 128px;
+  height: 128px;
   margin-bottom: 12px;
   border-radius: 50%;
   border: 2px solid var(--gold);
@@ -80,7 +80,7 @@
 
 .look-title {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .look-note {
@@ -95,7 +95,7 @@
 
 @media (max-width: 1024px) {
   .look-closer {
-    gap: 32px;
+    gap: 27px;
   }
 
   .look-circle {

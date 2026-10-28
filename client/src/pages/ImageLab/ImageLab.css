@@ -1,20 +1,20 @@
 .lab-top {
   position: relative;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 41px;
+  padding-bottom: 41px;
   overflow: hidden;
 }
 
 .lab-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 323px;
+  gap: 54px;
   align-items: center;
 }
 
 .lab-line {
-  max-width: 520px;
-  font-size: 17px;
+  max-width: 442px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
@@ -26,9 +26,9 @@
   position: absolute;
   top: -240px;
   left: 50%;
-  width: 560px;
-  height: 560px;
-  margin-left: -280px;
+  width: 476px;
+  height: 476px;
+  margin-left: -238px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -40,32 +40,32 @@
 }
 
 .lab-body {
-  padding-top: 56px;
-  padding-bottom: 64px;
+  padding-top: 48px;
+  padding-bottom: 54px;
 }
 
 .lab-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 56px;
+  gap: 48px;
   align-items: start;
 }
 
 .lab-result-column {
-  padding-left: 56px;
+  padding-left: 48px;
   border-left: 1px solid var(--line-on-stone);
 }
 
 .lab-waiting {
   font-family: var(--heading-font);
-  font-size: 22px;
+  font-size: 19px;
   color: var(--brown-grey-text);
 }
 
 .closest-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px 24px;
+  gap: 27px 24px;
 }
 
 .closest-reason {
@@ -78,7 +78,7 @@
 .earlier-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
+  gap: 27px;
 }
 
 .earlier-photo {
@@ -112,7 +112,7 @@
 
 .earlier-style {
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .earlier-when {
@@ -122,16 +122,16 @@
 
 @media (max-width: 1024px) {
   .lab-top-inner {
-    grid-template-columns: minmax(0, 1fr) 260px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 221px;
+    gap: 34px;
   }
 
   .lab-columns {
-    gap: 32px;
+    gap: 27px;
   }
 
   .lab-result-column {
-    padding-left: 32px;
+    padding-left: 27px;
   }
 
   .closest-grid,
@@ -155,7 +155,7 @@
 
   .lab-result-column {
     padding-left: 0;
-    padding-top: 32px;
+    padding-top: 27px;
     border-left: none;
     border-top: 1px solid var(--line-on-stone);
   }

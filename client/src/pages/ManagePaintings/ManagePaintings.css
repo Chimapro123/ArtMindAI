@@ -4,17 +4,17 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px 24px;
-  margin-bottom: 32px;
+  margin-bottom: 27px;
 }
 
 .manage-title {
-  font-size: 44px;
+  font-size: 36px;
   margin-bottom: 8px;
 }
 
 .manage-count {
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .manage-filters {
@@ -63,7 +63,7 @@
 }
 
 .manage-select select {
-  padding: 11px 32px 11px 12px;
+  padding: 11px 27px 11px 12px;
   background: transparent;
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
@@ -127,7 +127,7 @@
   }
 
   .manage-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
@@ -137,6 +137,6 @@
   }
 
   .manage-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

@@ -1,25 +1,25 @@
 .hero {
   position: relative;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   overflow: hidden;
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 520px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 442px;
+  gap: 54px;
   align-items: center;
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 52px;
   margin-bottom: 20px;
 }
 
 .hero-line {
-  max-width: 520px;
-  font-size: 18px;
+  max-width: 442px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
@@ -27,16 +27,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 32px;
-  margin-top: 32px;
+  gap: 16px 27px;
+  margin-top: 27px;
 }
 
 .hero-search {
   display: flex;
   align-items: center;
   gap: 14px;
-  max-width: 520px;
-  margin-top: 32px;
+  max-width: 442px;
+  margin-top: 27px;
   padding: 0 18px;
   border: 1px solid var(--line-on-dark);
   border-radius: var(--box-corner);
@@ -69,7 +69,7 @@
 .hero-picture {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px;
+  grid-template-columns: minmax(0, 1fr) 128px;
   gap: 28px;
   align-items: center;
 }
@@ -78,9 +78,9 @@
   position: absolute;
   top: -300px;
   left: 40%;
-  width: 760px;
-  height: 760px;
-  margin-left: -380px;
+  width: 646px;
+  height: 646px;
+  margin-left: -323px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.16), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -106,7 +106,7 @@
 
 .hero-label-title {
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .hero-label-line {
@@ -116,12 +116,12 @@
 
 @media (max-width: 1024px) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 306px;
+    gap: 34px;
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   .hero-picture {
@@ -140,17 +140,17 @@
   }
 
   .hero-picture {
-    max-width: 360px;
+    max-width: 306px;
     margin: 0 auto;
   }
 
   .hero-title {
-    font-size: 40px;
+    font-size: 33px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 }

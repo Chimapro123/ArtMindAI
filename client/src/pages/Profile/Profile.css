@@ -4,36 +4,36 @@
 
 .profile-top {
   position: relative;
-  padding-top: 48px;
+  padding-top: 41px;
   padding-bottom: 0;
   overflow: hidden;
 }
 
 .profile-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 272px;
+  gap: 54px;
   align-items: center;
 }
 
 .profile-line {
-  max-width: 520px;
-  font-size: 17px;
+  max-width: 442px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
 .profile-cover {
   position: relative;
-  padding-bottom: 32px;
+  padding-bottom: 27px;
 }
 
 .profile-glow {
   position: absolute;
   top: -240px;
   left: 50%;
-  width: 560px;
-  height: 560px;
-  margin-left: -280px;
+  width: 476px;
+  height: 476px;
+  margin-left: -238px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -45,19 +45,19 @@
 }
 
 .profile-heading {
-  max-width: 720px;
-  font-size: 34px;
+  max-width: 612px;
+  font-size: 28px;
   margin-bottom: 28px;
 }
 
 @media (max-width: 1024px) {
   .profile-top-inner {
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) 204px;
+    gap: 27px;
   }
 
   .profile-heading {
-    font-size: 28px;
+    font-size: 23px;
   }
 }
 
@@ -73,6 +73,6 @@
 
 @media (max-width: 480px) {
   .profile-heading {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

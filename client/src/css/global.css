@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: var(--text-font);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--white-text);
   background: var(--dark-wall);
@@ -101,20 +101,20 @@ select:focus-visible {
 }
 
 .page-title {
-  font-size: 56px;
+  font-size: 46px;
   margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: 40px;
-  margin-bottom: 40px;
+  font-size: 33px;
+  margin-bottom: 34px;
 }
 
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 36px;
+  margin-bottom: 31px;
   font-size: 13px;
   color: var(--grey-text);
 }
@@ -210,7 +210,7 @@ select:focus-visible {
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--line-on-dark);
-  font-size: 16px;
+  font-size: 15px;
   transition: border-color var(--fast-speed);
 }
 
@@ -251,27 +251,27 @@ select:focus-visible {
 
 @media (max-width: 1024px) {
   :root {
-    --side-space: 32px;
-    --section-space: 72px;
+    --side-space: 28px;
+    --section-space: 60px;
   }
 
   .page-title {
-    font-size: 44px;
+    font-size: 36px;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
 @media (max-width: 768px) {
   :root {
     --side-space: 24px;
-    --section-space: 56px;
+    --section-space: 48px;
   }
 
   .page-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
@@ -282,7 +282,7 @@ select:focus-visible {
   }
 
   .page-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 

@@ -13,12 +13,12 @@
 .quick-look-box {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(240px, 2fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 3fr) minmax(204px, 2fr);
+  gap: 34px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 850px;
   max-height: calc(100vh - 2 * var(--side-space));
-  padding: 40px;
+  padding: 34px;
   overflow-y: auto;
   background: var(--dark-wall);
   color: var(--white-text);
@@ -62,7 +62,7 @@
 }
 
 .quick-details .label-title {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .quick-facts {
@@ -117,7 +117,7 @@
   .quick-look-box {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 48px 24px 24px;
+    padding: 41px 24px 24px;
   }
 
   .quick-picture .frame,
@@ -138,6 +138,6 @@
   }
 
   .quick-details .label-title {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

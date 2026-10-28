@@ -1,7 +1,7 @@
 .room-collections {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px;
+  gap: 34px;
 }
 
 .room-collection {
@@ -11,7 +11,7 @@
 }
 
 .room-collection-cover {
-  max-width: 220px;
+  max-width: 187px;
   margin-bottom: 16px;
   transition: transform var(--normal-speed) ease;
 }
@@ -42,7 +42,7 @@
 .room-collection-title {
   margin-top: 8px;
   font-family: var(--heading-font);
-  font-size: 22px;
+  font-size: 19px;
 }
 
 .room-collection-count {
@@ -54,10 +54,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 170px;
   border: 1px solid var(--line-on-stone);
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
   transition: border-color var(--fast-speed), color var(--fast-speed);
 }
 

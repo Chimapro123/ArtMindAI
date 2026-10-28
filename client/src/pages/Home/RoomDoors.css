@@ -1,7 +1,7 @@
 .room-doors {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 32px;
+  gap: 27px;
 }
 
 .room-door {
@@ -35,7 +35,7 @@
   display: block;
   margin-top: 16px;
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
   transition: color var(--fast-speed);
 }
 
@@ -53,7 +53,7 @@
 @media (max-width: 1024px) {
   .room-doors {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px 24px;
+    gap: 27px 24px;
   }
 }
 

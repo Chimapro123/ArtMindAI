@@ -36,8 +36,8 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  min-height: 300px;
-  padding: 32px;
+  min-height: 255px;
+  padding: 27px;
   border: 1px dashed var(--gold);
   border-radius: var(--box-corner);
   text-align: center;
@@ -56,12 +56,12 @@
 .picture-empty-title {
   margin-top: 8px;
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 20px;
   color: var(--black-text);
 }
 
 .picture-empty-text {
-  max-width: 320px;
+  max-width: 272px;
   font-size: 13px;
   line-height: 1.5;
   color: var(--brown-grey-text);

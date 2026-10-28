@@ -1,5 +1,5 @@
 .editor-page {
-  padding-bottom: 96px;
+  padding-bottom: 82px;
 }
 
 .editor-page .breadcrumb {
@@ -12,14 +12,14 @@
 }
 
 .editor-title {
-  font-size: 44px;
-  margin-bottom: 36px;
+  font-size: 36px;
+  margin-bottom: 31px;
 }
 
 .editor-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
+  gap: 41px;
   align-items: start;
 }
 
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 48px;
+  padding: 16px 41px;
   background: var(--darker-wall);
   color: var(--white-text);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.25);
@@ -57,7 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 32px;
+  gap: 16px 27px;
 }
 
 .editor-cancel,
@@ -82,16 +82,16 @@
 
 @media (max-width: 1024px) {
   .editor-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 
   .editor-columns {
-    gap: 32px;
+    gap: 27px;
   }
 
   .editor-bar {
     left: 200px;
-    padding: 14px 32px;
+    padding: 14px 27px;
   }
 }
 
@@ -108,7 +108,7 @@
 
 @media (max-width: 480px) {
   .editor-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .editor-bar {

@@ -1,6 +1,6 @@
 .result-style {
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -46,7 +46,7 @@
 
 .result-others-title {
   font-family: var(--heading-font);
-  font-size: 19px;
+  font-size: 17px;
   margin-bottom: 8px;
 }
 
@@ -81,12 +81,12 @@
 
 .result-facts dd {
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .result-colours-title {
   font-family: var(--heading-font);
-  font-size: 19px;
+  font-size: 17px;
   margin-bottom: 8px;
 }
 

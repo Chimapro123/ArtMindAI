@@ -1,6 +1,6 @@
 .figures-section {
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .figures {
@@ -20,12 +20,12 @@
 
 .figure-number {
   font-family: var(--heading-font);
-  font-size: 56px;
+  font-size: 46px;
   line-height: 1.1;
 }
 
 .figure-word {
-  font-size: 44px;
+  font-size: 36px;
   padding-top: 8px;
 }
 
@@ -36,11 +36,11 @@
 
 @media (max-width: 1024px) {
   .figure-number {
-    font-size: 44px;
+    font-size: 36px;
   }
 
   .figure-word {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 

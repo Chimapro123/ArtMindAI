@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 48px 48px;
+  padding: 85px 41px 41px;
   background: var(--dark-wall);
   color: var(--white-text);
   overflow: hidden;
@@ -20,16 +20,16 @@
   position: absolute;
   top: 28px;
   left: 48px;
-  font-size: 40px;
+  font-size: 33px;
 }
 
 .split-spotlight {
   position: absolute;
   top: -120px;
   left: 50%;
-  width: 520px;
-  height: 520px;
-  margin-left: -260px;
+  width: 442px;
+  height: 442px;
+  margin-left: -221px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -38,7 +38,7 @@
 .split-picture {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 442px;
   opacity: 1;
   transition: opacity var(--slow-speed) ease;
 }
@@ -62,7 +62,7 @@
 }
 
 .split-label {
-  margin-top: 36px;
+  margin-top: 31px;
   font-size: 15px;
   line-height: 1.5;
 }
@@ -70,7 +70,7 @@
 .split-title {
   font-family: var(--heading-font);
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .split-year {
@@ -82,10 +82,10 @@
   align-items: center;
   gap: 28px;
   width: 100%;
-  max-width: 520px;
-  margin-top: 40px;
+  max-width: 442px;
+  margin-top: 34px;
   font-family: var(--heading-font);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--light-gold);
 }
 
@@ -113,7 +113,7 @@
 .split-right {
   display: flex;
   flex-direction: column;
-  padding: 28px 48px 48px;
+  padding: 28px 41px 41px;
   background: var(--stone-wall);
   color: var(--black-text);
 }
@@ -125,7 +125,7 @@
 
 .split-top-link {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--gold);
   transition: color var(--fast-speed);
@@ -137,13 +137,13 @@
 
 .split-form {
   width: 100%;
-  max-width: 560px;
+  max-width: 476px;
   margin: auto;
-  padding: 40px 0;
+  padding: 34px 0;
 }
 
 .split-form .page-title {
-  font-size: 48px;
+  font-size: 40px;
   margin-bottom: 12px;
 }
 
@@ -162,9 +162,9 @@
 
 .form-line {
   font-family: var(--heading-font);
-  font-size: 19px;
+  font-size: 17px;
   color: var(--brown-grey-text);
-  margin-bottom: 32px;
+  margin-bottom: 27px;
 }
 
 .form-field {
@@ -174,7 +174,7 @@
 .form-field-label {
   display: block;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
   margin-bottom: 2px;
 }
 
@@ -187,7 +187,7 @@
   right: 0;
   bottom: 12px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--brown-grey-text);
   transition: color var(--fast-speed);
 }
@@ -200,7 +200,7 @@
   width: 100%;
   padding: 16px 24px;
   font-family: var(--heading-font);
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .form-button:disabled {
@@ -211,7 +211,7 @@
 .form-under {
   margin-top: 22px;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .form-under a,
@@ -231,11 +231,11 @@
   justify-content: flex-end;
   margin: -14px 0 28px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .form-note {
-  margin-top: 64px;
+  margin-top: 54px;
   font-size: 12px;
   color: var(--brown-grey-text);
 }
@@ -260,7 +260,7 @@
 .form-progress {
   position: relative;
   height: 2px;
-  margin: 12px 0 40px;
+  margin: 12px 0 34px;
   background: var(--line-on-stone);
 }
 
@@ -274,7 +274,7 @@
 
 @media (max-width: 1024px) {
   .split-left {
-    padding: 90px 32px 40px;
+    padding: 77px 27px 34px;
   }
 
   .split-logo {
@@ -282,11 +282,11 @@
   }
 
   .split-right {
-    padding: 24px 32px 40px;
+    padding: 24px 27px 34px;
   }
 
   .split-form .page-title {
-    font-size: 40px;
+    font-size: 33px;
   }
 }
 
@@ -302,7 +302,7 @@
     justify-content: flex-start;
     gap: 20px;
     min-height: 0;
-    padding: 70px 24px 24px;
+    padding: 60px 24px 24px;
   }
 
   .split-right {
@@ -316,7 +316,7 @@
   .split-logo {
     top: 18px;
     left: 24px;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .split-spotlight {
@@ -349,7 +349,7 @@
   }
 
   .split-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .split-counter {
@@ -357,7 +357,7 @@
   }
 
   .split-right {
-    padding: 20px 24px 40px;
+    padding: 20px 24px 34px;
   }
 
   .split-form {
@@ -365,17 +365,17 @@
   }
 
   .split-form .page-title {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   .form-note {
-    margin-top: 40px;
+    margin-top: 34px;
   }
 }
 
 @media (max-width: 480px) {
   .split-left {
-    padding: 64px 16px 20px;
+    padding: 54px 16px 20px;
   }
 
   .split-logo {
@@ -391,10 +391,10 @@
   }
 
   .split-right {
-    padding: 16px 16px 32px;
+    padding: 16px 16px 27px;
   }
 
   .split-form .page-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

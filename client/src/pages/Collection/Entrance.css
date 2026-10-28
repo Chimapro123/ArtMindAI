@@ -1,13 +1,13 @@
 .entrance {
   padding-top: 28px;
-  padding-bottom: 56px;
+  padding-bottom: 48px;
 }
 
 .entrance-line {
-  max-width: 520px;
+  max-width: 442px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--gold-line);
-  font-size: 17px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
@@ -29,7 +29,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 32px;
+  gap: 12px 27px;
   margin-top: 28px;
 }
 

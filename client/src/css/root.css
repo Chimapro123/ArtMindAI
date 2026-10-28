@@ -20,8 +20,8 @@
   --heading-font: "EB Garamond", Georgia, serif;
   --text-font: "Inter", Arial, sans-serif;
   --page-width: 1280px;
-  --side-space: 48px;
-  --section-space: 96px;
+  --side-space: 40px;
+  --section-space: 80px;
   --button-corner: 3px;
   --box-corner: 4px;
   --frame-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);

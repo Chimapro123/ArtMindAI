@@ -3,8 +3,8 @@
 }
 
 .room-end {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 61px;
+  padding-bottom: 61px;
 }
 
 .room-end-inner {
@@ -12,11 +12,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 27px;
 }
 
 .room-end-title {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 16px;
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-  max-width: 420px;
+  max-width: 357px;
   padding: 20px 24px;
   border: 1px solid var(--gold-line);
   border-radius: var(--box-corner);
@@ -53,7 +53,7 @@
 
 .next-room-title {
   font-family: var(--heading-font);
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .next-room-count {
@@ -63,7 +63,7 @@
 
 @media (max-width: 480px) {
   .room-end-title {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .next-room {

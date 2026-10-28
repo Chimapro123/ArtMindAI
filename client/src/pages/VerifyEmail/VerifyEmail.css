@@ -17,7 +17,7 @@
 .verify-links {
   margin-top: 18px;
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .verify-links + .verify-links {
@@ -35,5 +35,5 @@
 
 .verify-resend {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }

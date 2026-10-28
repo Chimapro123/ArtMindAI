@@ -15,7 +15,7 @@
 
 .filter-panel-heading {
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .filter-backdrop {
@@ -23,7 +23,7 @@
 }
 
 .filter-group {
-  margin-bottom: 32px;
+  margin-bottom: 27px;
 }
 
 .filter-title {
@@ -146,7 +146,7 @@
     bottom: 0;
     z-index: 31;
     max-height: 80vh;
-    padding: 24px var(--side-space) 40px;
+    padding: 24px var(--side-space) 34px;
     background: var(--stone-wall);
     color: var(--black-text);
     border-radius: 12px 12px 0 0;

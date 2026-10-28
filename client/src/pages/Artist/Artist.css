@@ -19,7 +19,7 @@
 }
 
 .artist-sort-select {
-  padding: 8px 32px 8px 12px;
+  padding: 8px 27px 8px 12px;
   background: transparent;
   border: 1px solid var(--line-on-dark);
   border-radius: var(--box-corner);
@@ -42,7 +42,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 48px 36px;
+  gap: 41px 31px;
   margin-top: 24px;
 }
 
@@ -60,11 +60,11 @@
 }
 
 .artist-quote {
-  max-width: 760px;
+  max-width: 646px;
   margin: 24px auto 20px;
   font-family: var(--heading-font);
   font-style: italic;
-  font-size: 40px;
+  font-size: 33px;
   line-height: 1.3;
 }
 
@@ -76,12 +76,12 @@
 .related-artists {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 48px 40px;
+  gap: 41px 34px;
 }
 
 @media (max-width: 1024px) {
   .artist-quote {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .related-artists {
@@ -91,7 +91,7 @@
 
 @media (max-width: 480px) {
   .artist-quote {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .artist-wall-item {
@@ -100,6 +100,6 @@
 
   .related-artists {
     grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
+    gap: 31px;
   }
 }

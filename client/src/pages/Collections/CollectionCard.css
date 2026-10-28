@@ -15,7 +15,7 @@
 
 .collection-cover {
   width: 70%;
-  max-width: 220px;
+  max-width: 187px;
   margin-bottom: 20px;
   transition: transform var(--normal-speed) ease;
 }
@@ -35,7 +35,7 @@
 }
 
 .collection-title {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 

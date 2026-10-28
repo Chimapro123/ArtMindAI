@@ -1,14 +1,14 @@
 .viewing-room {
   position: relative;
   padding-top: 28px;
-  padding-bottom: 56px;
+  padding-bottom: 48px;
   overflow: hidden;
 }
 
 .room-inner {
   display: grid;
   grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
-  gap: 64px;
+  gap: 54px;
   align-items: start;
 }
 
@@ -20,9 +20,9 @@
   position: absolute;
   top: -260px;
   left: 50%;
-  width: 760px;
-  height: 760px;
-  margin-left: -380px;
+  width: 646px;
+  height: 646px;
+  margin-left: -323px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -59,7 +59,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 36px;
+  gap: 8px 31px;
   margin-top: 28px;
 }
 
@@ -83,12 +83,12 @@
 }
 
 .room-title {
-  font-size: 48px;
+  font-size: 40px;
   margin-bottom: 8px;
 }
 
 .room-artist {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 12px;
 }
 
@@ -107,11 +107,11 @@
 
 @media (max-width: 1024px) {
   .room-inner {
-    gap: 40px;
+    gap: 34px;
   }
 
   .room-title {
-    font-size: 38px;
+    font-size: 31px;
   }
 }
 
@@ -125,16 +125,16 @@
   }
 
   .room-spotlight {
-    width: 520px;
-    height: 520px;
-    margin-left: -260px;
+    width: 442px;
+    height: 442px;
+    margin-left: -221px;
     top: -200px;
   }
 }
 
 @media (max-width: 480px) {
   .room-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .room-tools {

@@ -38,7 +38,7 @@
   align-items: center;
   gap: 16px;
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .cell-thumb {
@@ -118,7 +118,7 @@
   .paintings-table tr {
     position: relative;
     margin-top: 16px;
-    padding: 16px 16px 16px 48px;
+    padding: 16px 16px 16px 41px;
     border: 1px solid var(--line-on-stone);
     border-radius: var(--box-corner);
   }

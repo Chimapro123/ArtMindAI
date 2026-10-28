@@ -1,26 +1,26 @@
 .home-panels {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 54px;
+  padding-bottom: 54px;
 }
 
 .panels-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 64px;
+  gap: 54px;
 }
 
 .panel-second {
-  padding-left: 64px;
+  padding-left: 54px;
   border-left: 1px solid var(--line-on-dark);
 }
 
 .panel-title {
-  font-size: 28px;
+  font-size: 23px;
   margin-bottom: 20px;
 }
 
 .panel-chat {
-  max-width: 420px;
+  max-width: 357px;
   margin-bottom: 24px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .panel-text {
-  max-width: 420px;
+  max-width: 357px;
   margin-bottom: 24px;
   font-size: 15px;
   line-height: 1.6;
@@ -58,12 +58,12 @@
 @media (max-width: 768px) {
   .panels-inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
+    gap: 34px;
   }
 
   .panel-second {
     padding-left: 0;
-    padding-top: 40px;
+    padding-top: 34px;
     border-left: none;
     border-top: 1px solid var(--line-on-dark);
   }

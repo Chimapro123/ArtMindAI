@@ -3,26 +3,26 @@
 }
 
 .room-top {
-  padding-top: 48px;
+  padding-top: 41px;
   padding-bottom: 0;
 }
 
 .room-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 289px;
+  gap: 54px;
   align-items: start;
 }
 
 .room-line {
-  max-width: 520px;
-  font-size: 17px;
+  max-width: 442px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
 .member-card {
   position: relative;
-  padding: 28px 32px 36px;
+  padding: 28px 27px 31px;
   border: 1px solid var(--gold);
   border-radius: var(--box-corner);
   background: var(--darker-wall);
@@ -32,13 +32,13 @@
 .member-card-logo {
   margin-bottom: 20px;
   font-family: var(--heading-font);
-  font-size: 32px;
+  font-size: 26px;
   color: var(--light-gold);
 }
 
 .member-card-name {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .member-card-since {
@@ -57,7 +57,7 @@
 .waiting-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px 24px;
+  gap: 27px 24px;
 }
 
 .waiting-reason {
@@ -106,16 +106,16 @@
 .taste-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 64px;
+  gap: 54px;
 }
 
 .taste-colours {
-  padding-left: 64px;
+  padding-left: 54px;
   border-left: 1px solid var(--line-on-dark);
 }
 
 .taste-title {
-  font-size: 26px;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
@@ -126,13 +126,13 @@
 }
 
 .room-all-link {
-  margin-top: 40px;
+  margin-top: 34px;
 }
 
 @media (max-width: 1024px) {
   .room-top-inner {
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) 238px;
+    gap: 27px;
   }
 
   .waiting-grid {
@@ -145,7 +145,7 @@
 
   .taste-inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: 48px;
+    gap: 41px;
   }
 
   .taste-colours {
@@ -160,7 +160,7 @@
   }
 
   .member-card {
-    max-width: 340px;
+    max-width: 289px;
     order: -1;
   }
 }

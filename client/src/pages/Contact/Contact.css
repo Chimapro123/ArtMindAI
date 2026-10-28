@@ -1,20 +1,20 @@
 .contact-top {
   position: relative;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   overflow: hidden;
 }
 
 .contact-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 357px;
+  gap: 54px;
   align-items: center;
 }
 
 .contact-line {
-  max-width: 520px;
-  font-size: 17px;
+  max-width: 442px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--grey-text);
 }
@@ -31,9 +31,9 @@
   position: absolute;
   top: -260px;
   left: 40%;
-  width: 640px;
-  height: 640px;
-  margin-left: -320px;
+  width: 544px;
+  height: 544px;
+  margin-left: -272px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -58,7 +58,7 @@
 .contact-cover-title {
   font-family: var(--heading-font);
   font-style: italic;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .contact-cover-year {
@@ -68,18 +68,18 @@
 
 .contact-inner {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 64px;
+  grid-template-columns: 255px minmax(0, 1fr);
+  gap: 54px;
 }
 
 .contact-aside {
-  padding-right: 40px;
+  padding-right: 34px;
   border-right: 1px solid var(--line-on-stone);
 }
 
 .contact-email {
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .contact-form {
-  max-width: 600px;
+  max-width: 510px;
 }
 
 .contact-field {
@@ -105,12 +105,12 @@
 
 .contact-select {
   width: 100%;
-  padding: 10px 32px 10px 0;
+  padding: 10px 27px 10px 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--line-on-stone);
   font-family: var(--heading-font);
-  font-size: 19px;
+  font-size: 17px;
   color: var(--black-text);
   appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, var(--brown-grey-text) 50%), linear-gradient(135deg, var(--brown-grey-text) 50%, transparent 50%);
@@ -167,7 +167,7 @@
 .contact-thanks {
   margin-bottom: 16px;
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
   color: var(--gold);
 }
 
@@ -191,8 +191,8 @@
 
 @media (max-width: 1024px) {
   .contact-top-inner {
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 255px;
+    gap: 34px;
   }
 
   .contact-cover {
@@ -205,8 +205,8 @@
   }
 
   .contact-inner {
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 187px minmax(0, 1fr);
+    gap: 34px;
   }
 
   .contact-aside {

@@ -18,12 +18,12 @@
 
 .guide-reply {
   align-self: flex-start;
-  max-width: 760px;
+  max-width: 646px;
 }
 
 .guide-reply-text {
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.45;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .reply-painting {
-  width: 180px;
+  width: 153px;
 }
 
 .reply-frame {
@@ -55,7 +55,7 @@
 
 .reply-painting-title {
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .reply-painting-artist {
@@ -109,7 +109,7 @@
   }
 
   .guide-reply-text {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .reply-painting {

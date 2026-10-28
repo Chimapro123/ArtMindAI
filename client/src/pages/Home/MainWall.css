@@ -1,6 +1,6 @@
 .wall-strip {
   display: flex;
-  gap: 32px;
+  gap: 27px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -13,7 +13,7 @@
 }
 
 .wall-strip-item {
-  flex: 0 0 280px;
+  flex: 0 0 238px;
   scroll-snap-align: start;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 27px;
   margin-top: 8px;
 }
 
@@ -76,12 +76,12 @@
   }
 
   .wall-strip-item {
-    flex-basis: 220px;
+    flex-basis: 187px;
   }
 }
 
 @media (max-width: 480px) {
   .wall-strip-item {
-    flex-basis: 200px;
+    flex-basis: 170px;
   }
 }

@@ -1,5 +1,5 @@
 .editor-form {
-  padding-left: 48px;
+  padding-left: 41px;
   border-left: 1px solid var(--line-on-stone);
 }
 
@@ -17,16 +17,16 @@
 
 .editor-form .line-input {
   border-bottom-color: var(--line-on-stone);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .editor-select {
   width: 100%;
-  padding: 10px 32px 10px 0;
+  padding: 10px 27px 10px 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--line-on-stone);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--black-text);
   appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, var(--brown-grey-text) 50%), linear-gradient(135deg, var(--brown-grey-text) 50%, transparent 50%);
@@ -54,7 +54,7 @@
   border: 1px solid var(--line-on-stone);
   border-radius: var(--box-corner);
   font-family: var(--heading-font);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   resize: vertical;
 }
@@ -103,7 +103,7 @@
 @media (max-width: 768px) {
   .editor-form {
     padding-left: 0;
-    padding-top: 32px;
+    padding-top: 27px;
     border-left: none;
     border-top: 1px solid var(--line-on-stone);
   }

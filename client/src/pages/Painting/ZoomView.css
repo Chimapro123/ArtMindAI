@@ -28,7 +28,7 @@
 
 .zoom-title {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 17px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -46,7 +46,7 @@
   height: 36px;
   border: 1px solid var(--line-on-dark);
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 16px;
   transition: border-color var(--fast-speed), color var(--fast-speed);
 }
 

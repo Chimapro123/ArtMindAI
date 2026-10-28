@@ -1,28 +1,28 @@
 .spotlight-section {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 61px;
+  padding-bottom: 61px;
 }
 
 .spotlight-inner {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: 255px minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
 }
 
 .spotlight-name {
-  font-size: 40px;
+  font-size: 33px;
   margin-bottom: 6px;
 }
 
 .spotlight-years {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 14px;
 }
 
 .spotlight-line {
-  max-width: 480px;
-  font-size: 16px;
+  max-width: 408px;
+  font-size: 15px;
   line-height: 1.6;
   margin-bottom: 28px;
 }
@@ -51,23 +51,23 @@
 .artist-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 56px 48px;
+  gap: 48px 41px;
   padding: 0 24px;
 }
 
 .show-more-artists {
-  margin-top: 56px;
+  margin-top: 48px;
 }
 
 @media (max-width: 1024px) {
   .spotlight-inner {
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 204px minmax(0, 1fr);
+    gap: 34px;
   }
 
   .artist-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 40px 32px;
+    gap: 34px 27px;
     padding: 0;
   }
 }
@@ -78,11 +78,11 @@
   }
 
   .spotlight-portrait {
-    max-width: 280px;
+    max-width: 238px;
   }
 
   .spotlight-name {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .artist-grid {
@@ -92,7 +92,7 @@
 
 @media (max-width: 480px) {
   .artist-grid {
-    gap: 32px 20px;
+    gap: 27px 20px;
   }
 
   .spotlight-painting {

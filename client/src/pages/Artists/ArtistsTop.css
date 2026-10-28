@@ -1,20 +1,20 @@
 .artists-top {
   position: relative;
-  padding-top: 56px;
-  padding-bottom: 40px;
+  padding-top: 48px;
+  padding-bottom: 34px;
   overflow: hidden;
 }
 
 .artists-top-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 272px;
+  gap: 54px;
   align-items: center;
 }
 
 .artists-line {
-  max-width: 560px;
-  font-size: 17px;
+  max-width: 476px;
+  font-size: 16px;
   color: var(--grey-text);
 }
 
@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  max-width: 520px;
+  max-width: 442px;
   margin-top: 28px;
   padding: 0 18px;
   border: 1px solid var(--line-on-dark);
@@ -113,9 +113,9 @@
   position: absolute;
   top: -240px;
   left: 50%;
-  width: 560px;
-  height: 560px;
-  margin-left: -280px;
+  width: 476px;
+  height: 476px;
+  margin-left: -238px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(241, 236, 227, 0.14), rgba(29, 28, 26, 0) 65%);
   pointer-events: none;
@@ -128,8 +128,8 @@
 
 @media (max-width: 1024px) {
   .artists-top-inner {
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 204px;
+    gap: 34px;
   }
 }
 

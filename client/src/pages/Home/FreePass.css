@@ -1,24 +1,24 @@
 .free-pass {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 54px;
+  padding-bottom: 54px;
 }
 
 .free-pass-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 306px;
+  gap: 54px;
   align-items: center;
 }
 
 .free-pass-title {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 14px;
 }
 
 .free-pass-text {
-  max-width: 480px;
+  max-width: 408px;
   margin-bottom: 28px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -33,8 +33,8 @@
 
 @media (max-width: 1024px) {
   .free-pass-inner {
-    grid-template-columns: minmax(0, 1fr) 260px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 221px;
+    gap: 34px;
   }
 }
 
@@ -44,10 +44,10 @@
   }
 
   .free-pass-picture {
-    max-width: 300px;
+    max-width: 255px;
   }
 
   .free-pass-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }

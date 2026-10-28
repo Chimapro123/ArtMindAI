@@ -1,6 +1,6 @@
 .close-heading {
-  max-width: 820px;
-  font-size: 32px;
+  max-width: 697px;
+  font-size: 26px;
   margin-bottom: 20px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .close-confirm {
-  max-width: 400px;
+  max-width: 340px;
 }
 
 .close-field {
@@ -47,12 +47,12 @@
 
 @media (max-width: 768px) {
   .close-heading {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 
 @media (max-width: 480px) {
   .close-heading {
-    font-size: 22px;
+    font-size: 19px;
   }
 }

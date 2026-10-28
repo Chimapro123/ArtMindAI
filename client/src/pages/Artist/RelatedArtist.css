@@ -17,7 +17,7 @@
 }
 
 .related-name {
-  font-size: 20px;
+  font-size: 17px;
   margin-bottom: 4px;
   transition: color var(--fast-speed);
 }
