@@ -4,6 +4,7 @@ const visitSchema = new mongoose.Schema({
   visitorId: { type: String, required: true },
   day: { type: String, required: true },
   page: { type: String, default: "/" },
+  pageViews: { type: Number },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", default: null },
   createdAt: { type: Date, default: Date.now }
 });

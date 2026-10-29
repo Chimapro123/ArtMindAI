@@ -59,7 +59,7 @@ async function recordVisit(request, response) {
     const page = String(request.body.page || "/").slice(0, 200);
     await Visit.updateOne(
       { visitorId, day },
-      { $setOnInsert: { visitorId, day, page, user: request.user ? request.user._id : null, createdAt: new Date() } },
+      { $setOnInsert: { visitorId, day, page, user: request.user ? request.user._id : null, createdAt: new Date() }, $inc: { pageViews: 1 } },
       { upsert: true }
     );
     response.json({ ok: true });
