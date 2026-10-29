@@ -1,0 +1,8 @@
+[
+  { "id": "G01", "question": "Tell me about The Hay Wain", "paintingSlug": null, "expectedPainting": "the-hay-wain" },
+  { "id": "G02", "question": "Who painted The Night Watch?", "paintingSlug": null, "expectedPainting": "the-night-watch" },
+  { "id": "G03", "question": "What is happening in this painting?", "paintingSlug": "hunters-in-the-snow", "expectedPainting": "hunters-in-the-snow" },
+  { "id": "G04", "question": "Which paintings here have a dog in them?", "paintingSlug": null, "expectedPainting": null },
+  { "id": "G05", "question": "Where does the Girl with a Pearl Earring hang?", "paintingSlug": null, "expectedPainting": "girl-with-a-pearl-earring" },
+  { "id": "G06", "question": "What is the capital of France?", "paintingSlug": null, "expectedPainting": null }
+]

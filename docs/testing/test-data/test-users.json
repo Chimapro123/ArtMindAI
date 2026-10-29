@@ -1,0 +1,13 @@
+{
+  "note": "Throwaway users made only for testing. All of them were deleted with their data when testing finished.",
+  "users": [
+    { "key": "one", "name": "Tom Tester", "email": "test.member.one@example.com", "password": "Gallery2026!", "newPassword": "Painting2027!", "rooms": ["Landscape", "Nature"], "use": "accounts, profile, saved, collections, dashboard, guide and Image Lab test cases" },
+    { "key": "two", "name": "Sara Tester", "email": "test.member.two@example.com", "password": "Gallery2026!", "rooms": ["Flower"], "use": "checks that one member cannot see or change what belongs to another" },
+    { "key": "unconfirmed", "name": "Una Tester", "email": "test.unconfirmed@example.com", "password": "Gallery2026!", "rooms": [], "use": "joins but never confirms the email" },
+    { "key": "checks", "name": "Chris Tester", "email": "test.checks@example.com", "password": "Gallery2026!", "rooms": ["Figurative"], "use": "runs the search check, the Image Lab check, the guide questions and the fallback check" }
+  ],
+  "alsoUsed": [
+    { "who": "Ada Obi", "email": "demo@artmind.test", "use": "the demo member from the seed, for the dashboard with real history" },
+    { "who": "Curator", "email": "the ADMIN_EMAIL in server/.env", "use": "the admin, for the admin test cases" }
+  ]
+}

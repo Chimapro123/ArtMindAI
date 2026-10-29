@@ -1,0 +1,31 @@
+{
+  "browsers": ["Google Chrome", "Microsoft Edge"],
+  "notTested": "Mozilla Firefox is not installed on the computer we tested on, and Safari only runs on Apple computers.",
+  "widths": [1440, 1024, 768, 390],
+  "pages": [
+    { "path": "/", "loggedInAs": "visitor" },
+    { "path": "/gallery", "loggedInAs": "visitor" },
+    { "path": "/painting/hunters-in-the-snow", "loggedInAs": "visitor" },
+    { "path": "/artists", "loggedInAs": "visitor" },
+    { "path": "/artists/vincent-van-gogh", "loggedInAs": "visitor" },
+    { "path": "/collections", "loggedInAs": "visitor" },
+    { "path": "/collections/good-dogs", "loggedInAs": "visitor" },
+    { "path": "/search?q=a stormy sea", "loggedInAs": "visitor" },
+    { "path": "/guide", "loggedInAs": "demo member" },
+    { "path": "/image-lab", "loggedInAs": "demo member" },
+    { "path": "/about", "loggedInAs": "visitor" },
+    { "path": "/contact", "loggedInAs": "visitor" },
+    { "path": "/login", "loggedInAs": "visitor" },
+    { "path": "/join", "loggedInAs": "visitor" },
+    { "path": "/verify-email?email=someone@example.com", "loggedInAs": "visitor" },
+    { "path": "/reset-password", "loggedInAs": "visitor" },
+    { "path": "/dashboard", "loggedInAs": "demo member" },
+    { "path": "/saved", "loggedInAs": "demo member" },
+    { "path": "/profile", "loggedInAs": "demo member" },
+    { "path": "/admin", "loggedInAs": "admin" },
+    { "path": "/admin/paintings", "loggedInAs": "admin" },
+    { "path": "/admin/paintings/the-hay-wain/edit", "loggedInAs": "admin" },
+    { "path": "/no-such-page", "loggedInAs": "visitor" }
+  ],
+  "whatWeChecked": ["the page finished loading", "no sideways scroll", "which navigation shows", "messages in the browser console", "broken images"]
+}

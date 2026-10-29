@@ -1,0 +1,22 @@
+[
+  { "id": "L01", "slug": "maesta", "expectedStyle": "Gothic", "expectedRoom": "Religious" },
+  { "id": "L02", "slug": "the-annunciation-simone-martini", "expectedStyle": "Gothic", "expectedRoom": "Religious" },
+  { "id": "L03", "slug": "the-birth-of-venus", "expectedStyle": "Renaissance", "expectedRoom": "Figurative" },
+  { "id": "L04", "slug": "the-school-of-athens", "expectedStyle": "Renaissance", "expectedRoom": "Figurative" },
+  { "id": "L05", "slug": "madonna-of-the-meadow", "expectedStyle": "Renaissance", "expectedRoom": "Religious" },
+  { "id": "L06", "slug": "the-harvesters", "expectedStyle": "Northern Renaissance", "expectedRoom": "Landscape" },
+  { "id": "L07", "slug": "the-arnolfini-portrait", "expectedStyle": "Northern Renaissance", "expectedRoom": "Figurative" },
+  { "id": "L08", "slug": "view-of-delft", "expectedStyle": "Baroque", "expectedRoom": "Landscape" },
+  { "id": "L09", "slug": "the-night-watch", "expectedStyle": "Baroque", "expectedRoom": "Figurative" },
+  { "id": "L10", "slug": "vase-of-flowers", "expectedStyle": "Baroque", "expectedRoom": "Flower" },
+  { "id": "L11", "slug": "the-fighting-temeraire", "expectedStyle": "Romanticism", "expectedRoom": "Landscape" },
+  { "id": "L12", "slug": "wanderer-above-the-sea-of-fog", "expectedStyle": "Romanticism", "expectedRoom": "Nature" },
+  { "id": "L13", "slug": "the-gleaners", "expectedStyle": "Realism", "expectedRoom": "Figurative" },
+  { "id": "L14", "slug": "the-horse-fair", "expectedStyle": "Realism", "expectedRoom": "Nature" },
+  { "id": "L15", "slug": "luncheon-of-the-boating-party", "expectedStyle": "Impressionism", "expectedRoom": "Figurative" },
+  { "id": "L16", "slug": "reading-le-figaro", "expectedStyle": "Impressionism", "expectedRoom": "Figurative" },
+  { "id": "L17", "slug": "irises", "expectedStyle": "Post Impressionism", "expectedRoom": "Flower" },
+  { "id": "L18", "slug": "the-bedroom", "expectedStyle": "Post Impressionism", "expectedRoom": "Figurative" },
+  { "id": "L19", "slug": "the-great-wave-off-kanagawa", "expectedStyle": "Ukiyo-e", "expectedRoom": "Nature" },
+  { "id": "L20", "slug": "composition-vii", "expectedStyle": "Modern", "expectedRoom": "Abstract" }
+]

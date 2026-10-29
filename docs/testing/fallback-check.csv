@@ -1,0 +1,12 @@
+Area,What we measured,With MODEL_API_KEY,With MODEL_API_KEY switched off,Notes
+Search,Expected tags understood in 30 sentences,58 of 66,63 of 66,Without the key the word lists read the sentence. They do well on plain words and miss words that are not in the lists.
+Search,Sentences with every expected tag,22 of 30,27 of 30,
+Search,Sentences that found at least one painting,30 of 30,30 of 30,
+Search,Average paintings found,20.6,14.8,"The model adds a room or colour to most sentences, so it finds more paintings."
+Search,Average time for one search,3.9 s,0.6 s,
+Guide,"Answers about the right painting, or a polite no",6 of 6,6 of 6,Without the key the answer is the painting's facts and the first line of its story.
+Image Lab,Style right for 20 photos,17 of 20,3 of 20,"Without the key the style is guessed from the five colours only, always at 40%."
+Image Lab,Room right for 20 photos,16 of 20,8 of 20,
+Image Lab,Average time for one photo,3.4 s,1.1 s,
+Image Lab,20 photos sent back to back with the key on,6 of 20 right,,"The model service answered 429 (too many requests) for undefined photos, so the server used the colour guess for those. Nothing broke and every photo got a result."
+Everything,Pages still work with no key,Yes,Yes,Every answer came back with status 200 and the site showed no errors.

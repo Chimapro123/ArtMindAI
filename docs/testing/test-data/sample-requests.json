@@ -1,0 +1,66 @@
+{
+  "note": "Examples of the requests our test scripts sent to the server on port 5000. Logged in requests carry the httpOnly token cookie set by log in or verify email. The test users in these bodies were deleted after testing.",
+  "accounts": [
+    { "method": "POST", "path": "/api/auth/register", "body": { "name": "Tom Tester", "email": "test.member.one@example.com", "password": "Gallery2026!", "rooms": ["Landscape", "Nature"] } },
+    { "method": "POST", "path": "/api/auth/register", "body": { "name": "Short Pass", "email": "short.pass@example.com", "password": "short" } },
+    { "method": "POST", "path": "/api/auth/verify-email", "body": { "email": "test.member.one@example.com", "code": "000000" } },
+    { "method": "POST", "path": "/api/auth/login", "body": { "email": "test.member.one@example.com", "password": "WrongPass1" } },
+    { "method": "POST", "path": "/api/auth/resend-code", "body": { "email": "test.unconfirmed@example.com" } },
+    { "method": "POST", "path": "/api/auth/forgot-password", "body": { "email": "nobody.here@example.com" } },
+    { "method": "POST", "path": "/api/auth/check-reset-code", "body": { "email": "test.member.one@example.com", "code": "111111" } },
+    { "method": "POST", "path": "/api/auth/reset-password", "body": { "email": "test.member.one@example.com", "code": "the code printed in the server window", "password": "Painting2027!" } },
+    { "method": "POST", "path": "/api/auth/logout" }
+  ],
+  "profile": [
+    { "method": "PUT", "path": "/api/profile", "body": { "name": "Tom T Tester", "about": "I like quiet landscapes", "rooms": ["Landscape", "Flower", "Garden"] } },
+    { "method": "PUT", "path": "/api/profile/password", "body": { "currentPassword": "NotMyPass1", "newPassword": "Gallery2026!" } },
+    { "method": "POST", "path": "/api/profile/photo", "form": { "photo": "client/public/paintings/thumbs/irises.jpg" } },
+    { "method": "POST", "path": "/api/profile/photo", "form": { "photo": "not-an-image.txt sent as text/plain" } },
+    { "method": "POST", "path": "/api/profile/photo", "form": { "photo": "big-photo.jpg, 6 MB" } },
+    { "method": "PUT", "path": "/api/profile/emails", "body": { "newsletter": false, "newCollections": false } },
+    { "method": "DELETE", "path": "/api/profile" }
+  ],
+  "gallery": [
+    { "method": "GET", "path": "/api/paintings?room=Landscape&limit=60" },
+    { "method": "GET", "path": "/api/paintings?style=Baroque&medium=Oil&limit=60" },
+    { "method": "GET", "path": "/api/paintings?colour=Ultramarine&limit=60" },
+    { "method": "GET", "path": "/api/paintings?fromYear=1800&toYear=1899&limit=60" },
+    { "method": "GET", "path": "/api/paintings?sort=oldest&limit=60" },
+    { "method": "GET", "path": "/api/paintings?curated=true&limit=60" },
+    { "method": "GET", "path": "/api/paintings?hideSeen=true&limit=60" },
+    { "method": "GET", "path": "/api/paintings/hunters-in-the-snow" },
+    { "method": "POST", "path": "/api/paintings/the-hay-wain/view" },
+    { "method": "GET", "path": "/api/artists?letter=V&limit=60" },
+    { "method": "GET", "path": "/api/artists?search=van&limit=60" },
+    { "method": "GET", "path": "/api/artists/vincent-van-gogh" },
+    { "method": "GET", "path": "/api/home" }
+  ],
+  "member": [
+    { "method": "POST", "path": "/api/saved/hunters-in-the-snow" },
+    { "method": "GET", "path": "/api/saved?search=snow" },
+    { "method": "DELETE", "path": "/api/saved/sunflowers" },
+    { "method": "POST", "path": "/api/collections", "body": { "title": "Snowy days", "description": "Cold and quiet", "paintingSlugs": ["hunters-in-the-snow", "winter-landscape-with-skaters"] } },
+    { "method": "POST", "path": "/api/collections/snowy-days-xxxxx/paintings", "body": { "paintingSlug": "the-gloomy-day", "note": "" } },
+    { "method": "GET", "path": "/api/collections/for-you-room" },
+    { "method": "POST", "path": "/api/search", "body": { "sentence": "a stormy sea in the 1800s" } },
+    { "method": "POST", "path": "/api/guide/ask", "body": { "question": "Tell me about The Hay Wain", "conversationId": null } },
+    { "method": "POST", "path": "/api/guide/ask", "body": { "question": "What is happening in this painting?", "paintingSlug": "hunters-in-the-snow" } },
+    { "method": "POST", "path": "/api/image-lab/check", "form": { "image": "client/public/paintings/irises.jpg" } },
+    { "method": "GET", "path": "/api/image-lab/history" },
+    { "method": "GET", "path": "/api/dashboard" }
+  ],
+  "admin": [
+    { "method": "POST", "path": "/api/admin/paintings", "form": { "image": "client/public/paintings/thumbs/irises.jpg", "title": "Test Irises Copy", "artistSlug": "vincent-van-gogh", "year": "about 1889" } },
+    { "method": "POST", "path": "/api/admin/paintings/test-irises-copy/labels" },
+    { "method": "POST", "path": "/api/admin/paintings/test-irises-copy/story" },
+    { "method": "PUT", "path": "/api/admin/paintings/test-irises-copy", "form": { "room": "Flower", "style": "Post Impressionism", "status": "on-the-wall" } },
+    { "method": "POST", "path": "/api/admin/paintings/bulk", "body": { "action": "storage", "slugs": ["test-irises-copy"] } },
+    { "method": "DELETE", "path": "/api/admin/paintings/test-irises-copy" },
+    { "method": "GET", "path": "/api/admin/overview?range=year" }
+  ],
+  "contactAndNewsletter": [
+    { "method": "POST", "path": "/api/contact", "body": { "name": "Tom Tester", "email": "test.contact@example.com", "subject": "Just saying hello", "message": "Lovely gallery, thank you.", "sendCopy": true } },
+    { "method": "POST", "path": "/api/newsletter", "body": { "email": "test.newsletter@example.com" } },
+    { "method": "POST", "path": "/api/visits", "body": { "page": "/gallery" } }
+  ]
+}

@@ -1,0 +1,21 @@
+ID,Painting,Expected style,Expected room,With the model: style,Confidence,Words shown,Style right,With the model: room,Room right,Sent back to back: style,Style right,Without the model: style,Style right
+L01,maesta,Gothic,Religious,Gothic,95%,Fairly sure,Yes,Religious,Yes,Gothic 92%,Yes,Realism 40%,No
+L02,the-annunciation-simone-martini,Gothic,Religious,Gothic,92%,Fairly sure,Yes,Religious,Yes,Gothic 95%,Yes,Realism 40%,No
+L03,the-birth-of-venus,Renaissance,Figurative,Renaissance,98%,Fairly sure,Yes,Religious,No,Realism 40%,No,Realism 40%,No
+L04,the-school-of-athens,Renaissance,Figurative,Renaissance,98%,Fairly sure,Yes,Figurative,Yes,Realism 40%,No,Realism 40%,No
+L05,madonna-of-the-meadow,Renaissance,Religious,Renaissance,95%,Fairly sure,Yes,Religious,Yes,Realism 40%,No,Realism 40%,No
+L06,the-harvesters,Northern Renaissance,Landscape,Northern Renaissance,92%,Fairly sure,Yes,Landscape,Yes,Realism 40%,No,Realism 40%,No
+L07,the-arnolfini-portrait,Northern Renaissance,Figurative,Northern Renaissance,95%,Fairly sure,Yes,Figurative,Yes,Baroque 40%,No,Baroque 40%,No
+L08,view-of-delft,Baroque,Landscape,Northern Renaissance,85%,Fairly sure,No,Landscape,Yes,Realism 88%,No,Realism 40%,No
+L09,the-night-watch,Baroque,Figurative,Baroque,97%,Fairly sure,Yes,Figurative,Yes,Baroque 40%,Yes,Baroque 40%,Yes
+L10,vase-of-flowers,Baroque,Flower,Baroque,92%,Fairly sure,Yes,Flower,Yes,Baroque 40%,Yes,Baroque 40%,Yes
+L11,the-fighting-temeraire,Romanticism,Landscape,Romanticism,88%,Fairly sure,Yes,Landscape,Yes,Realism 40%,No,Realism 40%,No
+L12,wanderer-above-the-sea-of-fog,Romanticism,Nature,Romanticism,95%,Fairly sure,Yes,Landscape,No,Realism 40%,No,Realism 40%,No
+L13,the-gleaners,Realism,Figurative,Realism,95%,Fairly sure,Yes,Landscape,No,Realism 40%,Yes,Realism 40%,Yes
+L14,the-horse-fair,Realism,Nature,Romanticism,88%,Fairly sure,No,Nature,Yes,Baroque 40%,No,Baroque 40%,No
+L15,luncheon-of-the-boating-party,Impressionism,Figurative,Impressionism,95%,Fairly sure,Yes,Figurative,Yes,Realism 40%,No,Realism 40%,No
+L16,reading-le-figaro,Impressionism,Figurative,Realism,85%,Fairly sure,No,Figurative,Yes,Realism 40%,No,Realism 40%,No
+L17,irises,Post Impressionism,Flower,Post Impressionism,95%,Fairly sure,Yes,Flower,Yes,Romanticism 40%,No,Romanticism 40%,No
+L18,the-bedroom,Post Impressionism,Figurative,Post Impressionism,95%,Fairly sure,Yes,Figurative,Yes,Post Impressionism 95%,Yes,Realism 40%,No
+L19,the-great-wave-off-kanagawa,Ukiyo-e,Nature,Ukiyo-e,98%,Fairly sure,Yes,Landscape,No,Realism 40%,No,Realism 40%,No
+L20,composition-vii,Modern,Abstract,Modern,95%,Fairly sure,Yes,Abstract,Yes,Realism 40%,No,Realism 40%,No
