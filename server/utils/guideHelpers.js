@@ -66,7 +66,7 @@ function makeTitle(question) {
 }
 
 function tidyAnswer(text) {
-  const noDashes = String(text).replace(/[—–]/g, ",");
+  const noDashes = String(text).replace(/[\u2014\u2013]/g, ",");
   return noDashes.replace(/\s+,/g, ",").replace(/,(?=\S)/g, ", ").replace(/\s+/g, " ").trim();
 }
 
