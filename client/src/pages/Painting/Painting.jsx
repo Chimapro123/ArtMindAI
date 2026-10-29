@@ -29,8 +29,8 @@ function Painting() {
         const result = await getPainting(slug);
         if (!ignore) {
           setData(result);
+          countPaintingView(slug).catch(() => {});
         }
-        countPaintingView(slug).catch(() => {});
       } catch (error) {
         if (!ignore) {
           setErrorMessage(error.message);
