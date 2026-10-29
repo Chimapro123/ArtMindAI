@@ -4,12 +4,13 @@ const { dayKey, shortDay, monthNames } = require("./friendlyTime");
 async function countByDay(start, days) {
   const rows = await Visit.aggregate([
     { $match: { createdAt: { $gte: start } } },
-    { $group: { _id: "$day", count: { $sum: 1 } } }
+    { $group: { _id: "$day", visits: { $sum: 1 }, pageViews: { $sum: { $ifNull: ["$pageViews", 1] } } } }
   ]);
   const counts = {};
   rows.forEach((row) => {
-    counts[row._id] = row.count;
+    counts[row._id] = { visits: row.visits, pageViews: row.pageViews };
   });
+  const empty = { visits: 0, pageViews: 0 };
   if (days > 60) {
     const byMonth = {};
     const order = [];
@@ -17,17 +18,20 @@ async function countByDay(start, days) {
       const date = new Date(Date.now() - index * 24 * 60 * 60 * 1000);
       const label = monthNames[date.getMonth()].slice(0, 3) + " " + date.getFullYear();
       if (byMonth[label] === undefined) {
-        byMonth[label] = 0;
+        byMonth[label] = { visits: 0, pageViews: 0 };
         order.push(label);
       }
-      byMonth[label] += counts[dayKey(date)] || 0;
+      const found = counts[dayKey(date)] || empty;
+      byMonth[label].visits += found.visits;
+      byMonth[label].pageViews += found.pageViews;
     }
-    return order.map((label) => ({ day: label, count: byMonth[label] }));
+    return order.map((label) => ({ day: label, visits: byMonth[label].visits, pageViews: byMonth[label].pageViews }));
   }
   const list = [];
   for (let index = days - 1; index >= 0; index -= 1) {
     const date = new Date(Date.now() - index * 24 * 60 * 60 * 1000);
-    list.push({ day: shortDay(date), count: counts[dayKey(date)] || 0 });
+    const found = counts[dayKey(date)] || empty;
+    list.push({ day: shortDay(date), visits: found.visits, pageViews: found.pageViews });
   }
   return list;
 }
@@ -50,7 +54,9 @@ function roomShares(views) {
 function makeNotes(numbers) {
   const period = numbers.range === "week" ? "week" : numbers.range === "month" ? "month" : "year";
   const notes = [];
-  if (numbers.visitsChange > 0) {
+  if (numbers.visitsChange === null) {
+    notes.push(numbers.visits + (numbers.visits === 1 ? " visitor" : " visitors") + " this " + period + ". There is no earlier " + period + " to compare with yet.");
+  } else if (numbers.visitsChange > 0) {
     notes.push("Visits are up " + numbers.visitsChange + "% on the " + period + " before.");
   } else if (numbers.visitsChange < 0) {
     notes.push("Visits are down " + Math.abs(numbers.visitsChange) + "% on the " + period + " before.");
