@@ -9,9 +9,24 @@ import "./AdminOverview.css";
 
 const rangeWords = { week: "last week", month: "last month", year: "last year" };
 const rangeNames = { week: "this week", month: "this month", year: "this year" };
+const figureNames = [
+  { key: "visits", text: "visitors," },
+  { key: "pageViews", text: "pages opened," },
+  { key: "paintingViews", text: "paintings opened," },
+  { key: "saves", text: "paintings saved," },
+  { key: "searches", text: "searches," },
+  { key: "questions", text: "questions to the guide," },
+  { key: "labPhotos", text: "photos in the Image Lab," },
+  { key: "newPasses", text: "new passes," },
+  { key: "messages", text: "messages sent," },
+  { key: "subscribers", text: "new subscribers," }
+];
 
 function changeText(change, range) {
-  if (!change) {
+  if (change === null || change === undefined) {
+    return "nothing to compare with yet.";
+  }
+  if (change === 0) {
     return "level with " + rangeWords[range] + ".";
   }
   return (change > 0 ? "up " : "down ") + Math.abs(change) + "% on " + rangeWords[range] + ".";
@@ -43,12 +58,11 @@ function AdminOverview() {
   }, [range]);
 
   const figures = data
-    ? [
-        { number: data.visits, text: "visits,", change: changeText(data.visitsChange, range) },
-        { number: data.saves, text: "paintings saved,", change: changeText(data.savesChange, range) },
-        { number: data.searches, text: "searches,", change: changeText(data.searchesChange, range) },
-        { number: data.newPasses, text: "new passes,", change: changeText(data.newPassesChange, range) }
-      ]
+    ? figureNames.map((item) => ({
+        number: data.figures[item.key],
+        text: item.text,
+        change: changeText(data.changes[item.key], range)
+      }))
     : [];
 
   return (
@@ -77,9 +91,12 @@ function AdminOverview() {
               </div>
             ))}
           </div>
+          <p className="overview-all-time">
+            Since the gallery opened: {data.allTime.visits.toLocaleString()} visits, {data.allTime.paintingViews.toLocaleString()} paintings opened, {data.allTime.members.toLocaleString()} members and {data.allTime.paintingsOnWall.toLocaleString()} paintings on the wall.
+          </p>
           <div className="overview-boxes">
             <div className="overview-box">
-              <h2 className="overview-box-title">Visits each day</h2>
+              <h2 className="overview-box-title">Visitors each day</h2>
               <VisitsChart days={data.visitsByDay} />
             </div>
             <div className="overview-box">
@@ -96,6 +113,7 @@ function AdminOverview() {
                   <th>Painting</th>
                   <th>Artist</th>
                   <th>Views</th>
+                  <th>All time</th>
                   <th>Saves</th>
                 </tr>
               </thead>
@@ -108,6 +126,7 @@ function AdminOverview() {
                     </td>
                     <td>{row.painting.artist}</td>
                     <td>{row.views}</td>
+                    <td>{row.allTimeViews}</td>
                     <td>{row.saves}</td>
                   </tr>
                 ))}

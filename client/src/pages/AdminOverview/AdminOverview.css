@@ -28,8 +28,9 @@
 
 .overview-figures {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 29px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px 0;
+  margin-bottom: 20px;
 }
 
 .overview-figure {
@@ -38,8 +39,14 @@
   border-right: 1px solid var(--line-on-stone);
 }
 
-.overview-figure:last-child {
+.overview-figure:nth-child(5n) {
   border-right: none;
+}
+
+.overview-all-time {
+  margin-bottom: 29px;
+  font-size: 13px;
+  color: var(--brown-grey-text);
 }
 
 .overview-number {
@@ -175,7 +182,11 @@
     gap: 24px 0;
   }
 
-  .overview-figure:nth-child(2) {
+  .overview-figure:nth-child(5n) {
+    border-right: 1px solid var(--line-on-stone);
+  }
+
+  .overview-figure:nth-child(2n) {
     border-right: none;
   }
 
