@@ -356,16 +356,19 @@ Query value `range`: `week` (the default), `month` or `year`.
 
 ```
 {
-  visits, visitsChange, saves, savesChange, searches, searchesChange, newPasses, newPassesChange,
-  visitsByDay: [ { day, count } ],
+  range,
+  figures: { visits, pageViews, paintingViews, saves, searches, questions, labPhotos, newPasses, messages, subscribers },
+  changes: { the same keys as figures },
+  allTime: { members, paintingsOnWall, paintingViews, visits },
+  visitsByDay: [ { day, visits, pageViews } ],
   timeInRooms: [ { room, percent } ],
-  mostLookedAt: [ { painting: Painting, views, saves } ],
+  mostLookedAt: [ { painting: Painting, views, allTimeViews, saves } ],
   searchedFor: [ { sentence, count } ],
   notes: [ string ]
 }
 ```
 
-Each `Change` is a percentage compared to the range before, and can be negative. `visitsByDay` has one entry per day with a label like `Mon 27`, or one per month for the year range. `timeInRooms` is the share of painting views per room. `notes` is three plain sentences made from the numbers.
+Every number is counted from what visitors really did. `visits` is different visitors, one per browser per day, and `pageViews` is every page they opened. `paintingViews` counts each time a painting page was opened. `questions` counts questions typed to the guide, and `labPhotos` counts Image Lab uploads. Each value in `changes` is a percentage compared to the range before, can be negative, and is `null` when the range before has nothing to compare with. `visitsByDay` has one entry per day with a label like `Mon 27`, or one per month for the year range. `timeInRooms` is the share of painting views per room. `notes` is three plain sentences made from the numbers.
 
 ### GET /api/admin/paintings
 
