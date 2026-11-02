@@ -8,12 +8,13 @@ It is a gallery, not a shop. Nothing is for sale, and every painting on the site
 
 | Name | Course |
 | --- | --- |
-| Chiboy (group leader) | Advanced Diploma in Software Engineering (ADSE) |
-| Goodluck | Advanced Diploma in Software Engineering (ADSE) |
+| Chima (group leader) | Certificate of Proficiency in Information Systems Management (CPISM) |
+| Goodluck | Certificate of Proficiency in Information Systems Management (CPISM) |
 | Luwa | Advanced Diploma in Software Engineering (ADSE) |
 | Miles | Advanced Diploma in Software Engineering (ADSE) |
-| Treasure | Advanced Diploma in Software Engineering (ADSE) |
-| Noble | Advanced Diploma in Software Engineering (ADSE) |
+| Treasure | Certificate of Proficiency in Information Systems Management (CPISM) |
+| Noble | Certificate of Proficiency in Information Systems Management (CPISM) |
+| Muhammad | Advanced Diploma in Software Engineering (ADSE) |
 
 ## School
 
